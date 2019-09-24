@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.scripts">   
+    <!-- Prints info on available targets -->
+    <target name="scripts.info">
+        <echo>  scripts.ant           Copies the Ant scripts to the distribution</echo>
+        <echo>  scripts.makefile      Copies the makefile scripts to the distribution</echo>
+        <echo>  scripts.bin           Copies the scripts which run binaries to the distribution</echo>
+    </target>
+    
+    <!-- The distribution directory with the Ant files -->
+    <property name="dir.dist.ant" value="${abs.dir.dist}/ant"/>
+    
+    <!-- The distribution directory with the makefile files -->
+    <property name="dir.dist.makefile" value="${abs.dir.dist}/makefile"/>
+
+    <!-- Copies the Ant scripts to the distribution -->
+    <target name="scripts.ant" depends="build" unless="no.scripts">
+        <copy todir="${dir.dist.ant}">
+            <fileset dir="${dir.src}/main/ant" includes="**/*"/>
+        </copy>
+        <copy todir="${dir.dist.ant}/java">
+            <fileset dir="${dir.root}/commons" includes="build-java.xml"/>
+        </copy>
+    </target>
+
+    <!-- Copies the makefile scripts to the distribution -->
+    <target name="scripts.makefile" depends="build" unless="no.scripts">
+        <copy todir="${dir.dist.makefile}">
+            <fileset dir="${dir.src}/main/makefile" includes="**/*"/>
+        </copy>
+    </target>
+    
+    <!-- Copies the scripts which run binaries to the distribution -->
+    <target name="scripts.bin" depends="build" unless="no.scripts">
+    </target>
+    
+    <!-- Copies the scripts to the distribution -->
+    <target name="scripts" depends="scripts.ant,scripts.makefile,scripts.bin">
+    </target>
+</project>

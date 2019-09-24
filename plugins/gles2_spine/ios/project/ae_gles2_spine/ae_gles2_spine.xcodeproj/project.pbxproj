@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40B2BA741D0E02200064691C /* lua_spine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA6D1D0E02200064691C /* lua_spine.cpp */; };
+		40B2BA751D0E02200064691C /* luaSpineSkeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA6E1D0E02200064691C /* luaSpineSkeleton.cpp */; };
+		40B2BA761D0E02200064691C /* luaSpineSkeletonDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA6F1D0E02200064691C /* luaSpineSkeletonDrawer.cpp */; };
+		40B2BA771D0E02200064691C /* SpineAttachmentRendererObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA701D0E02200064691C /* SpineAttachmentRendererObject.cpp */; };
+		40B2BA781D0E02200064691C /* SpineLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA711D0E02200064691C /* SpineLuaExtraLib.cpp */; };
+		40B2BA791D0E02200064691C /* SpineSkeletonDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA721D0E02200064691C /* SpineSkeletonDrawer.cpp */; };
+		40B2BA7A1D0E02200064691C /* SpineUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA731D0E02200064691C /* SpineUtil.cpp */; };
+		40B2BA971D0E029B0064691C /* Animation.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA7D1D0E029B0064691C /* Animation.c */; };
+		40B2BA981D0E029B0064691C /* AnimationState.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA7E1D0E029B0064691C /* AnimationState.c */; };
+		40B2BA991D0E029B0064691C /* AnimationStateData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA7F1D0E029B0064691C /* AnimationStateData.c */; };
+		40B2BA9A1D0E029B0064691C /* Atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA801D0E029B0064691C /* Atlas.c */; };
+		40B2BA9B1D0E029B0064691C /* AtlasAttachmentLoader.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA811D0E029B0064691C /* AtlasAttachmentLoader.c */; };
+		40B2BA9C1D0E029B0064691C /* Attachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA821D0E029B0064691C /* Attachment.c */; };
+		40B2BA9D1D0E029B0064691C /* AttachmentLoader.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA831D0E029B0064691C /* AttachmentLoader.c */; };
+		40B2BA9E1D0E029B0064691C /* Bone.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA841D0E029B0064691C /* Bone.c */; };
+		40B2BA9F1D0E029B0064691C /* BoneData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA851D0E029B0064691C /* BoneData.c */; };
+		40B2BAA01D0E029B0064691C /* BoundingBoxAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA861D0E029B0064691C /* BoundingBoxAttachment.c */; };
+		40B2BAA11D0E029B0064691C /* Event.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA871D0E029B0064691C /* Event.c */; };
+		40B2BAA21D0E029B0064691C /* EventData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA881D0E029B0064691C /* EventData.c */; };
+		40B2BAA31D0E029B0064691C /* extension.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA891D0E029B0064691C /* extension.c */; };
+		40B2BAA41D0E029B0064691C /* IkConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8A1D0E029B0064691C /* IkConstraint.c */; };
+		40B2BAA51D0E029B0064691C /* IkConstraintData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8B1D0E029B0064691C /* IkConstraintData.c */; };
+		40B2BAA61D0E029B0064691C /* Json.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8C1D0E029B0064691C /* Json.c */; };
+		40B2BAA71D0E029B0064691C /* MeshAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8D1D0E029B0064691C /* MeshAttachment.c */; };
+		40B2BAA81D0E029B0064691C /* RegionAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8E1D0E029B0064691C /* RegionAttachment.c */; };
+		40B2BAA91D0E029B0064691C /* Skeleton.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA8F1D0E029B0064691C /* Skeleton.c */; };
+		40B2BAAA1D0E029B0064691C /* SkeletonBounds.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA901D0E029B0064691C /* SkeletonBounds.c */; };
+		40B2BAAB1D0E029B0064691C /* SkeletonData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA911D0E029B0064691C /* SkeletonData.c */; };
+		40B2BAAC1D0E029B0064691C /* SkeletonJson.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA921D0E029B0064691C /* SkeletonJson.c */; };
+		40B2BAAD1D0E029B0064691C /* Skin.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA931D0E029B0064691C /* Skin.c */; };
+		40B2BAAE1D0E029B0064691C /* SkinnedMeshAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA941D0E029B0064691C /* SkinnedMeshAttachment.c */; };
+		40B2BAAF1D0E029B0064691C /* Slot.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA951D0E029B0064691C /* Slot.c */; };
+		40B2BAB01D0E029B0064691C /* SlotData.c in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA961D0E029B0064691C /* SlotData.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40B2BA5A1D0E00800064691C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40B2BA5C1D0E00800064691C /* libae_gles2_spine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_gles2_spine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B2BA6D1D0E02200064691C /* lua_spine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_spine.cpp; path = ../../../common/src/cpp/lua_spine.cpp; sourceTree = "<group>"; };
+		40B2BA6E1D0E02200064691C /* luaSpineSkeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaSpineSkeleton.cpp; path = ../../../common/src/cpp/luaSpineSkeleton.cpp; sourceTree = "<group>"; };
+		40B2BA6F1D0E02200064691C /* luaSpineSkeletonDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaSpineSkeletonDrawer.cpp; path = ../../../common/src/cpp/luaSpineSkeletonDrawer.cpp; sourceTree = "<group>"; };
+		40B2BA701D0E02200064691C /* SpineAttachmentRendererObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpineAttachmentRendererObject.cpp; path = ../../../common/src/cpp/SpineAttachmentRendererObject.cpp; sourceTree = "<group>"; };
+		40B2BA711D0E02200064691C /* SpineLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpineLuaExtraLib.cpp; path = ../../../common/src/cpp/SpineLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40B2BA721D0E02200064691C /* SpineSkeletonDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpineSkeletonDrawer.cpp; path = ../../../common/src/cpp/SpineSkeletonDrawer.cpp; sourceTree = "<group>"; };
+		40B2BA731D0E02200064691C /* SpineUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpineUtil.cpp; path = ../../../common/src/cpp/SpineUtil.cpp; sourceTree = "<group>"; };
+		40B2BA7D1D0E029B0064691C /* Animation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Animation.c; path = "../../../build/ios/libs/spine-c/src/Animation.c"; sourceTree = "<group>"; };
+		40B2BA7E1D0E029B0064691C /* AnimationState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AnimationState.c; path = "../../../build/ios/libs/spine-c/src/AnimationState.c"; sourceTree = "<group>"; };
+		40B2BA7F1D0E029B0064691C /* AnimationStateData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AnimationStateData.c; path = "../../../build/ios/libs/spine-c/src/AnimationStateData.c"; sourceTree = "<group>"; };
+		40B2BA801D0E029B0064691C /* Atlas.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Atlas.c; path = "../../../build/ios/libs/spine-c/src/Atlas.c"; sourceTree = "<group>"; };
+		40B2BA811D0E029B0064691C /* AtlasAttachmentLoader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AtlasAttachmentLoader.c; path = "../../../build/ios/libs/spine-c/src/AtlasAttachmentLoader.c"; sourceTree = "<group>"; };
+		40B2BA821D0E029B0064691C /* Attachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Attachment.c; path = "../../../build/ios/libs/spine-c/src/Attachment.c"; sourceTree = "<group>"; };
+		40B2BA831D0E029B0064691C /* AttachmentLoader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AttachmentLoader.c; path = "../../../build/ios/libs/spine-c/src/AttachmentLoader.c"; sourceTree = "<group>"; };
+		40B2BA841D0E029B0064691C /* Bone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Bone.c; path = "../../../build/ios/libs/spine-c/src/Bone.c"; sourceTree = "<group>"; };
+		40B2BA851D0E029B0064691C /* BoneData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BoneData.c; path = "../../../build/ios/libs/spine-c/src/BoneData.c"; sourceTree = "<group>"; };
+		40B2BA861D0E029B0064691C /* BoundingBoxAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BoundingBoxAttachment.c; path = "../../../build/ios/libs/spine-c/src/BoundingBoxAttachment.c"; sourceTree = "<group>"; };
+		40B2BA871D0E029B0064691C /* Event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Event.c; path = "../../../build/ios/libs/spine-c/src/Event.c"; sourceTree = "<group>"; };
+		40B2BA881D0E029B0064691C /* EventData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = EventData.c; path = "../../../build/ios/libs/spine-c/src/EventData.c"; sourceTree = "<group>"; };
+		40B2BA891D0E029B0064691C /* extension.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = extension.c; path = "../../../build/ios/libs/spine-c/src/extension.c"; sourceTree = "<group>"; };
+		40B2BA8A1D0E029B0064691C /* IkConstraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IkConstraint.c; path = "../../../build/ios/libs/spine-c/src/IkConstraint.c"; sourceTree = "<group>"; };
+		40B2BA8B1D0E029B0064691C /* IkConstraintData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IkConstraintData.c; path = "../../../build/ios/libs/spine-c/src/IkConstraintData.c"; sourceTree = "<group>"; };
+		40B2BA8C1D0E029B0064691C /* Json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Json.c; path = "../../../build/ios/libs/spine-c/src/Json.c"; sourceTree = "<group>"; };
+		40B2BA8D1D0E029B0064691C /* MeshAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MeshAttachment.c; path = "../../../build/ios/libs/spine-c/src/MeshAttachment.c"; sourceTree = "<group>"; };
+		40B2BA8E1D0E029B0064691C /* RegionAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = RegionAttachment.c; path = "../../../build/ios/libs/spine-c/src/RegionAttachment.c"; sourceTree = "<group>"; };
+		40B2BA8F1D0E029B0064691C /* Skeleton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Skeleton.c; path = "../../../build/ios/libs/spine-c/src/Skeleton.c"; sourceTree = "<group>"; };
+		40B2BA901D0E029B0064691C /* SkeletonBounds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SkeletonBounds.c; path = "../../../build/ios/libs/spine-c/src/SkeletonBounds.c"; sourceTree = "<group>"; };
+		40B2BA911D0E029B0064691C /* SkeletonData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SkeletonData.c; path = "../../../build/ios/libs/spine-c/src/SkeletonData.c"; sourceTree = "<group>"; };
+		40B2BA921D0E029B0064691C /* SkeletonJson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SkeletonJson.c; path = "../../../build/ios/libs/spine-c/src/SkeletonJson.c"; sourceTree = "<group>"; };
+		40B2BA931D0E029B0064691C /* Skin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Skin.c; path = "../../../build/ios/libs/spine-c/src/Skin.c"; sourceTree = "<group>"; };
+		40B2BA941D0E029B0064691C /* SkinnedMeshAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SkinnedMeshAttachment.c; path = "../../../build/ios/libs/spine-c/src/SkinnedMeshAttachment.c"; sourceTree = "<group>"; };
+		40B2BA951D0E029B0064691C /* Slot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Slot.c; path = "../../../build/ios/libs/spine-c/src/Slot.c"; sourceTree = "<group>"; };
+		40B2BA961D0E029B0064691C /* SlotData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SlotData.c; path = "../../../build/ios/libs/spine-c/src/SlotData.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40B2BA591D0E00800064691C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40B2BA531D0E00800064691C = {
+			isa = PBXGroup;
+			children = (
+				40B2BA681D0E00980064691C /* ae_gles2_spine */,
+				40B2BA5D1D0E00800064691C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40B2BA5D1D0E00800064691C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA5C1D0E00800064691C /* libae_gles2_spine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40B2BA681D0E00980064691C /* ae_gles2_spine */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA7B1D0E02760064691C /* spine-runtime */,
+				40B2BA691D0E01DD0064691C /* common */,
+			);
+			name = ae_gles2_spine;
+			sourceTree = "<group>";
+		};
+		40B2BA691D0E01DD0064691C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA6C1D0E020F0064691C /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40B2BA6C1D0E020F0064691C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA6D1D0E02200064691C /* lua_spine.cpp */,
+				40B2BA6E1D0E02200064691C /* luaSpineSkeleton.cpp */,
+				40B2BA6F1D0E02200064691C /* luaSpineSkeletonDrawer.cpp */,
+				40B2BA701D0E02200064691C /* SpineAttachmentRendererObject.cpp */,
+				40B2BA711D0E02200064691C /* SpineLuaExtraLib.cpp */,
+				40B2BA721D0E02200064691C /* SpineSkeletonDrawer.cpp */,
+				40B2BA731D0E02200064691C /* SpineUtil.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40B2BA7B1D0E02760064691C /* spine-runtime */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA7C1D0E02840064691C /* src */,
+			);
+			name = "spine-runtime";
+			sourceTree = "<group>";
+		};
+		40B2BA7C1D0E02840064691C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA7D1D0E029B0064691C /* Animation.c */,
+				40B2BA7E1D0E029B0064691C /* AnimationState.c */,
+				40B2BA7F1D0E029B0064691C /* AnimationStateData.c */,
+				40B2BA801D0E029B0064691C /* Atlas.c */,
+				40B2BA811D0E029B0064691C /* AtlasAttachmentLoader.c */,
+				40B2BA821D0E029B0064691C /* Attachment.c */,
+				40B2BA831D0E029B0064691C /* AttachmentLoader.c */,
+				40B2BA841D0E029B0064691C /* Bone.c */,
+				40B2BA851D0E029B0064691C /* BoneData.c */,
+				40B2BA861D0E029B0064691C /* BoundingBoxAttachment.c */,
+				40B2BA871D0E029B0064691C /* Event.c */,
+				40B2BA881D0E029B0064691C /* EventData.c */,
+				40B2BA891D0E029B0064691C /* extension.c */,
+				40B2BA8A1D0E029B0064691C /* IkConstraint.c */,
+				40B2BA8B1D0E029B0064691C /* IkConstraintData.c */,
+				40B2BA8C1D0E029B0064691C /* Json.c */,
+				40B2BA8D1D0E029B0064691C /* MeshAttachment.c */,
+				40B2BA8E1D0E029B0064691C /* RegionAttachment.c */,
+				40B2BA8F1D0E029B0064691C /* Skeleton.c */,
+				40B2BA901D0E029B0064691C /* SkeletonBounds.c */,
+				40B2BA911D0E029B0064691C /* SkeletonData.c */,
+				40B2BA921D0E029B0064691C /* SkeletonJson.c */,
+				40B2BA931D0E029B0064691C /* Skin.c */,
+				40B2BA941D0E029B0064691C /* SkinnedMeshAttachment.c */,
+				40B2BA951D0E029B0064691C /* Slot.c */,
+				40B2BA961D0E029B0064691C /* SlotData.c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40B2BA5B1D0E00800064691C /* ae_gles2_spine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40B2BA651D0E00800064691C /* Build configuration list for PBXNativeTarget "ae_gles2_spine" */;
+			buildPhases = (
+				40B2BA581D0E00800064691C /* Sources */,
+				40B2BA591D0E00800064691C /* Frameworks */,
+				40B2BA5A1D0E00800064691C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_gles2_spine;
+			productName = ae_gles2_spine;
+			productReference = 40B2BA5C1D0E00800064691C /* libae_gles2_spine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40B2BA541D0E00800064691C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40B2BA5B1D0E00800064691C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 40B2BA571D0E00800064691C /* Build configuration list for PBXProject "ae_gles2_spine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40B2BA531D0E00800064691C;
+			productRefGroup = 40B2BA5D1D0E00800064691C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40B2BA5B1D0E00800064691C /* ae_gles2_spine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40B2BA581D0E00800064691C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B2BAA11D0E029B0064691C /* Event.c in Sources */,
+				40B2BAB01D0E029B0064691C /* SlotData.c in Sources */,
+				40B2BAA61D0E029B0064691C /* Json.c in Sources */,
+				40B2BAA91D0E029B0064691C /* Skeleton.c in Sources */,
+				40B2BAA31D0E029B0064691C /* extension.c in Sources */,
+				40B2BAA21D0E029B0064691C /* EventData.c in Sources */,
+				40B2BA991D0E029B0064691C /* AnimationStateData.c in Sources */,
+				40B2BAA51D0E029B0064691C /* IkConstraintData.c in Sources */,
+				40B2BA9D1D0E029B0064691C /* AttachmentLoader.c in Sources */,
+				40B2BAA01D0E029B0064691C /* BoundingBoxAttachment.c in Sources */,
+				40B2BA7A1D0E02200064691C /* SpineUtil.cpp in Sources */,
+				40B2BA9C1D0E029B0064691C /* Attachment.c in Sources */,
+				40B2BA9A1D0E029B0064691C /* Atlas.c in Sources */,
+				40B2BA771D0E02200064691C /* SpineAttachmentRendererObject.cpp in Sources */,
+				40B2BAAA1D0E029B0064691C /* SkeletonBounds.c in Sources */,
+				40B2BA741D0E02200064691C /* lua_spine.cpp in Sources */,
+				40B2BAAC1D0E029B0064691C /* SkeletonJson.c in Sources */,
+				40B2BA981D0E029B0064691C /* AnimationState.c in Sources */,
+				40B2BA751D0E02200064691C /* luaSpineSkeleton.cpp in Sources */,
+				40B2BA9F1D0E029B0064691C /* BoneData.c in Sources */,
+				40B2BA971D0E029B0064691C /* Animation.c in Sources */,
+				40B2BAAD1D0E029B0064691C /* Skin.c in Sources */,
+				40B2BA9E1D0E029B0064691C /* Bone.c in Sources */,
+				40B2BA791D0E02200064691C /* SpineSkeletonDrawer.cpp in Sources */,
+				40B2BA9B1D0E029B0064691C /* AtlasAttachmentLoader.c in Sources */,
+				40B2BAA81D0E029B0064691C /* RegionAttachment.c in Sources */,
+				40B2BAAF1D0E029B0064691C /* Slot.c in Sources */,
+				40B2BA761D0E02200064691C /* luaSpineSkeletonDrawer.cpp in Sources */,
+				40B2BAA41D0E029B0064691C /* IkConstraint.c in Sources */,
+				40B2BA781D0E02200064691C /* SpineLuaExtraLib.cpp in Sources */,
+				40B2BAAE1D0E029B0064691C /* SkinnedMeshAttachment.c in Sources */,
+				40B2BAAB1D0E029B0064691C /* SkeletonData.c in Sources */,
+				40B2BAA71D0E029B0064691C /* MeshAttachment.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40B2BA631D0E00800064691C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40B2BA641D0E00800064691C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40B2BA661D0E00800064691C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/spine-c/src/include",
+					"$(AE_DIST)/plugins/gles2/common/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40B2BA671D0E00800064691C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/spine-c/src/include",
+					"$(AE_DIST)/plugins/gles2/common/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40B2BA571D0E00800064691C /* Build configuration list for PBXProject "ae_gles2_spine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B2BA631D0E00800064691C /* Debug */,
+				40B2BA641D0E00800064691C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40B2BA651D0E00800064691C /* Build configuration list for PBXNativeTarget "ae_gles2_spine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B2BA661D0E00800064691C /* Debug */,
+				40B2BA671D0E00800064691C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40B2BA541D0E00800064691C /* Project object */;
+}

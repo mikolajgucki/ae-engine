@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.studio">
+    <!-- Prints info on main available targets -->
+    <target name="studio.info">
+        <echo>  studio.clean          Removes AE studio build files</echo>
+    </target>
+
+    <!-- The directory with AE Studio -->
+    <property name="ae.dir.studio" value="${dir.root}/studio"/>
+
+    <!-- Builds AE Studio -->
+    <target name="studio" depends="libs.core,ae.tasks,get.os">
+        <ant dir="${ae.dir.studio}" target="build">
+            <property name="ae.os" value="${ae.os}"/>
+        </ant>
+    </target>
+    
+    <!-- Removes AE studio build files -->
+    <target name="studio.clean" depends="libs.core,ae.tasks,get.os">
+        <ant dir="${ae.dir.studio}" target="clean">
+            <property name="ae.os" value="${ae.os}"/>
+        </ant>
+    </target>
+</project>

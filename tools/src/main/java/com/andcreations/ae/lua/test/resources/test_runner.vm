@@ -1,0 +1,80 @@
+local prefix = 'lua-test-runner>'
+
+local function notify(name,...)
+    io.write(string.format('%sstart,%s\n',prefix,name))
+    
+    local values = {...}
+    for _,value in ipairs(values) do
+        io.write(value)
+        io.write(string.format('\n%sarg\n',prefix))
+    end
+    
+    io.write(string.format('%send\n',prefix))
+    io.flush()
+end
+
+-- the default message
+local defaultMsg = '?'
+
+-- @brief The test runner listener.
+local listener = {
+    failedToRunTestSuite = function(moduleName,msg)
+        notify('failedToRunTestSuite',moduleName,msg or defaultMsg)
+    end,
+    
+    runningTestSuite = function(moduleName)
+        notify('runningTestSuite',moduleName,'${srcFilePath}')
+    end,
+    
+    notFunctionError = function(moduleName,testName)
+        notify('notFunctionError',moduleName,testName)
+    end,
+    
+    setUpFailed = function(moduleName,testName,msg)
+        notify('setUpFailed',moduleName,testName,msg or defaultMsg)
+    end,
+    
+    tearDownFailed = function(moduleName,testName,msg)
+        notify('tearDownFailed',moduleName,testName,msg or defaultMsg)
+    end,
+    
+    runningTest = function(moduleName,testName)
+        notify('runningTest',moduleName,testName)
+    end,
+    
+    testFinished = function(moduleName,testName)
+        notify('testFinished',moduleName,testName)
+    end,
+    
+    testFailed = function(moduleName,testName,msg)
+        notify('testFailed',moduleName,testName,msg or defaultMsg)
+    end,
+    
+    testSuiteFinished = function(moduleName)
+        notify('testSuiteFinished',moduleName)
+    end,
+    
+    tracebackCaught = function(moduleName,testName,traceback,msg)
+        notify('traceback',traceback,msg)
+    end
+}
+
+-- @brief Runs the tests.
+local function run()
+    local runner = require('ae.test.runner')
+    runner.runAllByName({'$moduleName'},listener)
+end
+
+#foreach ($path in $pkgPaths)
+package.path = package.path .. ';${path}/?.lua'    
+#end
+    
+-- @brief Handles errors.
+local function errorHandler()
+    notify('traceback',debug.traceback())
+end
+    
+local ok,result = xpcall(run,errorHandler)
+if not ok then
+    print(result)
+end

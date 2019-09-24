@@ -1,0 +1,19 @@
+-- @brief $brief
+local $localName = {}
+
+-- @brief $brief
+-- @return The modules.
+function ${localName}.get()
+    return {
+#if ($$modules.size() > 0)
+#set($max = $modules.size() - 1)
+#foreach ($index in [0..$max])
+#set($module = $modules.get($index))
+        '$module'#if($index < $max),#end
+        
+#end
+#end
+    }
+end
+
+return $localName

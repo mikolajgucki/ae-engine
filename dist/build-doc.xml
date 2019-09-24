@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.doc">
+    <!-- Prints info on available targets -->
+    <target name="doc.info">
+        <echo>  doc.gen               Generates the documentation from markdown files</echo>
+        <echo>  doc.api               Generates the API documents</echo>
+    </target>
+
+    <!-- The directory with the documentation files -->
+    <property name="dir.doc" value="${dir.root}/doc"/>
+
+    <!-- The distribution directory for the documentation files -->
+    <property name="dir.dist.doc" value="${dir.dist}/doc"/>
+    
+    <!-- Generates the documentation from markdown -->
+    <target name="doc.gen" depends="build,ae.tasks">
+        <!-- Classpath -->
+        <path id="doc.gen.classpath">
+            <fileset dir="${dir.libs.java}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.commons}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.tools}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <pathelement path="${java.dir.build.classes}"/>
+        </path>
+        
+        <!-- Print classpath -->
+        <!--
+        <pathconvert property="doc.gen.classpath.prop"
+            refid="doc.gen.classpath"/>
+        <echo>Doc generator tasks classpath is ${doc.gen.classpath.prop}</echo>
+        -->        
+    
+        <!-- Task -->
+        <taskdef name="aedoc" classpathref="doc.gen.classpath"
+            classname="com.andcreations.ae.doc.AEDocAntTask"/>
+            
+        <!-- Generate documentation -->
+        <aedoc>
+            <srcdir path="${dir.doc}"/>
+            <dstdir path="${dir.dist.doc}"/>
+        </aedoc>
+        <unzip src="${dir.libs}/highlight.zip" dest="${dir.dist.doc}/highlight">        
+            <patternset>
+                <include name="highlight.pack.js"/>
+                <include name="styles/github.css"/>
+            </patternset>
+        </unzip>
+    </target>
+    
+    <!-- Generates the to-do list -->
+    <!--
+    <target name="doc.todo" depends="build">
+        <taskdef name="todo" classpathref="java.classpath"
+            classname="com.andcreations.ae.doc.TodoAntTask"/>
+        <todo>
+            <srcfiles dir="${dir.root}">
+                <include name="**/*.lua"/>
+                <include name="**/*.h"/>
+                <include name="**/*.hpp"/>
+                <include name="**/*.cpp"/>
+                <include name="**/*.c"/>
+                <include name="**/*.java"/>
+                <include name="**/*.md"/>
+                <include name="**/*.xml"/>
+                <exclude name="**/build/**"/>
+                <exclude name="**/jni/**"/>
+                <exclude name="plugins/**"/>
+            </srcfiles>
+            <dstfile path="${dir.dist.doc}/todo.html"/>            
+        </todo>
+    </target>
+    -->
+    
+    <!-- Generates the API documents -->
+    <target name="doc.api" depends="build,ae.tasks">
+        <taskdef name="luacapi" classpathref="java.classpath"
+            classname="com.andcreations.ae.doc.api.LuaCApiAntTask"/>
+        <luacapi>
+            <dstfile path="${dir.dist.doc}/api/lua-c-api.json"/>
+            <srcfiles dir="${dir.root}">
+                <include name="**/*.c"/>
+                <include name="**/*.cpp"/>
+                <exclude name="**/build/**/*.c"/>
+                <exclude name="plugins/**"/>
+            </srcfiles>            
+        </luacapi>
+    </target>
+    
+    <!-- Generates the documentation -->
+    <target name="doc" depends="build,doc.gen,doc.api">
+    </target>
+</project>

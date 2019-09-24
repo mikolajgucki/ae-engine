@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40A3F6E71C0E2B8400E02F52 /* SBJson4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E01C0E2B8400E02F52 /* SBJson4Parser.m */; };
+		40A3F6E81C0E2B8400E02F52 /* SBJson4StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E11C0E2B8400E02F52 /* SBJson4StreamParser.m */; };
+		40A3F6E91C0E2B8400E02F52 /* SBJson4StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E21C0E2B8400E02F52 /* SBJson4StreamParserState.m */; };
+		40A3F6EA1C0E2B8400E02F52 /* SBJson4StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E31C0E2B8400E02F52 /* SBJson4StreamTokeniser.m */; };
+		40A3F6EB1C0E2B8400E02F52 /* SBJson4StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E41C0E2B8400E02F52 /* SBJson4StreamWriter.m */; };
+		40A3F6EC1C0E2B8400E02F52 /* SBJson4StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E51C0E2B8400E02F52 /* SBJson4StreamWriterState.m */; };
+		40A3F6ED1C0E2B8400E02F52 /* SBJson4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F6E61C0E2B8400E02F52 /* SBJson4Writer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A3F6D01C0E2ADF00E02F52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40A3F6D21C0E2ADF00E02F52 /* libae_sbjson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_sbjson.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A3F6E01C0E2B8400E02F52 /* SBJson4Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4Parser.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4Parser.m"; sourceTree = "<group>"; };
+		40A3F6E11C0E2B8400E02F52 /* SBJson4StreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamParser.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4StreamParser.m"; sourceTree = "<group>"; };
+		40A3F6E21C0E2B8400E02F52 /* SBJson4StreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamParserState.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4StreamParserState.m"; sourceTree = "<group>"; };
+		40A3F6E31C0E2B8400E02F52 /* SBJson4StreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamTokeniser.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4StreamTokeniser.m"; sourceTree = "<group>"; };
+		40A3F6E41C0E2B8400E02F52 /* SBJson4StreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamWriter.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4StreamWriter.m"; sourceTree = "<group>"; };
+		40A3F6E51C0E2B8400E02F52 /* SBJson4StreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamWriterState.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4StreamWriterState.m"; sourceTree = "<group>"; };
+		40A3F6E61C0E2B8400E02F52 /* SBJson4Writer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJson4Writer.m; path = "../../../build/ios/libs/json-framework-master/src/main/objc/SBJson4Writer.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A3F6CF1C0E2ADF00E02F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A3F6C91C0E2ADF00E02F52 = {
+			isa = PBXGroup;
+			children = (
+				40A3F6DE1C0E2B0100E02F52 /* sbjson */,
+				40A3F6D31C0E2ADF00E02F52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A3F6D31C0E2ADF00E02F52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F6D21C0E2ADF00E02F52 /* libae_sbjson.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A3F6DE1C0E2B0100E02F52 /* sbjson */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F6DF1C0E2B0600E02F52 /* src */,
+			);
+			name = sbjson;
+			sourceTree = "<group>";
+		};
+		40A3F6DF1C0E2B0600E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F6E01C0E2B8400E02F52 /* SBJson4Parser.m */,
+				40A3F6E11C0E2B8400E02F52 /* SBJson4StreamParser.m */,
+				40A3F6E21C0E2B8400E02F52 /* SBJson4StreamParserState.m */,
+				40A3F6E31C0E2B8400E02F52 /* SBJson4StreamTokeniser.m */,
+				40A3F6E41C0E2B8400E02F52 /* SBJson4StreamWriter.m */,
+				40A3F6E51C0E2B8400E02F52 /* SBJson4StreamWriterState.m */,
+				40A3F6E61C0E2B8400E02F52 /* SBJson4Writer.m */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A3F6D11C0E2ADF00E02F52 /* ae_sbjson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A3F6DB1C0E2ADF00E02F52 /* Build configuration list for PBXNativeTarget "ae_sbjson" */;
+			buildPhases = (
+				40A3F6CE1C0E2ADF00E02F52 /* Sources */,
+				40A3F6CF1C0E2ADF00E02F52 /* Frameworks */,
+				40A3F6D01C0E2ADF00E02F52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_sbjson;
+			productName = sbjson;
+			productReference = 40A3F6D21C0E2ADF00E02F52 /* libae_sbjson.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A3F6CA1C0E2ADF00E02F52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40A3F6D11C0E2ADF00E02F52 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 40A3F6CD1C0E2ADF00E02F52 /* Build configuration list for PBXProject "ae_sbjson" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40A3F6C91C0E2ADF00E02F52;
+			productRefGroup = 40A3F6D31C0E2ADF00E02F52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A3F6D11C0E2ADF00E02F52 /* ae_sbjson */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A3F6CE1C0E2ADF00E02F52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A3F6ED1C0E2B8400E02F52 /* SBJson4Writer.m in Sources */,
+				40A3F6E81C0E2B8400E02F52 /* SBJson4StreamParser.m in Sources */,
+				40A3F6E71C0E2B8400E02F52 /* SBJson4Parser.m in Sources */,
+				40A3F6EB1C0E2B8400E02F52 /* SBJson4StreamWriter.m in Sources */,
+				40A3F6EA1C0E2B8400E02F52 /* SBJson4StreamTokeniser.m in Sources */,
+				40A3F6EC1C0E2B8400E02F52 /* SBJson4StreamWriterState.m in Sources */,
+				40A3F6E91C0E2B8400E02F52 /* SBJson4StreamParserState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40A3F6D91C0E2ADF00E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A3F6DA1C0E2ADF00E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A3F6DC1C0E2ADF00E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/json-framework-master/src/main/objc";
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = ae_sbjson;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40A3F6DD1C0E2ADF00E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/json-framework-master/src/main/objc";
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = ae_sbjson;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A3F6CD1C0E2ADF00E02F52 /* Build configuration list for PBXProject "ae_sbjson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F6D91C0E2ADF00E02F52 /* Debug */,
+				40A3F6DA1C0E2ADF00E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A3F6DB1C0E2ADF00E02F52 /* Build configuration list for PBXNativeTarget "ae_sbjson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F6DC1C0E2ADF00E02F52 /* Debug */,
+				40A3F6DD1C0E2ADF00E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A3F6CA1C0E2ADF00E02F52 /* Project object */;
+}

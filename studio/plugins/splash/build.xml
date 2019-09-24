@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<project name="com.andcreations.ae.studio.plugins.splash" default="build">
+    <property name="plugin.class" value="com.andcreations.ae.studio.plugins.splash.SplashPlugin"/>
+    <property name="plugin.dir" value="${basedir}"/>
+    
+    <!-- Called before the compilation -->
+    <target name="before.compile">
+    </target>
+    
+    <!-- Called after the compilation -->
+    <target name="after.compile">
+    </target>
+    
+    <!-- Called before clean -->
+    <target name="before.clean">
+    </target>
+    
+    <!-- Called after clean -->
+    <target name="after.clean">
+    </target>
+
+    <import file="${basedir}/../build-plugin.xml"/>
+</project>

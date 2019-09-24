@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<project name="${ae.template.app.name}" default="info">
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>
+
+    <!-- Verify the envrionment variable AE_DIST is set. -->
+    <fail unless="ae.env.AE_DIST" message="Environment variable AE_DIST not set."/>
+    <property name="ae.dir.dist" value="${ae.env.AE_DIST}"/>    
+
+    <!-- The root directory. -->
+    <property name="dir.root" value="${basedir}"/>    
+    
+    <!-- The directory with the tools -->
+    <property name="dir.tools" value="${dir.root}/tools"/>
+    
+    <!-- Loads the properties -->
+    <property file="build-ae.properties"/>
+    
+    <!-- Prints info on available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  assets    Builds the assets</echo>
+        <echo>  clean     Removes the generated files and directories</echo>
+    </target>    
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${dir.tools}">
+            <include name="libs/*.jar"/>
+            <include name="build/*.jar"/>
+        </fileset>
+        <path refid="java.classpath">
+        </path>
+    </path>
+    
+    <!-- Import the build file from the distribution -->
+    <import file="${ae.dir.dist}/ant/project/build.xml"/>
+    
+    <!-- TODO Put your custom targets here. Every target starting with
+         "ae.studio." will be listed in the builders in AE Studio. -->
+</project>

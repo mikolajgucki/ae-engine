@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin" default="info">
+    <!-- Plugin name must be given -->
+    <fail unless="plugin.name" message="Plugin name not set (property plugin.name)"/> 
+    
+    <!-- The property with the libraries directory -->
+    <property name="dir.libs" value="${basedir}/libs"/>
+
+    <!-- The property with the common files directory -->
+    <property name="dir.common" value="${basedir}/common"/>
+
+    <!-- The property with the common sources directory -->
+    <property name="dir.common.src" value="${dir.common}/src"/>
+    
+    <!-- The property with the build directory -->
+    <property name="dir.build" value="${basedir}/build"/>
+    
+    <!-- The property with the binaries in the distribution -->
+    <property name="dir.dist.bin" value="${ae.dist}/bin"/>
+    
+    <!-- The property with the plugins in the distribution -->
+    <property name="dir.dist.plugins" value="${ae.dist}/plugins"/>
+    
+    <!-- The property with the installation directory -->
+    <property name="dir.install" value="${dir.dist.plugins}/${plugin.name}"/>
+    
+    <!-- Prints info -->
+    <target name="info">
+        <echo>Plugin ${plugin.name} available targets:</echo>
+        <echo>   build          Builds the plugin</echo>
+        <echo>   android        Builds the Android part of the plugin</echo>
+        <echo>   ios            Builds the iOS part of the plugin</echo>
+        <echo>   install        Installs the plugin in the AE distribution</echo>
+        <echo>   uninstall      Uninstalls the plugin from the AE distribution</echo>
+        <echo>   clean          Removes the build files</echo>
+    </target>
+
+    <!-- Determines the operating system -->
+    <target name="get.os" unless="ae.os">
+        <taskdef name="get-os" classpathref="java.classpath"
+            classname="com.andcreations.ae.dist.GetOSAntTask"/>    
+        <get-os>
+            <dstprop value="ae.os"/>
+        </get-os>
+    </target>
+    
+    <!-- Defines the necessary tasks -->
+    <target name="ae.tasks">
+        <!-- Ant-contib tasks -->
+        <taskdef name="if" classpathref="java.classpath"
+            classname="net.sf.antcontrib.logic.IfTask"/>        
+    </target>
+    
+    <!-- -->
+    <property file="${ae.dist}/properties/android.properties"/>
+    
+    <!-- -->
+    <import file="build-plugin-android.xml"/>
+    <import file="build-plugin-ios.xml"/>
+    <import file="build-plugin-desktop.xml"/>
+    <import file="build-plugin-studio.xml"/>
+    <import file="build-plugin-doc.xml"/>
+    
+    <!-- Removes the build directories and files -->
+    <target name="clean" depends="ios.clean,desktop.clean">
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Builds the plugin -->
+    <target name="build" depends="clean,android,ios,desktop">        
+    </target>
+    
+    <!-- Installs the common files -->
+    <target name="install.common">
+        <copy todir="${dir.install}/common/src/include" failonerror="false">        
+            <fileset dir="${dir.common.src}/cpp/include" includes="**/*"/>
+        </copy>
+        <mkdir dir="${dir.install}/common/src/lua"/>
+        <copy todir="${dir.install}/common/src/lua" failonerror="false">        
+            <fileset dir="${dir.common.src}/lua" includes="**/*"/>
+        </copy>
+    </target>
+    
+    <!-- Installs the plugin -->
+    <target name="install" depends="install.android,install.ios,install.desktop,install.common,install.studio,install.doc">
+    </target>
+    
+    <!-- Uninstalls the plugin -->
+    <target name="uninstall" depends="get.os,uninstall.custom">
+        <delete dir="${dir.install}"/>
+    </target>
+</project>

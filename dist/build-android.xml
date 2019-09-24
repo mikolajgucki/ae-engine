@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.android">
+    <!-- Prints info on available targets -->
+    <target name="android.info">
+        <echo>  android.headers       Copies the Android headers to the distribution</echo>
+        <echo>  android.clean         Removes the Android build directories</echo>
+    </target>
+
+    <!-- The directory with Android sources -->
+    <property name="dir.android" value="${dir.root}/android"/>
+    
+    <!-- The Android build directory -->
+    <property name="dir.build.android" value="${dir.build}/android"/>
+    
+    <!-- The Android project build directory -->
+    <property name="dir.build.android.project" value="${dir.build.android}/project"/>
+
+    <!-- The distribution directory for Android project files -->
+    <property name="dir.dist.android" value="${abs.dir.dist}/android"/>    
+    
+    <!-- -->
+    <macrodef name="android-copy-native-src">
+        <attribute name="dstDir"/>
+        <attribute name="srcDir"/>
+        <sequential>
+            <copy todir="${dir.build.android.project}/src/main/cpp/@{dstDir}">
+                <fileset dir="@{srcDir}/src/cpp" includes="include/*.h"/>
+                <fileset dir="@{srcDir}/src/cpp" includes="*.c"/>
+                <fileset dir="@{srcDir}/src/cpp" includes="*.cpp"/>
+            </copy>
+        </sequential>
+    </macrodef>
+    
+    <!-- -->
+    <macrodef name="dist-native-lib">
+        <attribute name="dirName"/>
+        <sequential>
+            <copy todir="${dir.dist.android}/libs/jni/armeabi">
+                <fileset 
+                    dir="${dir.build.android.project}/build/jni/@{dirName}/armeabi"
+                    includes="*.so"/>
+            </copy>
+            <copy todir="${dir.dist.android}/libs/jni/armeabi-v7a">
+                <fileset 
+                    dir="${dir.build.android.project}/build/jni/@{dirName}/armeabi-v7a"
+                    includes="*.so"/>
+            </copy>
+        </sequential>
+    </macrodef>
+    
+    <!-- Sets up the Android project -->
+    <target name="android.project" depends="libs.unzip,ae.tasks" unless="no.android">
+        <property name="dir.engine.sdl2" value="${dir.engine}/sdl2"/>
+        <property name="dir.engine.android" value="${dir.engine}/android"/>
+        
+        <!-- Create the Android project -->
+        <create-android-project>
+            <templateDir path="${dir.root}/templates/android/project"/>
+            <sdkDir path="${android.sdk.dir}"/>
+            <ndkDir path="${android.ndk.dir}"/>
+            <applicationName value="AE Engine"/>
+            <minSdkVersion value="${android.min.sdk.version}"/>
+            <targetSdkVersion value="${android.target.sdk.version}"/>
+            <compileSdkVersion value="${android.compile.sdk.version}"/>
+            <packageName value="org.libsdl.app"/>
+            <activityName value="SDLActivity"/>
+            <nativeCode/>
+            <cmakeArgs value="-DANDROID_STL=gnustl_shared"/>
+            <dstDir path="${dir.build.android.project}"/>
+        </create-android-project>
+        
+        <!-- Copy the Java sources -->
+        <copy todir="${dir.build.android.project}/src/main/java">
+            <fileset dir="${dir.android}/java" includes="**/*"/>
+        </copy>
+        
+        <!-- Copy the native sources -->
+        <copy todir="${dir.build.android.project}/src/main/cpp">
+            <fileset dir="${dir.libs.build}" includes="lua/**/*"/>
+            <fileset dir="${dir.libs.build}" includes="lpng/**/*"/>
+            <fileset dir="${dir.libs.build}" includes="SDL2/include/**/"/>
+            <fileset dir="${dir.libs.build}" includes="SDL2/src/**/"/>
+        </copy>
+        
+        <!-- Copy the native sources of AE Engine -->
+        <android-copy-native-src dstDir="ae/audio" srcDir="${dir.engine}/common/audio"/>
+        <android-copy-native-src dstDir="ae/core" srcDir="${dir.engine}/common/core"/>
+        <android-copy-native-src dstDir="ae/engine" srcDir="${dir.engine}/common/engine"/>
+        <android-copy-native-src dstDir="ae/image" srcDir="${dir.engine}/common/image"/>
+        <android-copy-native-src dstDir="ae/io" srcDir="${dir.engine}/common/io"/>
+        <android-copy-native-src dstDir="ae/math" srcDir="${dir.engine}/common/math"/>
+        <android-copy-native-src dstDir="ae/texture" srcDir="${dir.engine}/common/texture"/>
+        <android-copy-native-src dstDir="ae/util" srcDir="${dir.engine}/common/util"/>
+        
+        <!-- Copy the native sources of JNI utility -->
+        <android-copy-native-src dstDir="jniutil" srcDir="${dir.engine}/android/jniutil"/>
+        
+        <!-- Copy the native sources of Android audio -->
+        <android-copy-native-src dstDir="audio" srcDir="${dir.engine}/android/audio"/>
+        
+        <!-- Copy the native sources of specific to SDL2 -->
+        <android-copy-native-src dstDir="ae_sdl2/core" srcDir="${dir.engine}/sdl2/core"/>
+        <android-copy-native-src dstDir="ae_sdl2/engine" srcDir="${dir.engine}/sdl2/engine"/>
+        <android-copy-native-src dstDir="ae_sdl2/io" srcDir="${dir.engine}/sdl2/io"/>
+        <android-copy-native-src dstDir="ae_sdl2/sdl2" srcDir="${dir.engine}/sdl2/sdl2"/>
+        
+        <!-- Copy CMakeLists.txt -->
+        <copy todir="${dir.build.android.project}">
+            <fileset file="${dir.android}/cmake/CMakeLists.txt"/>
+        </copy>
+        
+        <!-- Build the Android project -->
+        <exec executable="gradlew" dir="${dir.build.android.project}" vmlauncher="false" failonerror="true">
+            <arg value="jarDebugClasses"/>
+            <arg value="assembleDebug"/>
+        </exec>
+
+        <!-- Copy the GNU STL shared library -->
+        <property name="ndk.cpp.libs"
+            value="${android.ndk.dir}/sources/cxx-stl/gnu-libstdc++/4.9/libs"/>
+        <copy todir="${dir.dist.android}/libs/jni">
+            <fileset dir="${ndk.cpp.libs}" includes="armeabi/libgnustl_shared.so"/>
+            <fileset dir="${ndk.cpp.libs}" includes="armeabi-v7a/libgnustl_shared.so"/>
+        </copy>
+        
+        <!-- Copy the native libraries to the distribution -->
+        <dist-native-lib dirName="ae"/>
+        <dist-native-lib dirName="ae_audio"/>
+        <dist-native-lib dirName="ae_jniutil"/>
+        <dist-native-lib dirName="ae_lua"/>
+        <dist-native-lib dirName="ae_png"/>
+        <dist-native-lib dirName="ae_sdl2"/>
+        <dist-native-lib dirName="SDL2"/>
+        
+        <!-- Copy the JAR file to the distribution -->
+        <copy file="${dir.build.android.project}/build/intermediates/packaged/debug/classes.jar"
+            tofile="${dir.dist.android}/libs/ae.jar"/>
+    </target>
+    
+    <!-- Copies the Android headers to the distribution -->
+    <target name="android.headers">
+        <copy todir="${dir.dist.android}/src/ae/include" flatten="true">
+            <fileset dir="${dir.root}/engine/android" includes="**/*.h"/>
+        </copy>
+    </target>
+    
+    <!-- Removes the Android build directories -->
+    <target name="android.clean">
+        <delete dir="${dir.build.android}"/>
+    </target>
+    
+    <!-- Builds the Android project based on SDL2 -->
+    <target name="android" unless="no.android">
+        <antcall target="android.project"/>
+        <antcall target="android.headers"/>
+    </target>
+</project>
+

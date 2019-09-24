@@ -1,0 +1,29 @@
+# This file is called from Ant.
+
+CC = gcc
+CCFLAGS = -Wall -I$(abspath ./include) 
+
+DYNLIB = $(BUILD_DIR)/liblua_util.jnilib
+CFILES = $(wildcard *.c)
+OBJS = $(CFILES:.c=.o)
+DEPS = $(wildcard *.c) $(wildcard $(INCLUDE)/*.h)
+
+LUA_DIR = ../../../libs/lua-$(LUA_VERSION)
+LUA_LIB = $(LUA_DIR)/src/liblua.dylib
+
+CCFLAGS := $(CCFLAGS) -I$(LUA_DIR)/src
+CCFLAGS := $(CCFLAGS) "-I$(JAVA_HOME)/include" "-I$(JAVA_HOME)/include/darwin"
+
+all: $(OBJS) $(DYNLIB)
+
+$(DYNLIB): $(OBJS)
+	cp $(LUA_LIB) $(BUILD_DIR)
+	$(CC) -dynamiclib -o $(DYNLIB) $(OBJS) $(LUA_LIB) -D_JNI_IMPLEMENTATION_
+
+%.o: %.c $(DEPS)
+	$(CC) -o $@ -c $< $(CCFLAGS)
+
+clean:
+	rm -f $(OBJS) $(DYNLIB)
+
+.PHONY: clean all

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.libs">
+    <!-- Prints info on available targets -->
+    <target name="libs.info">
+        <echo>  libs.unzip            Unzips the common libraries</echo>
+        <echo>  libs.core             Copies the core libraries to the distribution directory</echo>
+    </target>
+
+    <!-- Cleans the library build directory -->
+    <target name="libs.clean">
+        <delete dir="${dir.libs.build}"/>
+    </target>
+    
+    <!-- Checks if the directory with unzipped libraries exists -->
+    <available property="libs.unzipped" file="${dir.libs.build}"/>
+    
+    <!-- Unzips the common libraries -->
+    <target name="libs.unzip" unless="libs.unzipped">
+        <mkdir dir="${dir.libs.build}"/>
+        
+        <unzip src="${dir.libs}/lua-${lua.version}-ae.zip" dest="${dir.libs.build}"/>
+        <move file="${dir.libs.build}/lua-${lua.version}" tofile="${dir.libs.build}/lua"/>
+        
+        <unzip src="${dir.libs}/lpng1610-ae.zip" dest="${dir.libs.build}"/>
+        <move file="${dir.libs.build}/lpng1610" tofile="${dir.libs.build}/lpng"/>
+        
+        <unzip src="${dir.libs}/SDL2-${sdl2.version}-ae.zip" dest="${dir.libs.build}"/>
+        <move file="${dir.libs.build}/SDL2-${sdl2.version}" tofile="${dir.libs.build}/SDL2"/>
+        
+        <unzip src="${dir.libs}/SDL2_mixer-${sdl2.mixer.version}-ae.zip" dest="${dir.libs.build}"/>
+        <move file="${dir.libs.build}/SDL2_mixer-${sdl2.mixer.version}" tofile="${dir.libs.build}/SDL2_mixer"/>
+        
+        <!-- These files will be replaced with custom ones -->
+        <delete file="${dir.libs.build}/SDL2/Android.mk"/>
+        <delete file="${dir.libs.build}/SDL2_mixer/Android.mk"/>
+    </target>
+    
+    <!-- Copies the core libraries to the distribution directory -->
+    <target name="libs.core" depends="build" unless="no.libs">
+        <copy todir="${dir.dist.libs}">
+            <fileset dir="${dir.libs}/java" includes="*.jar"/>
+            <fileset dir="${dir.commons}/build" includes="*.jar"/>
+            <fileset dir="${dir.tools}/build" includes="*.jar"/>
+        </copy>        
+    </target>
+    
+    <!-- Copies the libraries into the distribution directory -->
+    <target name="libs" depends="build,libs.core" unless="no.libs">
+        <copy todir="${dir.dist.libs}">
+            <fileset dir="${dir.build}" includes="${java.jar.filename}"/>
+        </copy>
+    </target>
+</project>

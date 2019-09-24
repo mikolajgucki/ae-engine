@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.lua">    
+    <!-- Prints info on available targets -->
+    <target name="lua.info">
+        <echo>  lua.src               Copies the Lua sources to the distribution</echo>
+        <echo>  lua.src.test          Copies the Lua test sources to the distribution</echo>
+        <echo>  lua.bin               Copies the Lua binaries to the distribution</echo>
+    </target>
+
+    <!-- The distribution directory for the Lua sources -->
+    <property name="dir.dist.lua" value="${dir.dist}/lua"/>
+    
+    <!-- The distribution directory for the Lua test sources -->
+    <property name="dir.dist.test.lua" value="${dir.dist}/test/lua"/>
+    
+    <!-- -->
+    <macrodef name="lua-src">
+        <attribute name="dir"/>
+        <sequential>
+            <copy todir="${dir.dist.lua}">
+                <fileset dir="@{dir}/src/lua" erroronmissingdir="false">
+                    <include name="**/*.lua"/>
+                </fileset>
+            </copy>
+        </sequential>
+    </macrodef>
+    
+    <!-- Copies the Lua sources to the distribution -->
+    <target name="lua.src">
+        <mkdir dir="${dir.dist.lua}"/>        
+        <echo>Copying Lua sources to ${dir.dist.lua}</echo>
+        <lua-src dir="${dir.engine}/common/math"/>
+        <lua-src dir="${dir.engine}/common/util"/>
+        <lua-src dir="${dir.engine}/common/core"/>
+        <lua-src dir="${dir.engine}/common/io"/>
+        <lua-src dir="${dir.engine}/common/math"/>
+        <lua-src dir="${dir.engine}/common/image"/>
+        <lua-src dir="${dir.engine}/common/texture"/>
+        <lua-src dir="${dir.engine}/common/engine"/>
+        <lua-src dir="${dir.engine}/common/animation"/>
+        <lua-src dir="${dir.engine}/common/event"/>
+        <lua-src dir="${dir.engine}/common/audio"/>
+    </target>
+    
+    <!-- Copies the Lua test sources to the distribution -->
+    <target name="lua.src.test">
+        <mkdir dir="${dir.dist.test.lua}"/>        
+        <echo>Copying Lua test sources to ${dir.dist.test.lua}</echo>
+        <copy todir="${dir.dist.test.lua}">
+            <fileset dir="${dir.tools}/src/test/lua" erroronmissingdir="false">
+                <include name="**/*.lua"/>
+            </fileset>
+        </copy>        
+    </target>
+
+    <!-- Copies the Lua binaries to the distribution (Windows) -->
+    <target name="lua.bin.windows" if="ae.os.windows">
+        <copy todir="${dir.dist.bin}">
+            <fileset dir="${dir.libs}/${ae.os}/lua-${lua.version}/bin">
+                <include name="*"/>            
+            </fileset>        
+            <fileset dir="${dir.libs}/windows/lua-${lua.version}/lib">
+                <include name="*.dll"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- Copies the Lua binaries to the distribution (Linux) -->
+    <target name="lua.bin.linux" if="ae.os.osx">
+    </target>    
+    
+    <!-- Copies the Lua binaries to the distribution (OS X) -->
+    <target name="lua.bin.osx" if="ae.os.osx">
+        <copy todir="${dir.dist.bin}">
+            <fileset dir="${dir.libs}/${ae.os}/lua-${lua.version}/bin">
+                <include name="lua"/>
+            </fileset>        
+            <fileset dir="${dir.libs}/osx/lua-${lua.version}/lib">
+                <include name="*.dylib"/>
+            </fileset>
+        </copy>
+        <chmod perm="u+x">
+            <fileset dir="${dir.dist.bin}">
+                <include name="lua"/>
+            </fileset> 
+        </chmod>
+    </target>   
+    
+    <!-- Copies the Lua binaries to the distribution (unknown) -->
+    <target name="lua.bin.unknown" if="ae.os.unknown">
+        <fail message="Don't know how to copy Lua binaries on an unknown OS."/>
+    </target>       
+    
+    <!-- Copies the Lua binaries to the distribution -->
+    <target name="lua.bin" depends="build,ae.tasks,get.os">
+        <antcall target="lua.bin.windows"/>
+        <antcall target="lua.bin.linux"/>
+        <antcall target="lua.bin.osx"/>
+        <antcall target="lua.bin.unknown"/>
+    </target>
+    
+    <!-- Performs all the Lua-related tasks. --> 
+    <target name="lua" depends="build,lua.src,lua.src.test,lua.bin"> 
+    </target>
+</project>

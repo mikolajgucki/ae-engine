@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>$cfg.getTitle()</title>
+    <style>
+        body {
+           font-family: Helvetica, arial, sans-serif;
+           font-size: 13px;
+        }
+        
+        a {
+           color: #4183C4; 
+           text-decoration: none;
+        }
+        a.absent {
+           color: #cc0000; 
+        }
+        a:hover {
+           cursor: pointer;
+           text-decoration: none;
+        }
+           
+        .group {
+            padding-top: 1em;
+            padding-bottom: 0.5em;
+            font-weight: bold;
+        }
+        
+        .entry {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+<body>
+#foreach ($group in $cfg.getNavigation())
+    <div class="group">$group.getTitle()</div>
+#foreach ($entry in $group.getEntries())
+#set ($url = $entry.getURL())
+    <div class="entry"><a href="$url" target="document">$entry.getTitle()</a></div>
+#end
+#end
+</body>
+</html>

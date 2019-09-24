@@ -1,0 +1,43 @@
+#set ($html = ".html")
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$title</title>      
+    <link rel="stylesheet" type="text/css" href="luadoc.css">
+</head>
+<body>
+${navigation}
+    
+    <div class="section">Modules</div>
+    <div id="summary">
+    <table id="modules_table">
+        <col width="40%"/>
+        <col/>
+    
+        <thead>
+            <tr>
+                <th>Module</th>                    
+                <th>Summary</th>
+            </tr>
+        </thead>    
+        <tbody>
+#foreach ($group in $groups)
+#if ($group.getName())
+            <tr>
+                <td class="group" colspan="2">$group.getName()</td>
+            </tr>
+#end
+
+#foreach ($module in $group.getModules())
+#set ($name = $module.getName())
+            <tr>
+                <td><a href="$name$html">$module.getName()</a></td>
+                <td>$module.getBriefDesc()</td>
+            </tr>
+#end        
+#end
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

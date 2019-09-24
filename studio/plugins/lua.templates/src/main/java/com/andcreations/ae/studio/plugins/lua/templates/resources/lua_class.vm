@@ -1,0 +1,59 @@
+#set ($dot = '.')
+#if (!$argsStr)
+#set($argsStr = '')
+#set($commaArgsStr = '')
+#else
+#set($commaArgsStr = ',' + $argsStr)
+#end
+#macro(paramsDoc)
+#if($args)
+#foreach($arg in $args)
+-- @param $arg $argsDesc.get($arg)
+#end
+#end
+#end
+#if($comments)
+#if($module)
+-- @module $module
+#end
+#if($superclass)
+#end
+#if($group)
+-- @group $group
+#end
+-- @brief ...
+#end
+#if($superclass)
+local $name,super = ae.oo.subclass($superclass)
+#else
+local $name = ae.oo.class()
+#end
+    
+#if($comments)
+-- @brief Creates a $name object.
+#paramsDoc()
+-- @return A new $name object. 
+#end
+function $name${dot}new($argsStr)
+    local self = ae.oo.new($name)
+    $name${dot}construct(self$commaArgsStr)
+    
+    return self
+end
+
+#if($comments)
+-- @brief Constructs a $name object.
+-- @param self The object. 
+#paramsDoc()
+#end
+function $name${dot}construct(self$commaArgsStr)
+#if($superclass)
+    -- TODO Super construct arguments.    
+    -- super.construct(self,...)
+#end    
+    -- TODO construct() body.
+end
+
+-- TODO Functions/methods.
+
+return $name

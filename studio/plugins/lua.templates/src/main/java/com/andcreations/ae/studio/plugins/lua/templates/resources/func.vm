@@ -1,0 +1,14 @@
+#if($comments)
+-- @brief ...
+#if($args)
+#foreach($arg in $args)
+-- @param $arg ...
+#end
+#end
+#end
+#if($argsStr)
+function $name($argsStr)
+#else
+function $name()
+#end
+end

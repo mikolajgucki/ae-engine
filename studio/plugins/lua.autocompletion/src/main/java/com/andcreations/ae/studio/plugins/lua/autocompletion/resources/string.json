@@ -1,0 +1,760 @@
+{
+    "funcs":[
+        {
+            "name":"byte",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str",                    
+                    "replace":"string.byte",
+                    "desc":"Returns the first character of the string as a number.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }                        
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"byte",
+                    "desc":"Returns the first character of the string as a number."
+                },                
+                {
+                    "prefix":"string.",
+                    "args":"str,i",                    
+                    "replace":"string.byte",
+                    "desc":"Returns the <code>i</code>-th character of the string as a number.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },        
+                        {
+                            "name":"i",
+                            "desc":"The index of the character."
+                        }                        
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "args":"i",
+                    "replace":"byte",
+                    "desc":"Returns the <code>i</code>-th character of the string as a number.",
+                    "params":[
+                        {
+                            "name":"i",
+                            "desc":"The index of the character."
+                        }                        
+                    ]                    
+                },                
+                {
+                    "prefix":"string.",
+                    "args":"str,i,j",                    
+                    "replace":"string.byte",
+                    "desc":"Returns the characters <code>i</code> and <code>j</code> as numbers between including the <code>i</code>-th and <code>j</code>-th characters.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },        
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        },        
+                        {
+                            "name":"j",
+                            "desc":"The index of the last character."
+                        }                          
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "args":"i,j",
+                    "replace":"byte",
+                    "desc":"Returns the characters <code>i</code> and <code>j</code> as numbers between including the <code>i</code>-th and <code>j</code>-th characters.",
+                    "params":[
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        },        
+                        {
+                            "name":"j",
+                            "desc":"The index of the last character."
+                        }                       
+                    ]                    
+                }                
+            ]
+        },
+        {
+            "name":"char",
+            "desc":"<p>Receives zero or more integers. Returns a string with length equal to the number of arguments, in which each character has the internal numerical code equal to its corresponding argument.</p><p>Numerical codes are not necessarily portable across platforms.</p>",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"...",
+                    "desc":"The internal numerical codes of the characters."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"...",
+                    "replace":"string.char"
+                }
+            ]
+        },
+        {
+            "name":"dump",
+            "desc":"Returns a string containing a binary representation of the given function, so that a later load on this string returns a copy of the function (but with new upvalues).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"func",
+                    "desc":"The function."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"func",
+                    "replace":"string.dump"
+                }
+            ]
+        },                      
+        {
+            "name":"find",
+            "desc":"",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern",
+                    "replace":"string.find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string <code>str</code>. If it finds a match, then find returns the indices of <code>str</code> where this occurrence starts and ends; otherwise, it returns <code>nil</code>.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern,init",
+                    "replace":"string.find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string <code>str</code>. If it finds a match, then find returns the indices of <code>str</code> where this occurrence starts and ends; otherwise, it returns <code>nil</code>. <code>init</code> specifies where to start the search.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern,init,plain",
+                    "replace":"string.find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string <code>str</code>. If it finds a match, then find returns the indices of <code>str</code> where this occurrence starts and ends; otherwise, it returns <code>nil</code>. <code>init</code> specifies where to start the search. <code>plain</code> turns off pattern matching if equals <code>false</code>.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        },                        
+                        {
+                            "name":"plain",
+                            "desc":"Turns off pattern matching if <code>false</code>."
+                        }
+                    ]            
+                },
+                
+                {
+                    "prefix":"string:",
+                    "args":"pattern",
+                    "replace":"find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string. If it finds a match, then find returns the indices of the string where this occurrence starts and ends; otherwise, it returns <code>nil</code>.</p>",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern,init",
+                    "replace":"find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string. If it finds a match, then find returns the indices of the string where this occurrence starts and ends; otherwise, it returns <code>nil</code>. <code>init</code> specifies where to start the search.</p>",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern,init,plain",
+                    "replace":"find",
+                    "desc":"<p>Looks for the first match of <code>pattern</code> in the string. If it finds a match, then find returns the indices of the string where this occurrence starts and ends; otherwise, it returns <code>nil</code>. <code>init</code> specifies where to start the search. <code>plain</code> turns off pattern matching if equals <code>false</code>.</p>",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        },                        
+                        {
+                            "name":"plain",
+                            "desc":"Turns off pattern matching if <code>false</code>."
+                        }
+                    ]            
+                }                
+            ]
+        },
+        {
+            "name":"format",
+            "desc":"<p>Returns a formatted version of its variable number of arguments following the description given in its first argument (which must be a string). The format string follows the same rules as the ISO C function sprintf. The only differences are that the options/modifiers *, h, L, l, n, and p are not supported and that there is an extra option, q. The q option formats a string between double quotes, using escape sequences when necessary to ensure that it can safely be read back by the Lua interpreter. For instance, the call</p><pre>  string.format('%q', 'a string with \"quotes\" and \\n new line')</pre><p>may produce the string:</p><pre>  \"a string with \\\"quotes\\\" and <br/>  new line\"</pre><p>Options A and a (when available), E, e, f, G, and g all expect a number as argument. Options c, d, i, o, u, X, and x also expect a number, but the range of that number may be limited by the underlying C implementation. For options o, u, X, and x, the number cannot be negative. Option q expects a string; option s expects a string without embedded zeros. If the argument to option s is not a string, it is converted to one following the same rules of tostring.</p>", 
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"formatstring,...",
+                    "replace":"string.format",
+                    "params":[
+                        {
+                            "name":"formatstring",
+                            "desc":"The format string."
+                        },
+                        {
+                            "name":"...",
+                            "desc":"The format arguments."
+                        }
+                    ]            
+                }
+            ]
+        },
+        {
+            "name":"gmatch",
+            "definedIn":"Lua",          
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern",
+                    "replace":"string.gmatch",
+                    "desc":"<p>Returns an iterator function that, each time it is called, returns the next captures from pattern over the string <code>str</code>. If pattern specifies no captures, then the whole match is produced in each call.</p><p>As an example, the following loop will iterate over all the words from string <code>str</code>, printing one per line:</p><pre>  s = \"hello world from Lua\"<br/>  for w in string.gmatch(s, \"%a+\") do<br/>    print(w)<br/>  end</pre><p>For this function, a caret '^' at the start of a pattern does not work as an anchor, as this would prevent the iteration.</p>",                    
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ]                    
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern",
+                    "replace":"gmatch",
+                    "desc":"<p>Returns an iterator function that, each time it is called, returns the next captures from pattern over the string. If pattern specifies no captures, then the whole match is produced in each call.</p><p>As an example, the following loop will iterate over all the words from string <code>str</code>, printing one per line:</p><pre>  s = \"hello world from Lua\"<br/>  for w in string.gmatch(s, \"%a+\") do<br/>    print(w)<br/>  end</pre><p>For this function, a caret '^' at the start of a pattern does not work as an anchor, as this would prevent the iteration.</p>",                    
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ]                    
+                }                
+            ]
+        },
+        {
+            "name":"gsub",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern,repl",
+                    "replace":"string.gsub",
+                    "desc":"<p>Returns a copy of <code>str</code> in which all occurrences of the pattern have been replaced by a replacement string specified by <code>repl</code>, which can be a string, a table, or a function. <code>gsub</code> also returns, as its second value, the total number of matches that occurred. The name <code>gsub</code> comes from <i>Global SUBstitution.</i>.<p>If <code>repl</code> is a string, then its value is used for replacement. The character % works as an escape character: any sequence in <code>repl</code> of the form %d, with d between 1 and 9, stands for the value of the d-th captured substring. The sequence %0 stands for the whole match. The sequence %% stands for a single %.</p><p>If <code>repl</code> is a table, then the table is queried for every match, using the first capture as the key.</p><p>If <code>repl</code> is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.</p><p>In any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.</p><p>If the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is <code>false</code> or <code>nil</code>, then there is no replacement (that is, the original match is kept in the string).<p>Here are some examples:</p><pre>  x = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")<br/>  --> x=\"hello hello world world\"</pre><pre>  x = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)<br/>  --> x=\"hello hello world\"</pre><pre>  x = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")<br/>  --> x=\"world hello Lua from\"</pre><pre>  x = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)<br/>  --> x=\"home = /home/roberto, user = roberto\"</pre><pre>  x = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)</br>    return load(s)()<br/>  end)<br/>  --> x=\"4+5 = 9\"</pre><pre>  local t = {name=\"lua\", version=\"5.2\"}<br/>  x = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)<br/>  --> x=\"lua-5.2.tar.gz\"</pre>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"repl",
+                            "desc":"The replacement string, table or function."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern,repl,n",
+                    "replace":"string.gsub",
+                    "desc":"<p>Returns a copy of <code>str</code> in which <code>n</code> occurrences of the pattern have been replaced by a replacement string specified by <code>repl</code>, which can be a string, a table, or a function. <code>gsub</code> also returns, as its second value, the total number of matches that occurred. The name <code>gsub</code> comes from <i>Global SUBstitution.</i>.<p>If <code>repl</code> is a string, then its value is used for replacement. The character % works as an escape character: any sequence in <code>repl</code> of the form %d, with d between 1 and 9, stands for the value of the d-th captured substring. The sequence %0 stands for the whole match. The sequence %% stands for a single %.</p><p>If <code>repl</code> is a table, then the table is queried for every match, using the first capture as the key.</p><p>If <code>repl</code> is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.</p><p>In any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.</p><p>If the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is <code>false</code> or <code>nil</code>, then there is no replacement (that is, the original match is kept in the string).<p>Here are some examples:</p><pre>  x = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")<br/>  --> x=\"hello hello world world\"</pre><pre>  x = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)<br/>  --> x=\"hello hello world\"</pre><pre>  x = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")<br/>  --> x=\"world hello Lua from\"</pre><pre>  x = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)<br/>  --> x=\"home = /home/roberto, user = roberto\"</pre><pre>  x = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)</br>    return load(s)()<br/>  end)<br/>  --> x=\"4+5 = 9\"</pre><pre>  local t = {name=\"lua\", version=\"5.2\"}<br/>  x = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)<br/>  --> x=\"lua-5.2.tar.gz\"</pre>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"repl",
+                            "desc":"The replacement string, table or function."
+                        },
+                        {
+                            "name":"n",
+                            "desc":"The number of occurences to return."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern,repl",
+                    "replace":"gsub",
+                    "desc":"<p>Returns a copy of the string in which all occurrences of the pattern have been replaced by a replacement string specified by <code>repl</code>, which can be a string, a table, or a function. <code>gsub</code> also returns, as its second value, the total number of matches that occurred. The name <code>gsub</code> comes from <i>Global SUBstitution.</i>.<p>If <code>repl</code> is a string, then its value is used for replacement. The character % works as an escape character: any sequence in <code>repl</code> of the form %d, with d between 1 and 9, stands for the value of the d-th captured substring. The sequence %0 stands for the whole match. The sequence %% stands for a single %.</p><p>If <code>repl</code> is a table, then the table is queried for every match, using the first capture as the key.</p><p>If <code>repl</code> is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.</p><p>In any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.</p><p>If the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is <code>false</code> or <code>nil</code>, then there is no replacement (that is, the original match is kept in the string).<p>Here are some examples:</p><pre>  x = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")<br/>  --> x=\"hello hello world world\"</pre><pre>  x = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)<br/>  --> x=\"hello hello world\"</pre><pre>  x = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")<br/>  --> x=\"world hello Lua from\"</pre><pre>  x = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)<br/>  --> x=\"home = /home/roberto, user = roberto\"</pre><pre>  x = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)</br>    return load(s)()<br/>  end)<br/>  --> x=\"4+5 = 9\"</pre><pre>  local t = {name=\"lua\", version=\"5.2\"}<br/>  x = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)<br/>  --> x=\"lua-5.2.tar.gz\"</pre>",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"repl",
+                            "desc":"The replacement string, table or function."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern,repl,n",
+                    "replace":"gsub",
+                    "desc":"<p>Returns a copy of <code>str</code> in which <code>n</code> occurrences of the pattern have been replaced by a replacement string specified by <code>repl</code>, which can be a string, a table, or a function. <code>gsub</code> also returns, as its second value, the total number of matches that occurred. The name <code>gsub</code> comes from <i>Global SUBstitution.</i>.<p>If <code>repl</code> is a string, then its value is used for replacement. The character % works as an escape character: any sequence in <code>repl</code> of the form %d, with d between 1 and 9, stands for the value of the d-th captured substring. The sequence %0 stands for the whole match. The sequence %% stands for a single %.</p><p>If <code>repl</code> is a table, then the table is queried for every match, using the first capture as the key.</p><p>If <code>repl</code> is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.</p><p>In any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.</p><p>If the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is <code>false</code> or <code>nil</code>, then there is no replacement (that is, the original match is kept in the string).<p>Here are some examples:</p><pre>  x = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")<br/>  --> x=\"hello hello world world\"</pre><pre>  x = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)<br/>  --> x=\"hello hello world\"</pre><pre>  x = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")<br/>  --> x=\"world hello Lua from\"</pre><pre>  x = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)<br/>  --> x=\"home = /home/roberto, user = roberto\"</pre><pre>  x = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)</br>    return load(s)()<br/>  end)<br/>  --> x=\"4+5 = 9\"</pre><pre>  local t = {name=\"lua\", version=\"5.2\"}<br/>  x = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)<br/>  --> x=\"lua-5.2.tar.gz\"</pre>",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"repl",
+                            "desc":"The replacement string, table or function."
+                        },
+                        {
+                            "name":"n",
+                            "desc":"The number of occurences to return."
+                        }
+                    ]            
+                }                  
+            ]
+        },
+        {
+            "name":"len",
+            "desc":"Receives a string and returns its length. The empty string \"\" has length 0. Embedded zeros are counted, so \"a\\000bc\\000\" has length 5.",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str",
+                    "replace":"string.len",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string"
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"len"
+                }
+            ]
+        },
+        {
+            "name":"lower",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",                   
+                    "replace":"string.lower",
+                    "desc":"<p>Receives a string and returns a copy of this string with all uppercase letters changed to lowercase. All other characters are left unchanged. The definition of what an uppercase letter is depends on the current locale.</p>",                    
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"lower",
+                    "desc":"<p>Returns a copy of this string with all uppercase letters changed to lowercase. All other characters are left unchanged. The definition of what an uppercase letter is depends on the current locale.</p>"
+                }
+            ]
+        },
+        {
+            "name":"match",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern",
+                    "replace":"string.match",
+                    "desc":"Looks for the first match of pattern in the string <code>str</code>. If it finds one, then match returns the captures from the pattern; otherwise it returns <code>nil</code>. If pattern specifies no captures, then the whole match is returned.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ] 
+                },
+                {
+                    "prefix":"string.",
+                    "args":"str,pattern,init",
+                    "replace":"string.match",
+                    "desc":"Looks for the first match of pattern in the string <code>str</code>. If it finds one, then match returns the captures from the pattern; otherwise it returns <code>nil</code>. If pattern specifies no captures, then the whole match is returned. <code>init</code> specifies where to start the search.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        }
+                    ] 
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern",
+                    "replace":"match",
+                    "desc":"Looks for the first match of pattern in the string. If it finds one, then match returns the captures from the pattern; otherwise it returns <code>nil</code>. If pattern specifies no captures, then the whole match is returned.",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        }
+                    ] 
+                },
+                {
+                    "prefix":"string:",
+                    "args":"pattern,init",
+                    "replace":"match",
+                    "desc":"Looks for the first match of pattern in the string. If it finds one, then match returns the captures from the pattern; otherwise it returns <code>nil</code>. If pattern specifies no captures, then the whole match is returned. <code>init</code> specifies where to start the search.",
+                    "params":[
+                        {
+                            "name":"pattern",
+                            "desc":"The pattern."
+                        },
+                        {
+                            "name":"init",
+                            "desc":"Specifies where to start the search."
+                        }
+                    ] 
+                }                
+            ]
+        },
+        {
+            "name":"pack",
+            "desc":"Returns a binary string containing the values <code>...</code> packed (that is, serialized in binary form) according to the format string <code>fmt</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"fmt",
+                    "desc":"The format."
+                },
+                {
+                    "name":"...",
+                    "desc":"The values to pack."
+                }
+            ],         
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"fmt,...",
+                    "replace":"string.pack"
+                }
+            ]
+        },        
+        {
+            "name":"packsize",
+            "desc":"Returns the size of a string resulting from <code>string.pack</code> with the given format. The format string cannot have the variable-length options <i>s</i> or <i>z</i>",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"fmt",
+                    "desc":"The format."
+                }
+            ],         
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"fmt",
+                    "replace":"string.packsize"
+                }
+            ]
+        },        
+        {
+            "name":"rep",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str,n,sep",
+                    "desc":"Returns a string that is the concatenation of <code>n</code> copies of the string <code>str</code> separated by the string <code>sep</code>.",
+                    "replace":"string.rep",                    
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"n",
+                            "desc":"The number of copies."
+                        },
+                        {
+                            "name":"sep",
+                            "desc":"The separator."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string.",
+                    "args":"str,n",
+                    "desc":"Returns a string that is the concatenation of <code>n</code> copies of the string <code>str</code>.", 
+                    "replace":"string.rep",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"n",
+                            "desc":"The number of copies."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "args":"str,n,sep",
+                    "desc":"Returns a string that is the concatenation of <code>n</code> copies of the string separated by the string <code>sep</code>.",
+                    "replace":"rep",                    
+                    "params":[
+                        {
+                            "name":"n",
+                            "desc":"The number of copies."
+                        },
+                        {
+                            "name":"sep",
+                            "desc":"The separator."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "args":"n",
+                    "desc":"Returns a string that is the concatenation of <code>n</code> copies of the string.", 
+                    "replace":"rep",
+                    "params":[
+                        {
+                            "name":"n",
+                            "desc":"The number of copies."
+                        }
+                    ]
+                }                
+            ]
+        },
+        {
+            "name":"reverse",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "args":"str",
+                    "replace":"string.str",
+                    "desc":"Returns a string that is the string <code>str</code> reversed.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"str",
+                    "desc":"Returns a string that is the string reversed."
+                }                
+            ]
+        },
+        {
+            "name":"sub",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "replace":"string.sub",
+                    "desc":"<p>Returns the substring of <code>str</code> that starts at <code>i</code> and continues until <code>j</code>; <code>i</code> and <code>j</code> can be negative. In particular, the call <code>string.sub(str,1,j)</code> returns a prefix of <code>str</code> with length <code>j</code>, and <code>string.sub(str, -i)</code> returns a suffix of <code>str</code> with length <code>i</code>.</p><p>If, after the translation of negative indices, <code>i</code> is less than 1, it is corrected to 1. If <code>j</code> is greater than the string length, it is corrected to that length. If, after these corrections, <code>i</code> is greater than <code>j</code>, the function returns the empty string.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        },
+                        {
+                            "name":"j",
+                            "desc":"The index of the last character."
+                        }                        
+                    ]            
+                },
+                {
+                    "prefix":"string.",
+                    "replace":"string.sub",
+                    "desc":"<p>Returns the substring of <code>str</code> that starts at <code>i</code> and continues until the end of string <code>str</code>. <code>i</code> can be negative. In particular, the call <code>string.sub(str, -i)</code> returns a suffix of <code>str</code> with length <code>i</code>.</p><p>If, after the translation of negative indices, <code>i</code> is less than 1, it is corrected to 1.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        }                        
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"sub",
+                    "desc":"<p>Returns the substring of the string that starts at <code>i</code> and continues until <code>j</code>; <code>i</code> and <code>j</code> can be negative. In particular, the call <code>str:sub(1,j)</code> returns a prefix of <code>str</code> with length <code>j</code>, and <code>str:sub(-i)</code> returns a suffix of <code>str</code> with length <code>i</code>.</p><p>If, after the translation of negative indices, <code>i</code> is less than 1, it is corrected to 1. If <code>j</code> is greater than the string length, it is corrected to that length. If, after these corrections, <code>i</code> is greater than <code>j</code>, the function returns the empty string.</p>",
+                    "params":[
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        },
+                        {
+                            "name":"j",
+                            "desc":"The index of the last character."
+                        }                        
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"sub",
+                    "desc":"<p>Returns the substring of <code>str</code> that starts at <code>i</code> and continues until the end of string <code>str</code>. <code>i</code> can be negative. In particular, the call <code>str:sub(-i)</code> returns a suffix of <code>str</code> with length <code>i</code>.</p><p>If, after the translation of negative indices, <code>i</code> is less than 1, it is corrected to 1.</p>",
+                    "params":[
+                        {
+                            "name":"i",
+                            "desc":"The index of the first character."
+                        }                        
+                    ]            
+                }                
+            ]
+        },
+        {
+            "name":"unpack",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "replace":"string.pack",
+                    "desc":"Returns the values packed in string <code>str</code> (see <code>string.pack</code>) according to the format string <code>fmt</code>. <code>position</code> marks where to start reading in <code>str</code>. After the read values, this function also returns the index of the first unread byte in <code>str</code>.",
+                    "params":[
+                        {
+                            "name":"fmt",
+                            "desc":"The format."
+                        },
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },
+                        {
+                            "name":"position",
+                            "desc":"The position from which to start reading."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"string.",
+                    "replace":"string.pack",
+                    "desc":"Returns the values packed in string <code>str</code> (see <code>string.pack</code>) according to the format string <code>fmt</code>. After the read values, this function also returns the index of the first unread byte in <code>str</code>.",
+                    "params":[
+                        {
+                            "name":"fmt",
+                            "desc":"The format."
+                        },
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }
+                    ]
+                }
+            ]
+        },         
+        {
+            "name":"upper",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"string.",
+                    "replace":"string.upper",
+                    "desc":"Receives a string and returns a copy of this string with all lowercase letters changed to uppercase. All other characters are left unchanged. The definition of what a lowercase letter is depends on the current locale.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }
+                    ]            
+                },
+                {
+                    "prefix":"string:",
+                    "replace":"upper",
+                    "desc":"Returns a copy of this string with all lowercase letters changed to uppercase. All other characters are left unchanged. The definition of what a lowercase letter is depends on the current locale."         
+                }                
+            ]
+        }       
+    ]
+}

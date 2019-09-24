@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist" default="info">
+    <!-- The root directory of the entire AE project -->
+    <property name="dir.root" value="${basedir}/.."/>
+                                                                                  
+    <!-- The directory with the commons -->
+    <property name="dir.commons" value="${dir.root}/commons"/>    
+    
+    <!-- The directory with the tools -->
+    <property name="dir.tools" value="${dir.root}/tools"/>    
+
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="${basedir}/src"/>
+    
+    <!-- The directory with the build files -->
+    <property name="dir.build" value="build"/>    
+
+    <!-- The directory with libraries -->
+    <property name="dir.libs" value="${dir.root}/libs"/>
+
+    <!-- The directory with Java libraries -->
+    <property name="dir.libs.java" value="${dir.libs}/java"/>
+    
+    <!-- The directory for the libraries necessary to build the project -->
+    <property name="dir.libs.build" value="${dir.libs}/build"/>      
+    
+    <!-- The directory for the distribution -->
+    <property name="dir.dist" value="${dir.build}/dist"/>
+    
+    <!-- The absolute path to the directory for the distribution -->
+    <property name="abs.dir.dist" location="${dir.dist}"/>
+    
+    <!-- The distribution directory for the binaries -->
+    <property name="dir.dist.bin" value="${dir.dist}/bin"/>
+    
+    <!-- The distribution directory with the libraries -->
+    <property name="dir.dist.libs" value="${abs.dir.dist}/libs"/>
+    
+    <!-- The directory with the engine C++ and Lua sources -->
+    <property name="dir.engine" value="${dir.root}/engine"/>
+
+    <!-- The directory with the plugins -->
+    <property name="dir.plugins" value="${dir.root}/plugins"/>
+
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/> 
+    
+    <!-- Verify the envrionment variable JAVA_HOME is set. -->
+    <fail unless="ae.env.JAVA_HOME" message="Environment variable JAVA_HOME not set."/>
+    
+    <!-- The distribution-related properties. -->
+    <property file="android.properties"/>
+    <property file="ios.properties"/>
+    <property file="dist.properties"/>
+    <property file="libs.properties"/>
+    
+    <!-- Prints info on main available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  compile     Compiles the distribution sources</echo>
+        <echo>  templates   Copies the templates to the distribution.</echo>
+        <echo>  libs        Copies the libraries to the distribution</echo>
+        <echo>  headers     Copies the header files (*.h) to the distribution</echo>
+        <echo>  scripts     Copies the scripts to the distribution</echo>
+        <echo>  properties  Copies the properties to the distribution</echo>
+        <echo>  doc         Generates the documentation</echo>  
+        <echo>  lua         Copies the Lua files to the distribution</echo>    
+        <echo>  desktop     Builds the desktop version of the engine</echo>
+        <echo>  android     Builds the Android project</echo>    
+        <echo>  ios         Builds the iOS projects</echo>
+        <echo>  studio      Builds the AE studio</echo>
+        <echo>  plugins     Builds plugins</echo>
+        <echo>  dist        Builds the AE distribution</echo>
+        <echo>  clean       Removes the build directory</echo>
+        <echo>  zip         Zips the distribution</echo>
+        <echo>  eclipse     Creates Eclipse projects</echo>
+        <echo>  backup      Zips the entire project skipping the build directories</echo>
+        <echo>  more        Prints information about sub-targets</echo>
+    </target>
+        
+    <!-- Prints info on available sub-targets -->
+    <target name="more">
+        <antcall target="info"/>
+        <antcall target="libs.info"/>
+        <antcall target="headers.info"/>
+        <antcall target="scripts.info"/>
+        <antcall target="doc.info"/>
+        <antcall target="lua.info"/>
+        <antcall target="desktop.info"/>
+        <antcall target="android.info"/>
+        <antcall target="ios.info"/>
+        <antcall target="studio.info"/>
+        <antcall target="plugins.info"/>
+    </target>    
+    
+    <!-- Classpath -->
+    <path id="java.classpath">
+        <fileset dir="${dir.libs.java}">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.commons}/${dir.build}">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.tools}/${dir.build}">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.root}/dist/${dir.build}">
+            <include name="*.jar"/>
+        </fileset>   
+    </path>    
+    
+    <!-- Java related build -->
+    <import file="${dir.commons}/build-java.xml"/>
+
+    <!-- Defines the necessary tasks -->
+    <target name="ae.tasks">
+        <!-- Classpath -->
+        <path id="ae.tasks.classpath">
+            <fileset dir="${dir.libs.java}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.commons}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.tools}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <pathelement path="${java.dir.build.classes}"/>
+        </path>
+        
+        <!-- Print classpath -->
+        <!--
+        <pathconvert property="ae.tasks.classpath.prop"
+            refid="ae.tasks.classpath"/>
+        <echo>AE tasks classpath is ${ae.tasks.classpath.prop}</echo>
+        -->        
+    
+        <!-- Ant-contib tasks -->
+        <taskdef name="for" classpathref="ae.tasks.classpath"
+            classname="net.sf.antcontrib.logic.For"/>
+            
+        <!-- AE Engine specific types and tasks-->
+        <taskdef name="get-os"
+            loaderRef="ae.loader"
+            classpathref="ae.tasks.classpath"
+            classname="com.andcreations.ae.dist.GetOSAntTask"/>
+        <typedef name="gradle-deps"
+            loaderRef="ae.loader"
+            classpathref="ae.tasks.classpath"
+            classname="com.andcreations.android.project.gradle.GradleDependenciesAntType"/>
+        <taskdef name="create-android-project"
+            loaderRef="ae.loader"
+            classpathref="ae.tasks.classpath"
+            classname="com.andcreations.android.project.gradle.AndroidGradleProjectAntTask"/>            
+    </target>
+
+    <!-- Determines the operating system -->
+    <target name="get.os" unless="ae.os">
+        <get-os>
+            <dstprop value="ae.os"/>
+        </get-os>
+    </target>
+    
+    <!-- Builds the commons -->
+    <target name="commons">
+        <ant dir="${dir.commons}" target="build" useNativeBasedir="true"
+            inheritAll="false"/>
+    </target>
+    
+    <!-- Cleans the commons -->
+    <target name="commons.clean">
+        <ant dir="${dir.commons}" target="clean" useNativeBasedir="true"
+            inheritAll="false"/>
+    </target>
+    
+    <!-- Builds the tools -->
+    <target name="tools">
+        <ant dir="${dir.tools}" target="build" useNativeBasedir="true"
+            inheritAll="false"/>
+    </target>
+    
+    <!-- Cleans the tools -->
+    <target name="tools.clean">
+        <ant dir="${dir.tools}" target="clean" useNativeBasedir="true"
+            inheritAll="false"/>
+    </target>
+
+    <!-- Builds the project -->
+    <target name="build" depends="commons,tools,java.jar">
+    </target>
+    
+    <!-- Import libs-related targets -->
+    <import file="build-libs.xml"/>
+    
+    <!-- Compiles the sources -->
+    <target name="compile" depends="java.compile">
+    </target>
+        
+    <!-- Import header-related targets -->
+    <import file="build-headers.xml"/>
+    
+    <!-- Import script-releated targets -->
+    <import file="build-scripts.xml"/>    
+    
+    <!-- Import properties-releated targets -->
+    <import file="build-properties.xml"/>    
+    
+    <!-- Import project templates-related targets -->
+    <import file="build-templates.xml"/>    
+    
+    <!-- Import doc-related targets -->
+    <import file="build-doc.xml"/>
+    
+    <!-- Import Lua-releated targets -->
+    <import file="build-lua.xml"/>    
+    
+    <!-- Import desktop-related targets -->
+    <import file="build-desktop.xml"/>
+    
+    <!-- Import Android-related targets -->
+    <import file="build-android.xml"/>
+
+    <!-- Import iOS-related targets -->
+    <import file="build-ios.xml"/>
+    
+    <!-- Import AE studio targets -->
+    <import file="build-studio.xml"/>    
+    
+    <!-- Import Eclipse targets -->
+    <import file="build-eclipse.xml"/>    
+    
+    <!-- Import plugins targets -->
+    <import file="build-plugins.xml"/>    
+
+    <!-- Builds the AE Engine distribution -->
+    <target name="dist" depends="headers,libs,scripts,doc,lua,desktop,android,studio,plugins">
+    </target>
+    
+    <!-- Removes the build directories -->
+    <target name="clean" depends="commons.clean,tools.clean,desktop.clean,studio.clean,plugins.clean">        
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Builds and zips the AndEngine distribution -->
+    <target name="zip" depends="dist">
+        <zip destfile="${dir.build}/ae-${ae.version}.zip">
+            <fileset dir="${dir.dist}">
+                <include name="**/*"/>
+            </fileset>
+        </zip>
+    </target>
+
+    <!-- Zips the entire project skipping the build directories -->
+    <target name="backup">
+        <tstamp>
+            <format property="backup.file.date" pattern="yyyyMMdd"/>
+        </tstamp>
+        <zip destfile="${dir.build}/ae${backup.file.date}.zip">
+            <fileset dir="${dir.root}/..">            
+                <include name="ae/**/*"/>
+                <exclude name="ae/**/build/**"/>
+                <exclude name="ae/**/*.o"/>
+                <exclude name="ae/**/.DS_Store"/>
+                <exclude name="ae/**/__MACOSX"/>
+            </fileset>
+        </zip>
+    </target>
+</project>

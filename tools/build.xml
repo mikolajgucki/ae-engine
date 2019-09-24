@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<project name="ae.tools" default="info">
+    <!-- The root directory of the entire AndEngine project -->
+    <property name="dir.root" value="${basedir}/.."/>
+
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="src"/>
+    
+    <!-- The directories the the build files -->
+    <property name="dir.build" value="build"/>    
+
+    <!-- The directory with the commons -->
+    <property name="dir.commons" value="${dir.root}/commons"/> 
+    
+    <!-- The directory with the AE studio core -->
+    <property name="dir.studio.core" value="${dir.root}/studio/core"/> 
+    
+    <!-- Java related build -->
+    <import file="${dir.commons}/build-java.xml"/>
+
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${dir.commons}/${dir.build}">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.root}/libs/java">
+            <include name="*.jar"/>
+        </fileset>   
+        <pathelement path="${java.dir.build.classes}"/>
+    </path> 
+    
+    <!-- Prints info on available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  compile    Compiles the sources</echo>
+        <echo>  clean      Removes the build directory</echo>
+        <echo>  build      Builds the project</echo>
+        <antcall target="java.info"/>
+    </target>
+    
+    <!-- Compiles the sources -->
+    <target name="compile" depends="java.compile" description="Compiles">
+    </target>
+    
+    <!-- Removes the build directory -->
+    <target name="clean">    
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Builds the project -->
+    <target name="build" depends="compile,java.jar" description="Builds target">
+    </target>
+</project>

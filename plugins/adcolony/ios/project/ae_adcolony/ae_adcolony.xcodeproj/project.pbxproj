@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40739B4B1DCA7D3200734F8D /* AEiOSLuaLibAdColony.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40739B4A1DCA7D3200734F8D /* AEiOSLuaLibAdColony.mm */; };
+		40A79DCF1C08BDB500E81A8B /* AdColonyLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A79DCB1C08BDB500E81A8B /* AdColonyLuaExtraLib.cpp */; };
+		40A79DD01C08BDB500E81A8B /* lua_adcolony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A79DCC1C08BDB500E81A8B /* lua_adcolony.cpp */; };
+		40A79DD11C08BDB500E81A8B /* LuaAdColonyCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A79DCD1C08BDB500E81A8B /* LuaAdColonyCallback.cpp */; };
+		40A79DD21C08BDB500E81A8B /* LuaLibAdColony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A79DCE1C08BDB500E81A8B /* LuaLibAdColony.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A79DBA1C08BD2D00E81A8B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40739B4A1DCA7D3200734F8D /* AEiOSLuaLibAdColony.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEiOSLuaLibAdColony.mm; path = ../../src/AEiOSLuaLibAdColony.mm; sourceTree = "<group>"; };
+		40A79DBC1C08BD2D00E81A8B /* libae_adcolony.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_adcolony.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A79DCB1C08BDB500E81A8B /* AdColonyLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AdColonyLuaExtraLib.cpp; path = ../../../common/src/cpp/AdColonyLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40A79DCC1C08BDB500E81A8B /* lua_adcolony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_adcolony.cpp; path = ../../../common/src/cpp/lua_adcolony.cpp; sourceTree = "<group>"; };
+		40A79DCD1C08BDB500E81A8B /* LuaAdColonyCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaAdColonyCallback.cpp; path = ../../../common/src/cpp/LuaAdColonyCallback.cpp; sourceTree = "<group>"; };
+		40A79DCE1C08BDB500E81A8B /* LuaLibAdColony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaLibAdColony.cpp; path = ../../../common/src/cpp/LuaLibAdColony.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A79DB91C08BD2D00E81A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A79DB31C08BD2D00E81A8B = {
+			isa = PBXGroup;
+			children = (
+				40A79DC81C08BD8E00E81A8B /* ae_adcolony */,
+				40A79DBD1C08BD2D00E81A8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A79DBD1C08BD2D00E81A8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A79DBC1C08BD2D00E81A8B /* libae_adcolony.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A79DC81C08BD8E00E81A8B /* ae_adcolony */ = {
+			isa = PBXGroup;
+			children = (
+				40A79DD31C08BDB900E81A8B /* ios */,
+				40A79DC91C08BD9900E81A8B /* common */,
+			);
+			name = ae_adcolony;
+			sourceTree = "<group>";
+		};
+		40A79DC91C08BD9900E81A8B /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40A79DCA1C08BD9E00E81A8B /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40A79DCA1C08BD9E00E81A8B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A79DCB1C08BDB500E81A8B /* AdColonyLuaExtraLib.cpp */,
+				40A79DCC1C08BDB500E81A8B /* lua_adcolony.cpp */,
+				40A79DCD1C08BDB500E81A8B /* LuaAdColonyCallback.cpp */,
+				40A79DCE1C08BDB500E81A8B /* LuaLibAdColony.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40A79DD31C08BDB900E81A8B /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40A79DD41C08BDBD00E81A8B /* src */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40A79DD41C08BDBD00E81A8B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40739B4A1DCA7D3200734F8D /* AEiOSLuaLibAdColony.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A79DBB1C08BD2D00E81A8B /* ae_adcolony */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A79DC51C08BD2D00E81A8B /* Build configuration list for PBXNativeTarget "ae_adcolony" */;
+			buildPhases = (
+				40A79DB81C08BD2D00E81A8B /* Sources */,
+				40A79DB91C08BD2D00E81A8B /* Frameworks */,
+				40A79DBA1C08BD2D00E81A8B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_adcolony;
+			productName = ae_adcolony;
+			productReference = 40A79DBC1C08BD2D00E81A8B /* libae_adcolony.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A79DB41C08BD2D00E81A8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40A79DBB1C08BD2D00E81A8B = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 40A79DB71C08BD2D00E81A8B /* Build configuration list for PBXProject "ae_adcolony" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40A79DB31C08BD2D00E81A8B;
+			productRefGroup = 40A79DBD1C08BD2D00E81A8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A79DBB1C08BD2D00E81A8B /* ae_adcolony */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A79DB81C08BD2D00E81A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40739B4B1DCA7D3200734F8D /* AEiOSLuaLibAdColony.mm in Sources */,
+				40A79DCF1C08BDB500E81A8B /* AdColonyLuaExtraLib.cpp in Sources */,
+				40A79DD21C08BDB500E81A8B /* LuaLibAdColony.cpp in Sources */,
+				40A79DD11C08BDB500E81A8B /* LuaAdColonyCallback.cpp in Sources */,
+				40A79DD01C08BDB500E81A8B /* lua_adcolony.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40A79DC31C08BD2D00E81A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A79DC41C08BD2D00E81A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A79DC61C08BD2D00E81A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/AdColony-iOS-SDK-3-3.0.4.1";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40A79DC71C08BD2D00E81A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/AdColony-iOS-SDK-3-3.0.4.1";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A79DB71C08BD2D00E81A8B /* Build configuration list for PBXProject "ae_adcolony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A79DC31C08BD2D00E81A8B /* Debug */,
+				40A79DC41C08BD2D00E81A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A79DC51C08BD2D00E81A8B /* Build configuration list for PBXNativeTarget "ae_adcolony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A79DC61C08BD2D00E81A8B /* Debug */,
+				40A79DC71C08BD2D00E81A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A79DB41C08BD2D00E81A8B /* Project object */;
+}

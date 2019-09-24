@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+#foreach ($srcDir in $cfg.getSrcDirs())
+    <classpathentry kind="src" path="$srcDir"/>
+#end
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+#foreach ($lib in $cfg.getLibs())
+    <classpathentry kind="lib" path="$lib"/>
+#end
+#foreach ($project in $cfg.getProjects())
+    <classpathentry combineaccessrules="false" kind="src" path="/${project}"/>
+#end
+#if ($cfg.getOutputDir())
+    <classpathentry kind="output" path="$cfg.getOutputDir()"/>
+#end
+</classpath>

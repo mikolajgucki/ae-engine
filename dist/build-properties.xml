@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.properties">   
+    <!-- The distribution directory with the properties files -->
+    <property name="dir.dist.properties" value="${abs.dir.dist}/properties"/>
+    
+    <!-- Copies the properties files to the distribution -->
+    <target name="properties">
+        <copy todir="${dir.dist.properties}">
+            <fileset dir="${dir.root}/dist" includes="*.properties"
+                excludes="dist.properties"/> 
+        </copy>
+    </target>
+</project>

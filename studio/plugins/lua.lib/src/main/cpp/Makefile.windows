@@ -1,0 +1,30 @@
+# This file is called from Ant.
+
+CC = gcc
+CCFLAGS = -Wall -I$(abspath ./include) 
+
+DYNLIB = $(BUILD_DIR)/lua_util.dll
+CFILES = $(wildcard *.c)
+OBJS = $(CFILES:.c=.o)
+DEPS = $(wildcard *.c) $(wildcard $(INCLUDE)/*.h)
+
+LUA_DIR = ../../../../../../libs/windows/lua-$(LUA_VERSION)
+#LUA_LIB = $(LUA_DIR)/src/lua53.dll
+LUA_DYNLIBS = $(wildcard $(LUA_DIR)/lib/*.dll)
+
+CCFLAGS := $(CCFLAGS) -I$(LUA_DIR)/include
+CCFLAGS := $(CCFLAGS) "-I$(JAVA_HOME)/include" "-I$(JAVA_HOME)/include/win32"
+
+all: $(OBJS) $(DYNLIB)
+
+$(DYNLIB): $(OBJS)
+	cp $(LUA_DYNLIBS) $(BUILD_DIR)
+	$(CC) -shared -o $(DYNLIB) $(OBJS) $(LUA_DYNLIBS) -D_JNI_IMPLEMENTATION_ -Wl,--kill-at
+
+%.o: %.c $(DEPS)
+	$(CC) -o $@ -c $< $(CCFLAGS)
+
+clean:
+	rm -f $(OBJS) $(DYNLIB)
+
+.PHONY: clean all

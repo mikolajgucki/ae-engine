@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.desktop">
+    <!-- Prints info on available targets -->
+    <target name="desktop.info">
+        <echo>  desktop.build         Builds the executable of the desktop version of the engine</echo>
+        <echo>  desktop.headers       Copies the desktop engine header files (*.h) to the distribution</echo>
+        <echo>  desktop.libs          Copies the static libraries to the distribution</echo>
+        <echo>  desktop.clean         Cleans the desktop version of the engine</echo>
+    </target>
+
+    <!-- The distribution directory with the desktop files -->
+    <property name="dir.dist.desktop" value="${abs.dir.dist}/desktop"/>  
+    
+    <!-- Builds the desktop version of the engine -->
+    <target name="desktop.build" unless="no.desktop">
+        <echo>Building deskop engine for OS ${ae.os}</echo>
+        <exec executable="make" dir="${dir.engine}" failonerror="true">
+            <arg value="all"/>
+            <arg value="PLATFORM=${ae.os}"/>
+            <arg value="ZLIB_VERSION=${zlib.version}"/>
+            <arg value="LIBPNG_VERSION=${libpng.version}"/>
+            <arg value="LUA_VERSION=${lua.version}"/>
+            <arg value="SDL2_VERSION=${sdl2.version}"/>
+            <arg value="SDL2_MIXER_VERSION=${sdl2.mixer.version}"/>
+        </exec>
+        <mkdir dir="${dir.dist.bin}"/>
+        <copy todir="${dir.dist.bin}">
+            <fileset dir="${dir.engine}/desktop">
+                <include name="ae.exe"/>
+                <include name="ae"/>
+            </fileset>
+        </copy> 
+    </target>
+
+    <!-- Builds the desktop version of the engine for Windows -->
+    <target name="desktop.windows" if="ae.os.windows" unless="no.desktop">
+        <antcall target="desktop.build"/>
+        <copy todir="${dir.dist.bin}">
+            <fileset dir="${dir.libs}/windows/zlib-1.2.8/bin">
+                <include name="zlib1.dll"/>
+            </fileset>            
+            <fileset dir="${dir.libs}/windows/SDL2-${sdl2.version}/i686-w64-mingw32/bin">
+                <include name="SDL2.dll"/>
+            </fileset> 
+            <fileset dir="${dir.libs}/windows/SDL2_mixer-${sdl2.mixer.version}/i686-w64-mingw32/bin">
+                <include name="libogg-0.dll"/>
+                <include name="libvorbis-0.dll"/>
+                <include name="libvorbisfile-3.dll"/>
+                <include name="SDL2_mixer.dll"/>
+            </fileset> 
+        </copy>
+    </target>    
+    
+    <!-- Builds the desktop version of the engine for Linux -->
+    <target name="desktop.linux" if="ae.os.linux" unless="no.desktop">
+        <antcall target="desktop.build"/>
+    </target>
+    
+    <!-- Builds the desktop version of the engine for Max OS X -->
+    <target name="desktop.osx" if="ae.os.osx" unless="no.desktop">
+        <antcall target="desktop.build"/>
+        <copy todir="${dir.dist.libs}/osx">
+            <fileset dir="${dir.libs}/osx/SDL2-${sdl2.version}">
+                <include name="*.framework/**"/>
+            </fileset>
+            <fileset dir="${dir.libs}/osx/SDL2_mixer-${sdl2.mixer.version}">
+                <include name="*.framework/**"/>
+            </fileset>
+        </copy>      
+        <chmod file="${dir.dist.bin}/ae" perm="ug+x"/>
+    </target>
+    
+    <!-- Builds the desktop version of the engine for an unknown OS -->
+    <target name="desktop.unknown" if="ae.os.unknown" unless="no.desktop">
+        <fail message="Don't know how to build the deskop engine on an unknown OS."/>
+    </target>
+    
+    <!-- Copies the desktop engine header files (*.h) to the distribution -->
+    <target name="desktop.headers">
+        <property name="dir.dist.desktop.include" value="${dir.dist.desktop}/src/include"/>
+        <copy todir="${dir.dist.desktop.include}" flatten="yes">
+            <fileset dir="${dir.root}/engine/desktop/core" includes="**/include/*.h"/>
+            <fileset dir="${dir.root}/engine/desktop/plugins" includes="**/include/*.h"/>
+            <fileset dir="${dir.root}/engine/desktop/system" includes="**/include/*.h"/>
+        </copy>
+        <copy todir="${dir.dist.desktop.include}">
+            <fileset dir="${dir.root}/engine/desktop/jsoncpp/src/cpp/include" includes="**/*.h"/>
+        </copy>
+    </target>     
+    
+    <!-- Copies the static libraries to the distribution -->
+    <target name="desktop.libs" unless="no.desktop">
+        <copy todir="${dir.dist.desktop}/libs/${ae.os}" flatten="yes">
+            <fileset dir="${dir.libs}/windows/lua-${lua.version}/lib">
+                <include name="*.a"/>
+            </fileset>             
+            <fileset dir="${dir.engine}">
+                <include name="**/lib*.a"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Cleans the desktop version of the engine -->
+    <target name="desktop.clean" unless="no.desktop">
+        <exec executable="make" dir="${dir.engine}" failonerror="true">
+            <arg value="clean"/>
+        </exec>
+    </target>
+    
+    <!-- Builds the desktop version of the engine -->
+    <target name="desktop" depends="build,ae.tasks,get.os" unless="no.desktop">
+        <antcall target="desktop.windows"/>
+        <antcall target="desktop.linux"/>
+        <antcall target="desktop.osx"/>
+        <antcall target="desktop.unknown"/>
+        <antcall target="desktop.headers"/>
+        <antcall target="desktop.libs"/>
+    </target>
+</project>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.ios" default="info">
+    <!-- The property with the iOS files -->
+    <property name="dir.ios" value="${basedir}/ios"/>
+    
+    <!-- The property with the iOS project -->
+    <property name="dir.ios.project" value="${dir.ios}/project/ae_${plugin.name}"/>
+    
+    <!-- The property with the iOS build directory -->
+    <property name="dir.build.ios" value="${dir.build}/ios"/>    
+    
+    <!-- The property with the iOS libraries directory -->
+    <property name="dir.build.ios.libs" value="${dir.build.ios}/libs"/>
+    
+    <!-- The property with the iOS installation directory -->
+    <property name="dir.install.ios" value="${dir.install}/ios"/>
+    
+    <!-- Prints info -->
+    <target name="info">
+        <echo>This file is included in another build.xml. Don't run it directly.</echo>
+    </target>
+    
+    <!-- Removes ths iOS build files -->
+    <target name="ios.clean">
+        <delete dir="${dir.ios.project}/build"/>
+    </target>
+    
+    <!-- -->
+    <macrodef name="ios-xcodebuild">
+        <attribute name="dir"/>
+        <attribute name="target"/>
+        <attribute name="sdk" default="iphoneos10.2"/>
+        <attribute name="configuration" default="Release"/>
+        <sequential>
+            <exec executable="xcodebuild" dir="@{dir}" failonerror="true">
+                <arg value="ONLY_ACTIVE_ARCH=NO"/>
+                <arg value="ARCHS=armv7 armv7s arm64"/>
+                <arg value="-sdk"/>
+                <arg value="@{sdk}"/>
+                <arg value="-configuration"/>
+                <arg value="@{configuration}"/>
+                <arg value="-target"/>
+                <arg value="@{target}"/>
+                <arg value="AE_DIST=${AE_DIST}"/>
+            </exec>        
+        </sequential>
+    </macrodef>
+
+    <!-- Builds the project -->
+    <target name="ios.build" unless="no.ios">
+        <ios-xcodebuild dir="${dir.ios.project}" target="ae_${plugin.name}"/>
+    </target>
+    
+    <!-- Builds the iOS part of the plugin -->
+    <target name="ios" unless="no.ios" depends="ios.project.custom,ios.build">
+    </target>
+
+    <!-- Creates empty directories if the plugin is not be built for iOS -->
+    <target name="install.ios.none" if="no.ios">
+        <mkdir dir="${dir.install}/ios/src/include"/>
+        <mkdir dir="${dir.install}/ios/libs"/>
+    </target>
+    
+    
+    <!-- Installs the iOS files -->
+    <target name="install.ios.all" unless="no.ios"
+        depends="clean,ios,install.common,install.ios.custom">  
+        <copy todir="${dir.install}/ios/src/include" failonerror="false">        
+            <fileset dir="${dir.ios}/src/include" includes="**/*"/>
+        </copy>        
+        <copy todir="${dir.install}/ios/libs" failonerror="false">        
+            <fileset dir="${dir.ios.project}/build/Release-iphoneos" includes="*"/>
+        </copy>        
+    </target>
+    
+    <!-- Installs the iOS part of the plugin -->
+    <target name="install.ios" depends="install.ios.all,install.ios.none">
+    </target>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.templates">
+    <!-- The distribution directory with the project.template -->
+    <property name="dir.dist.project.templates" value="${abs.dir.dist}/templates"/>    
+
+    <!-- Copies the templates to the distribution -->
+    <target name="templates">
+        <copy todir="${dir.dist.project.templates}">
+            <fileset dir="${dir.root}/templates">
+                <include name="project/**/*"/>
+                <include name="android/project/**/*"/>
+            </fileset>
+        </copy>
+    </target>
+</project>

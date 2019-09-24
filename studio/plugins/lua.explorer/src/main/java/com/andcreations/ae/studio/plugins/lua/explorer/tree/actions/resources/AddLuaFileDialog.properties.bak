@@ -1,0 +1,8 @@
+title=Create Lua file
+add=Create
+cancel=Cancel
+module=Module:
+directory=Directory:
+name=Name:
+invalid.name=Invalid name. Letters, ciphers and underscore allowed.
+module.exists=Module already exists

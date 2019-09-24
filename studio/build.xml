@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+
+<project name="ae.studio" default="build">
+    <!-- Builds the core -->
+    <target name="build.core">
+        <echo>---=== Building core ===---</echo>
+        <echo>Building AE Studio for OS: ${ae.os}</echo>
+        <ant dir="${basedir}/core" useNativeBasedir="true" inheritAll="false"
+            target="build"/>
+    </target>
+    
+    <!-- -->
+    <macrodef name="build-plugin">
+        <attribute name="name"/>
+        <sequential>
+            <ant dir="${basedir}/plugins/@{name}" useNativeBasedir="true"
+                inheritAll="false" target="build"/>    
+        </sequential>
+    </macrodef>
+    
+    <!-- -->
+    <macrodef name="clean-plugin">
+        <attribute name="name"/>
+        <sequential>
+            <ant dir="${basedir}/plugins/@{name}" useNativeBasedir="true"
+                inheritAll="false" target="clean"/>
+            <echo/>
+        </sequential>
+    </macrodef>    
+
+    <!-- Builds the plugins -->
+    <target name="build.plugins">
+        <build-plugin name="ui.icons"/>
+        <build-plugin name="ui.common"/>
+        <build-plugin name="ui.init"/>
+        <build-plugin name="ui.main"/>        
+        <build-plugin name="ui.main.finalizer"/>
+        <build-plugin name="splash"/>
+        <build-plugin name="file"/>
+        <build-plugin name="problems"/>
+        <build-plugin name="file.problems"/>
+        <build-plugin name="ae.dist"/>
+        <build-plugin name="project.files"/>
+        <build-plugin name="text.editor"/>
+        <build-plugin name="todo"/>
+        <build-plugin name="outline"/>
+        <build-plugin name="file.explorer"/>
+        <build-plugin name="image.viewer"/>        
+        <build-plugin name="lua.lib"/>
+        <build-plugin name="lua"/>
+        <build-plugin name="search.common"/>
+        <build-plugin name="console"/>
+        <build-plugin name="project"/>
+        <build-plugin name="project.select"/>
+        <build-plugin name="search"/>
+        <build-plugin name="appicon"/>
+        <build-plugin name="ant"/>
+        <build-plugin name="project.explorer"/>
+        <build-plugin name="builders"/>
+        <build-plugin name="resources"/>
+        <build-plugin name="project.resources"/>
+        <build-plugin name="wizards"/>
+        <build-plugin name="assets"/>
+        <build-plugin name="assets.fonts"/>
+        <build-plugin name="assets.textures"/>
+        <build-plugin name="lua.parser"/>
+        <build-plugin name="lua.classes"/>
+        <build-plugin name="lua.debug"/>
+        <build-plugin name="lua.compiler"/>
+        <build-plugin name="lua.autocompletion"/>
+        <build-plugin name="lua.editor"/>
+        <build-plugin name="lua.templates"/>
+        <build-plugin name="lua.wizards"/>
+        <build-plugin name="lua.explorer"/>
+        <build-plugin name="lua.test"/>
+        <build-plugin name="project.ant"/>
+        <build-plugin name="android"/>
+        <build-plugin name="android.explorer"/>
+        <build-plugin name="adb"/>
+        <build-plugin name="ios"/>
+        <build-plugin name="simulator"/>
+        <build-plugin name="simulator.resources"/>
+    </target>
+    
+    <!-- Builds the AE Studio -->
+    <target name="build">
+        <antcall target="build.core"/>
+        <antcall target="build.plugins"/>
+    </target>
+    
+    <!-- Cleans the core -->
+    <target name="clean.core">
+        <echo>---=== Cleaning core ===---</echo>
+        <ant dir="${basedir}/core" useNativeBasedir="true" inheritAll="false"
+            target="clean"/>    
+    </target>
+    
+    <!-- Cleans the plugins -->
+    <target name="clean.plugins">
+        <clean-plugin name="ui.icons"/>
+        <clean-plugin name="ui.common"/>
+        <clean-plugin name="ui.init"/>
+        <clean-plugin name="ui.main"/>
+        <clean-plugin name="ui.main.finalizer"/>
+        <clean-plugin name="splash"/>        
+        <clean-plugin name="file"/>
+        <clean-plugin name="problems"/>
+        <clean-plugin name="file.problems"/>
+        <clean-plugin name="ae.dist"/>
+        <clean-plugin name="project.files"/>
+        <clean-plugin name="text.editor"/>
+        <clean-plugin name="todo"/>
+        <clean-plugin name="outline"/>        
+        <clean-plugin name="file.explorer"/>        
+        <clean-plugin name="image.viewer"/>
+        <clean-plugin name="lua.lib"/>
+        <clean-plugin name="lua"/>
+        <clean-plugin name="search.common"/>
+        <clean-plugin name="console"/>
+        <clean-plugin name="project"/>
+        <clean-plugin name="project.select"/>
+        <clean-plugin name="search"/>        
+        <clean-plugin name="appicon"/>
+        <clean-plugin name="ant"/>
+        <clean-plugin name="project.explorer"/>
+        <clean-plugin name="builders"/>
+        <clean-plugin name="resources"/>
+        <clean-plugin name="project.resources"/>
+        <clean-plugin name="wizards"/>
+        <clean-plugin name="assets"/>
+        <clean-plugin name="assets.fonts"/>
+        <clean-plugin name="assets.textures"/>
+        <clean-plugin name="lua.parser"/>
+        <clean-plugin name="lua.classes"/>
+        <clean-plugin name="lua.debug"/>
+        <clean-plugin name="lua.compiler"/>
+        <clean-plugin name="lua.autocompletion"/>
+        <clean-plugin name="lua.editor"/>
+        <clean-plugin name="lua.templates"/>
+        <clean-plugin name="lua.wizards"/>
+        <clean-plugin name="lua.explorer"/>
+        <clean-plugin name="lua.test"/>
+        <clean-plugin name="project.ant"/>
+        <clean-plugin name="android"/>
+        <clean-plugin name="android.explorer"/>
+        <clean-plugin name="adb"/>
+        <clean-plugin name="ios"/>
+        <clean-plugin name="simulator"/>
+        <clean-plugin name="simulator.resources"/>
+    </target>
+    
+    <!-- Cleans all the stuff -->
+    <target name="clean">
+        <antcall target="clean.core"/>
+        <antcall target="clean.plugins"/>
+        
+        <echo>---=== Cleaning distribution ===---</echo>
+        <delete dir="${basedir}/build"/>
+    </target>
+</project>

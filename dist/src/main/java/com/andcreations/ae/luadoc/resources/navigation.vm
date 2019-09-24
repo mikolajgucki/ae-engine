@@ -1,0 +1,19 @@
+#set($html = ".html")
+    <div id="navigation">
+        <div class="header">$title</div>
+        <div class="content">
+            <a href="index.html">Index</a>
+        </div>
+        <div class="header">Modules</div>
+        <div class="content">
+#foreach ($group in $groups)
+#if ($group.getName())
+            <div class="group">$group.getName()</div>
+#end
+#foreach ($module in $group.getModules())
+#set ($name = $module.getName())
+            <div class="module"><a href="$name$html">$module.getName()</a></div>
+#end
+#end
+        </div>
+    </div>

@@ -1,0 +1,191 @@
+#set ($html = ".html")
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$title ($module.getName())</title>      
+    <link rel="stylesheet" type="text/css" href="luadoc.css">
+</head>
+<body>
+${navigation}
+#set ($supermodules = $data.getSuperModules($module))
+
+## description
+    <div class="section">$module.getName()</div>
+    <div id="summary">
+#if ($module.getFullDesc())
+        <div id="desc">$module.getFullDesc()</div>
+#elseif ($module.getBriefDesc())
+        <div id="desc">$module.getBriefDesc()</div>
+#end
+    
+## supermodules
+#if ($supermodules.isEmpty() == false)
+        <div class="section">Supermodule(s):</div>        
+        <div class="content">$module.getName()
+    #foreach ($supermodule in $supermodules)
+    #set ($supermoduleName = $supermodule.getName())
+            &#x21FD; <a href="$supermoduleName$html">$supermoduleName</a>
+    #end
+        </div>
+#end
+        
+## submodules
+#set ($directSubmodules = $data.getDirectSubModules($module))
+#if ($directSubmodules.isEmpty() == false)
+        <div class="section">Submodule(s):</div>        
+        <div class="content">        
+    #set ($size1 = $directSubmodules.size() - 1)
+    #foreach ($index in [0..$size1])
+        #set ($submodule = $directSubmodules.get($index))
+        #set ($submoduleName = $submodule.getName())
+        #if ($index < $size1) #set ($separator = ",") #else #set ($separator = "") #end
+        <a href="$submoduleName$html">$submodule.getName()</a>$separator
+    #end
+#end
+        </div>        
+    
+## variables table
+#if ($data.hasVars($module))
+        <table id="vars_table">
+            <col width="40%"/>
+            <col/>
+        
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+#foreach ($var in $module.getVars())
+                <tr>
+                    <td><a href="#$var.getId()">$var.getSyntax()</a></td>
+                    <td>$var.getBriefDesc()</td>                    
+                </tr>
+#end
+
+## inherited variables    
+#if ($supermodules.isEmpty() == false)
+    #foreach ($supermodule in $supermodules) 
+        #if ($supermodule.hasVars())
+        #set ($supermoduleName = $supermodule.getName())    
+                <tr>
+                    <td colspan="2" class="supermodule">Inherited from <a href="$supermoduleName$html">$supermoduleName</a></td>
+                </tr>
+            #foreach ($var in $supermodule.getVars())
+                <tr>
+                    <td><a href="$supermoduleName$html#$var.getId()">$var.getSyntax()</a></td>
+                    <td>$var.getBriefDesc()</td>                    
+                </tr>
+            #end
+        #end
+    #end
+#end     
+    
+            </tbody>            
+        </table>     
+#end
+
+## functions table
+#if ($data.hasFuncs($module))
+        <table id="funcs_table">
+            <col width="40%"/>
+            <col/>
+        
+            <thead>
+                <tr>
+                    <th>Function</th>                    
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+#foreach ($func in $module.getFuncs())
+                <tr>
+                    <td><a href="#$func.getId()">$func.getSyntax()</a></td>
+                    <td>$func.getBriefDesc()</td>                    
+                </tr>
+#end
+    
+## inherited functions
+#if ($supermodules.isEmpty() == false)
+#foreach ($supermodule in $supermodules)    
+#if ($supermodule.hasFuncs())
+#set ($supermoduleName = $supermodule.getName())   
+                <tr>
+                    <td colspan="2" class="supermodule">Inherited from <a href="$supermoduleName$html">$supermoduleName</a></td>
+                </tr>
+#foreach ($func in $supermodule.getFuncs())
+                <tr>
+                    <td><a href="$supermoduleName$html#$func.getId()">$func.getSyntax()</a></td>
+                    <td>$func.getBriefDesc()</td>                    
+                </tr>
+#end
+#end
+#end
+#end 
+            </tbody>            
+        </table>      
+#end
+    </div>
+
+## variables
+#if ($module.hasVars())
+    <div class="section">Variables</div>
+    <div class="content">
+#foreach ($var in $module.getVars())
+        <div class="variable" id="$var.getId()">
+            <div class="srcfile">$var.getSrcFilename()</div>
+            <div class="syntax">$var.getSyntax()</div>
+#if ($var.getFullDesc())
+            <div class="section">
+                <div class="desc">$var.getFullDesc()</div>
+            </div>
+#elseif ($var.getBriefDesc())
+            <div class="section">
+                <div class="desc">$var.getBriefDesc()</div>
+            </div>
+#end
+        </div>
+#end
+    </div>    
+#end
+    
+## functions
+#if ($module.hasFuncs())
+    <div class="section">Functions</div>
+    <div class="content">
+#foreach ($func in $module.getFuncs())
+        <div class="function" id="$func.getId()">
+            <div class="srcfile">$func.getSrcFilename()</div>
+            <div class="syntax">$func.getSyntax()</div>
+#if ($func.getFullDesc())
+            <div class="section">
+                <div class="desc">$func.getFullDesc()</div>
+            </div>
+#elseif ($func.getBriefDesc())
+            <div class="section">
+                <div class="desc">$func.getBriefDesc()</div>
+            </div>
+#end
+#if ($func.hasParams())
+            <div class="header">Parameters</div>
+            <div class="section">            
+#foreach ($param in $func.getParams())
+                <div class="param">
+                    <span class="name">$param.getName()</span><span class="description">$param.getDesc()</span>
+                </div>
+#end
+            </div>
+#end
+#if ($func.getReturn())
+            <div class="header">Returns</div>
+            <div class="section">
+                <div class="return">$func.getReturn()</div>
+            </div>
+#end
+        </div>
+#end
+    </div>
+#end
+</body>
+</html>

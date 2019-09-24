@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<project name="ae.studio.plugin" default="info">
+    <!-- The root directory of the entire AE project -->
+    <property name="dir.root" value="${plugin.dir}/../../.."/>    
+
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="${plugin.dir}/src"/>
+    
+    <!-- The directories the the build files -->
+    <property name="dir.build" value="${plugin.dir}/build"/>
+    
+    <!-- The directory with libraries -->
+    <property name="dir.libs" value="${dir.root}/libs"/>
+
+    <!-- The directory with Java libraries -->
+    <property name="dir.libs.java" value="${dir.libs}/java"/>        
+
+    <!-- The directory with the core project -->
+    <property name="dir.core" value="${plugin.dir}/../../core"/>
+    
+    <!-- The directory with plugin libraries -->
+    <property name="dir.plugin.libs" value="${plugin.dir}/libs"/>
+    
+    <!-- The distribution directory -->
+    <property name="dir.dist" value="${dir.root}/dist/build/dist"/>     
+    
+    <!-- The distribution directory with libraries -->
+    <property name="dir.dist.libs" value="${dir.dist}/libs"/> 
+
+    <!-- The distribution directory with studio -->
+    <property name="dir.dist.libs.studio" value="${dir.dist.libs}/studio"/> 
+    
+    <!-- The distribution directory with libraries -->
+    <property name="dir.dist.libs.studio.plugins" value="${dir.dist.libs.studio}/plugins"/> 
+
+    <!-- The distribution-related properties. -->
+    <property file="${dir.root}/dist/libs.properties"/>
+    
+    <!-- Java related build -->
+    <import file="${dir.root}/commons/build-java.xml"/>
+
+    <!-- Creates the distribution directory with libraries -->
+    <mkdir dir="${dir.dist.libs.studio.plugins}"/>
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${dir.libs.java}">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.plugin.libs}">
+            <include name="*.jar"/>
+        </fileset>     
+        <fileset dir="${dir.dist.libs}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${dir.dist.libs.studio}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${dir.dist.libs.studio.plugins}">
+            <include name="*.jar"/>
+        </fileset>
+    </path> 
+    
+    <!-- Prints info on available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  build      Builds the project</echo>
+        <echo>  clean      Removes the build directory</echo>
+        <antcall target="java.info"/>
+    </target>
+    
+    <!-- Compiles the sources -->
+    <target name="compile" depends="java.compile">
+    </target>
+    
+    <!-- Removes the build directory -->
+    <target name="clean">    
+        <echo>---==== Cleaning plugin: ${ant.project.name} ===---</echo>
+        <echo>(${plugin.dir})</echo>
+        
+        <antcall target="before.clean"/>
+        <delete dir="${dir.build}"/>
+        <antcall target="after.clean"/>
+    </target>
+    
+    <!-- Creates the JAR file -->
+    <target name="plugin.jar" depends="java.compile,java.resources">
+        <mkdir dir="${java.dir.build.metainf}"/>
+        <tstamp>
+            <format property="build.date" pattern="yyyy-MM-dd HH:mm:ssZ"/>
+        </tstamp>      
+        <jar destfile="${dir.build}/${java.jar.filename}">
+            <fileset dir="${java.dir.build.classes}">
+                <include name="**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Build-Date" value="${build.date}"/>
+                <section name="AEStudio-Plugin">
+                    <attribute name="Plugin-Class" value="${plugin.class}"/>
+                </section>
+            </manifest>            
+            <metainf dir="${java.dir.build.metainf}" includes="**/*"/>
+        </jar>
+    </target>    
+    
+    <!-- Copies the JAR file to the distribution -->
+    <target name="dist.jar">
+        <copy todir="${dir.dist.libs.studio.plugins}">
+            <fileset dir="${dir.build}">
+                <include name="*.jar"/>
+                <include name="*.dll"/>
+                <include name="*.dylib"/>
+                <include name="*.jnilib"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- Copies the libraries to the distribution -->
+    <target name="dist.libs">
+        <mkdir dir="${dir.dist.libs.studio.plugins}"/>
+        <copy todir="${dir.dist.libs.studio.plugins}">
+            <fileset dir="${dir.plugin.libs}" erroronmissingdir="false">
+                <include name="*.jar"/>
+            </fileset>
+        </copy>        
+    </target>    
+    
+    <!-- Builds the project -->
+    <target name="build">
+        <echo>---==== Building plugin: ${ant.project.name} ===---</echo>
+        <echo>(${plugin.dir})</echo>
+        
+        <antcall target="before.compile"/>
+        <antcall target="compile"/>
+        <antcall target="after.compile"/>
+        <antcall target="plugin.jar"/>
+        <antcall target="dist.jar"/>
+        <antcall target="dist.libs"/>
+    </target>
+</project>

@@ -1,0 +1,20 @@
+-- @brief Contains `$id` font data.
+-- This file was generated. Do not edit!
+local font = {}
+
+-- @var
+-- @name $modname
+-- @brief Font `$id`.
+font = {
+    id = '$id',
+    keys = {
+#set ($chmax = $data.getChars().size() - 1)
+#foreach ($chindex in [0..$chmax])
+#set ($char = $data.getChars().get($chindex))
+        [$char.getCh()] = '$char.getSubtexture()'#if($chindex < $chmax),#end
+        
+#end
+    }
+}
+
+return font

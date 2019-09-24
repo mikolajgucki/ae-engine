@@ -1,0 +1,7 @@
+title=Introduction
+    title=Setting up the environment;link=SettingUpTheEnvironment.html
+title=Developer's Guide
+    title=Setting up the developer environment;link=SettingUpTheDeveloperEnvironment.html
+    title=Libraries;link=Libraries.html
+title=Built-in plugins
+    title=GPU plugins;link=GPUPlugins.html

@@ -1,0 +1,126 @@
+-- @brief Prints out.
+local function out(...)
+    print(string.format(...))
+end
+
+-- @brief Prints out a component as a JSON document.
+local function componentToJSON(component)
+    out('{')
+    
+    if component.id then
+        out('"id":"%s",',component.id)
+    end
+    
+    out('"bounds":{')
+    out('"x":%f,',component.bounds.x)
+    out('"y":%f,',component.bounds.y)
+    out('"width":%f,',component.bounds.width)
+    out('"height":%f',component.bounds.height)
+    out('}')
+    
+    if component.getChildren then
+        local children = component:getChildren()
+        if children and #children > 0 then
+            out(',')
+            out('"children":[')
+            local first = true
+            for _,child in ipairs(children) do
+                if not first then
+                    out(',')
+                end
+                first = false
+                componentToJSON(child)
+            end
+            out(']')
+        end
+    end
+    
+    out('}')
+end
+
+-- @brief Mocks loaders
+local function mockLoaders()
+    local loader = {
+        load = function()
+        end
+    }
+
+    ae.loaders = {
+        resources = loader,
+        calls = loader,
+        textures = loader,
+        fonts = loader,
+        sounds = loader,
+        modules = loader
+    }   
+end
+
+-- @brief Loads the font modules.
+local function loadFontModules()
+    ae.modules.loadAll({
+        'ae.font.Font'
+    })
+end
+
+-- @brief Loads all necessary modules, lays out and prints out the components.
+local function run()
+    -- load core modules
+    ae = {
+        modules = require('ae.modules')
+    }
+    ae.modules.loadCore()
+    loadFontModules()
+    
+    -- display (must be set before UI plugin)
+    ae.display.resize(${width},${height})
+    
+    -- load the UI plugin modules
+    ae.modules.loadAll(require('ui.modules').get())
+
+#foreach ($loadLuaSnippet in $loadLuaSnippets)
+    $loadLuaSnippet
+#end
+    
+#if( $hasTexturesModules )
+    -- load texture modules
+    ae.modules.loadAll(require('assets.textures.modules').get())
+#end
+#if( $hasFontsModules )
+    -- load font modules
+    ae.modules.loadAll(require('assets.fonts.modules').get())
+#end
+
+    -- user modules
+#foreach ($userModule in $userModulesToLoad)
+    require('$userModule')
+#end
+    
+    -- loaders
+    mockLoaders()
+    
+    -- full screen bounds
+    ui.Bounds.full = ui.Bounds.new(0,0,1,1)
+    
+    -- get layout data
+    local layoutData = require('${layoutModule}')
+    
+    -- build the layout
+    local result = ui.layout.builder.build(layoutData)
+    result:setBounds(0,0,1,1):layout()
+    
+    -- print out
+    result:setBounds(0,0,1,1):layout()
+    out('{')
+    out('"root":')
+    componentToJSON(result)
+    out('}')
+end
+
+#foreach ($path in $pkgPaths)
+package.path = package.path .. ';${path}/?.lua'    
+#end
+    
+local ok,result = pcall(run)
+if not ok then
+    out('eror%s',result)
+end

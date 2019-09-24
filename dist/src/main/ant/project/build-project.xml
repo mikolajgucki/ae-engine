@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<project name="ae.project" default="info">
+    <!-- The root directory of the project -->
+    <property name="dir.root" value="${basedir}"/>
+
+    <!-- The directories the build files -->
+    <property name="dir.build" value="${dir.root}/build"/>
+
+    <!-- The directory with the resources -->
+    <property name="dir.resources" value="${dir.root}/resources"/>
+    
+    <!-- The directory with the textures -->
+    <property name="dir.resources.tex" value="${dir.resources}/textures"/>
+    
+    <!-- The directory with the fonts -->
+    <property name="dir.resources.fonts" value="${dir.resources}/fonts"/>
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dir.dist}/libs">
+            <include name="*.jar"/>
+        </fileset>   
+    </path>     
+    
+    <!-- Creates the build directories -->
+    <target name="dir.build">
+        <mkdir dir="${dir.build}"/>
+    </target>
+    
+    <!-- Defines all the necessary tasks -->
+    <target name="tasks" unless="tasks.defined">
+        <taskdef name="assets" classpathref="java.classpath"
+            classname="com.andcreations.ae.assets.AssetsBuilderAntTask"/>
+        <taskdef name="center-launch-image" classpathref="java.classpath"
+            classname="com.andcreations.ae.launch.image.CenterLaunchImageAntTask"/>
+        <taskdef name="project-lua-test" classpathref="java.classpath"
+            classname="com.andcreations.ae.lua.test.ProjectLuaTestRunnerAntTask"/>
+        <property name="tasks.defined" value="yes"/>
+    </target>
+    
+    <!-- Removes the generated files and directories -->
+    <target name="clean">
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Builds assets -->
+    <target name="assets" depends="tasks">
+        <assets>
+            <projectdir path="${basedir}"/>
+        </assets>
+    </target>
+    
+    <!-- Runs the tests -->
+    <target name="tests" depends="tasks">
+        <project-lua-test>
+            <aedistdir path="${ae.dir.dist}"/>
+            <projectdir path="${dir.root}"/>
+        </project-lua-test>
+    </target>
+    
+    <!-- Builds the tools -->
+    <target name="tools">
+        <ant dir="${basedir}/tools" useNativeBasedir="true" inheritAll="false"
+            target="build"/>        
+    </target>
+</project>

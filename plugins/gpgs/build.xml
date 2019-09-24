@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.ae_gpgs" default="info">
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>
+    
+    <!-- Verify the envrionment variable AE_DIST is set. -->
+    <condition property="ae.dist" value="${ae.env.AE_DIST}">
+        <isset property="ae.env.AE_DIST"/>
+    </condition>
+    <fail unless="ae.dist" message="Could not determine the path to the AE distribution"/>
+
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin-types.xml"/>
+    
+    <!-- The plugin name -->
+    <property name="plugin.name" value="gpgs"/>
+
+    <!-- The Android JAR name (without the .jar suffix) -->
+    <property name="android.jar.name" value="ae_gpgs"/>    
+    
+    <!-- Android only -->
+    <property name="no.ios" value="yes"/>
+    
+    <!-- The Android dependecies put in build.gradle -->
+    <gradle-deps id="android.deps">
+        <dep value="compile 'com.google.android.gms:play-services-games:10.2.0'"/>
+    </gradle-deps>
+
+    <!-- Creates the JAR file -->
+    <target name="android.jar">
+        <echo>Creating JAR file specific to the plugin ${plugin.name}</echo>
+        <jar destfile="${dir.build.android.jar}">
+            <fileset dir="${dir.build.android.classes}">
+                <include name="**"/>
+                <exclude name="com/andcreations/plugin/**"/>
+                <exclude name="com/google/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Plugin-Name" value="${plugin.name}"/>
+            </manifest>                                 
+        </jar> 
+    </target>    
+    
+    <!-- Performs plugin-specific operations before the Android project is built -->
+    <target name="android.project.custom" unless="no.android">
+        <fetch-ae-jar/>
+    </target>
+
+    <!-- Performs plugin-specific operations before the iOS project is built -->
+    <target name="ios.project.custom" unless="no.ios">
+    </target>
+    
+    <!-- Performs plugin-specific operations before the desktop project (plugin) is built -->
+    <target name="desktop.project.custom" unless="no.desktop">
+    </target>     
+    
+    <!-- Installs Android plugin-specific files -->
+    <target name="install.android.custom" unless="no.android">
+    </target>
+    
+    <!-- Installs iOS plugin-specific files -->
+    <target name="install.ios.custom" unless="no.ios">
+    </target>
+    
+    <!-- Installs desktop plugin-specific files -->
+    <target name="install.desktop.custom" unless="no.desktop">
+    </target>        
+    
+    <!-- Uninstalls custom files from the AE distribution -->
+    <target name="uninstall.custom">
+    </target>        
+    
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin.xml"/>
+    
+    <!-- The custom fileset for Android jar -->
+    <property name="android.custom.fileset" value="yes"/>
+    <fileset dir="${dir.build.android}/bin/classes" id="android.jar.fileset">
+        <include name="**"/>
+        <exclude name="com/andcreations/dummy/**"/>
+        <exclude name="com/google/android/gms/**"/>
+    </fileset>    
+</project>

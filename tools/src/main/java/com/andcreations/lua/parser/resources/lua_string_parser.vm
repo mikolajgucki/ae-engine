@@ -1,0 +1,12 @@
+local str = '${str}'
+local len = utf8.len(str)
+local result = ''
+local index = 1
+for position,code in utf8.codes(str) do
+    result = result .. string.format('%d',code)
+    if index < len then
+        result = result .. ','
+    end
+    index = index + 1
+end
+io.write(result)

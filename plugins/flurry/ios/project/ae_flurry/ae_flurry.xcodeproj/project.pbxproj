@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40A3F8761C0E4F6000E02F52 /* FlurryLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8741C0E4F6000E02F52 /* FlurryLuaExtraLib.cpp */; };
+		40A3F8771C0E4F6000E02F52 /* lua_flurry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8751C0E4F6000E02F52 /* lua_flurry.cpp */; };
+		40A3F8791C0E4F7200E02F52 /* AEiOSLuaLibFlurry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8781C0E4F7200E02F52 /* AEiOSLuaLibFlurry.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A3F8611C0E4E7600E02F52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40A3F8631C0E4E7600E02F52 /* libae_flurry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_flurry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A3F8741C0E4F6000E02F52 /* FlurryLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlurryLuaExtraLib.cpp; path = ../../../common/src/cpp/FlurryLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40A3F8751C0E4F6000E02F52 /* lua_flurry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_flurry.cpp; path = ../../../common/src/cpp/lua_flurry.cpp; sourceTree = "<group>"; };
+		40A3F8781C0E4F7200E02F52 /* AEiOSLuaLibFlurry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEiOSLuaLibFlurry.mm; path = ../../src/AEiOSLuaLibFlurry.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A3F8601C0E4E7600E02F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A3F85A1C0E4E7600E02F52 = {
+			isa = PBXGroup;
+			children = (
+				40A3F86F1C0E4F3F00E02F52 /* ae_flurry */,
+				40A3F8641C0E4E7600E02F52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A3F8641C0E4E7600E02F52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8631C0E4E7600E02F52 /* libae_flurry.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A3F86F1C0E4F3F00E02F52 /* ae_flurry */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8721C0E4F4C00E02F52 /* ios */,
+				40A3F8701C0E4F4400E02F52 /* common */,
+			);
+			name = ae_flurry;
+			sourceTree = "<group>";
+		};
+		40A3F8701C0E4F4400E02F52 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8711C0E4F4800E02F52 /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40A3F8711C0E4F4800E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8741C0E4F6000E02F52 /* FlurryLuaExtraLib.cpp */,
+				40A3F8751C0E4F6000E02F52 /* lua_flurry.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40A3F8721C0E4F4C00E02F52 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8731C0E4F5300E02F52 /* src */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40A3F8731C0E4F5300E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8781C0E4F7200E02F52 /* AEiOSLuaLibFlurry.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A3F8621C0E4E7600E02F52 /* ae_flurry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A3F86C1C0E4E7600E02F52 /* Build configuration list for PBXNativeTarget "ae_flurry" */;
+			buildPhases = (
+				40A3F85F1C0E4E7600E02F52 /* Sources */,
+				40A3F8601C0E4E7600E02F52 /* Frameworks */,
+				40A3F8611C0E4E7600E02F52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_flurry;
+			productName = ae_flurry;
+			productReference = 40A3F8631C0E4E7600E02F52 /* libae_flurry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A3F85B1C0E4E7600E02F52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40A3F8621C0E4E7600E02F52 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 40A3F85E1C0E4E7600E02F52 /* Build configuration list for PBXProject "ae_flurry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40A3F85A1C0E4E7600E02F52;
+			productRefGroup = 40A3F8641C0E4E7600E02F52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A3F8621C0E4E7600E02F52 /* ae_flurry */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A3F85F1C0E4E7600E02F52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A3F8771C0E4F6000E02F52 /* lua_flurry.cpp in Sources */,
+				40A3F8761C0E4F6000E02F52 /* FlurryLuaExtraLib.cpp in Sources */,
+				40A3F8791C0E4F7200E02F52 /* AEiOSLuaLibFlurry.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40A3F86A1C0E4E7600E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A3F86B1C0E4E7600E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A3F86D1C0E4E7600E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/FlurrySDKiOS5dot3-master/Flurry",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40A3F86E1C0E4E7600E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/FlurrySDKiOS5dot3-master/Flurry",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A3F85E1C0E4E7600E02F52 /* Build configuration list for PBXProject "ae_flurry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F86A1C0E4E7600E02F52 /* Debug */,
+				40A3F86B1C0E4E7600E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A3F86C1C0E4E7600E02F52 /* Build configuration list for PBXNativeTarget "ae_flurry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F86D1C0E4E7600E02F52 /* Debug */,
+				40A3F86E1C0E4E7600E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A3F85B1C0E4E7600E02F52 /* Project object */;
+}

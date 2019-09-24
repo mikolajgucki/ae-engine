@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.studio" default="info">
+    <!-- The property with the SE Studio plugin -->
+    <property name="dir.studio" value="${basedir}/studio"/>
+    
+    <!-- The property with the build directory for AE Studio plugin -->
+    <property name="dir.build.studio" value="${dir.build}/studio"/>
+    
+    <!-- The property with the build directory for AE Studio plugin classes -->
+    <property name="dir.build.studio.classes" value="${dir.build.studio}/classes"/>
+    
+    <!-- The property with the AE Studio plugin installation directory -->
+    <property name="dir.install.studio" value="${dir.install}/studio"/>     
+
+    <!-- Prints info -->
+    <target name="info">
+        <echo>This file is included in another build.xml. Don't run it directly.</echo>
+    </target>
+    
+    <!-- Check if the studio directory exists -->
+    <available file="${dir.studio}" property="has.studio"/>
+    
+    <!-- -->
+    <path id="studio.classpath">
+        <fileset dir="${ae.dist}/libs">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${ae.dist}/plugins">
+            <include name="**/studio/*.jar"/>
+        </fileset>
+    </path>     
+    
+    <!-- Checks if all the necessary properties are set -->
+    <target name="studio.check" if="has.studio">
+        <fail message="AE Studio plugin class not set (property studio.plugin.class)"
+            unless="studio.plugin.class"/>
+        <fail message="AE Studio plugin package not set (property studio.plugin.package)"
+            unless="studio.plugin.package"/>
+    </target>
+    
+    <!-- Compiles the AE Studio plugin -->
+    <target name="studio.compile" if="has.studio">
+        <mkdir dir="${dir.build.studio.classes}"/>
+        <javac
+            srcdir="${dir.studio}/src"
+            destdir="${dir.build.studio.classes}"
+            classpathref="studio.classpath"
+            debug="yes"
+            debuglevel="vars,lines,source"            
+            includeantruntime="true">   
+            <compilerarg value="-Xlint:deprecation"/>   
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>           
+    </target>
+    
+    <!-- Copies the resources -->
+    <target name="studio.resources" if="has.studio">
+        <copy todir="${dir.build.studio.classes}">
+            <fileset dir="${dir.studio}/src" excludes="**/*.java">
+            </fileset>
+        </copy>
+    </target>
+
+    
+    <!-- Creates the JAR file -->
+    <target name="studio.jar" if="has.studio">
+        <tstamp>
+            <format property="build.date" pattern="yyyy-MM-dd HH:mm:ssZ"/>
+        </tstamp>
+        <jar destfile="${dir.build.studio}/${studio.plugin.package}.jar">
+            <fileset dir="${dir.build.studio.classes}">
+                <include name="**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Build-Date" value="${build.date}"/>
+                <section name="AEStudio-Plugin">
+                    <attribute name="Plugin-Class" value="${studio.plugin.package}.${studio.plugin.class}"/>
+                </section>
+            </manifest>            
+        </jar>    
+    </target>
+    
+    <!-- Builds the AE Studio plugin -->
+    <target name="studio" if="has.studio" depends="studio.check,studio.compile,studio.resources,studio.jar">
+    </target>
+    
+    <!-- Installs the AE Studio plugin -->
+    <target name="install.studio" if="has.studio" depends="clean,studio">
+        <copy todir="${dir.install.studio}" failonerror="false">        
+            <fileset dir="${dir.build.studio}" includes="*.jar"/>
+        </copy>
+    </target>
+</project>

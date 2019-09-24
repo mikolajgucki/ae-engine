@@ -1,0 +1,158 @@
+{
+    "vars":[
+        {
+            "name":"charpattern",
+            "prefix":"math.",
+            "desc":"The pattern (a string, not a function) <code>[\0-\x7F\xC2-\xF4][\x80-\xBF]*</code>, which matches exactly one UTF-8 byte sequence, assuming that the subject is a valid UTF-8 string. ",
+            "definedIn":"Lua"
+        }
+    ],    
+    "funcs":[     
+        {
+            "name":"char",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.char",
+                    "desc":"Receives zero or more integers, converts each one to its corresponding UTF-8 byte sequence and returns a string with the concatenation of all these sequences.",
+                    "params":[
+                        {
+                            "name":"...",
+                            "desc":"The integers representing the characters."
+                        }                   
+                    ]
+                }              
+            ]
+        },
+        {
+            "name":"codes",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.codes",
+                    "desc":"<p>Returns values so that the construction</p><p><code>for position,code in utf8.codes(str) do body end</code></p><p>will iterate over all characters in string <code>str</code>, with <code>position<code> being the position (in bytes) and <code>code</code> the code point of each character. It raises an error if it meets any invalid byte sequence.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }                   
+                    ]
+                }              
+            ]
+        },        
+        {
+            "name":"codepoint",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.codepoint",
+                    "desc":"Returns the codepoints (as integers) from all characters in <code>str</code> that start between byte position <code>i</code> and <code>j</code> (both included).",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },                   
+                        {
+                            "name":"i",
+                            "desc":"The position of the first byte."
+                        },                  
+                        {
+                            "name":"j",
+                            "desc":"The position of the last byte."
+                        }                   
+                    ]
+                },
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.codepoint",
+                    "desc":"Returns the codepoint (as integer) from the character in <code>str</code> at position <code>i</code>.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },                   
+                        {
+                            "name":"i",
+                            "desc":"The byte position."
+                        }                  
+                    ]
+                },
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.codepoint",
+                    "desc":"Returns the codepoints (as integers) from all characters in <code>str</code>.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name":"len",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.len",
+                    "desc":"Returns the number of UTF-8 characters in string <code>str</code> that start between positions <code>i</code> and <code>j</code> (both inclusive). If it finds any invalid byte sequence, returns a false value plus the position of the first invalid byte.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },                   
+                        {
+                            "name":"i",
+                            "desc":"The position of the first byte."
+                        },                  
+                        {
+                            "name":"j",
+                            "desc":"The position of the last byte."
+                        }                   
+                    ]
+                },
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.len",
+                    "desc":"Returns the number of UTF-8 characters in string <code>str</code>. If it finds any invalid byte sequence, returns a false value plus the position of the first invalid byte.",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        }                 
+                    ]
+                }
+            ]
+        },
+        {
+            "name":"offset",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"utf8.",
+                    "replace":"utf8.offset",
+                    "desc":"<p>Returns the position (in bytes) where the encoding of the <code>n</code>-th character of <code>str</code> (counting from position <code>i</code>) starts. A negative <code>n</code> gets characters before position <code>i</code>. The default for <code>i</code> is 1 when <code>n</code> is non-negative and <code>#s + 1</code> otherwise, so that <code>utf8.offset(str,-n)</code> gets the offset of the <code>n</code>-th character from the end of the string. If the specified character is neither in the subject nor right after its end, the function returns <code>nil</code>.</p><p>As a special case, when <code>n</code> is 0 the function returns the start of the encoding of the character that contains the <code>i</code>-th byte of <code>str</code>.</p><p>This function assumes that <code>str</code> is a valid UTF-8 string.</p>",
+                    "params":[
+                        {
+                            "name":"str",
+                            "desc":"The string."
+                        },                   
+                        {
+                            "name":"n",
+                            "desc":"The position of the character."
+                        },                  
+                        {
+                            "name":"i",
+                            "desc":"The position."
+                        }                   
+                    ]
+                }
+            ]
+        }
+    ]
+}

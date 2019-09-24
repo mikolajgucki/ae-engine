@@ -1,0 +1,62 @@
+-- @brief Contains `$id` texture data.
+-- This file was generated. Do not edit!
+local texture = {}
+
+-- @brief Texture `$id`.
+texture = {
+    -- @var
+    -- @name $modname.filename
+    -- @brief The name of the file with the texture.
+    filename = '$filename',
+    
+    -- @var
+    -- @name $modname.pixel
+    -- @brief The pixel size.
+    pixel = {
+        -- @var
+        -- @name $modname.pixel.width
+        -- @brief The pixel width.
+        width = $LuaTypes.numberToStr($tex.getPixelWidth()),
+        
+        -- @var
+        -- @name $modname.pixel.height
+        -- @brief The pixel height.
+        height = $LuaTypes.numberToStr($tex.getPixelHeight())
+    },
+#set($max = $subtextures.size() - 1)
+#foreach ($index in [0..$max])
+#set($subtex = $subtextures.get($index))
+    -- @var
+    -- @name $modname.$subtex.getId()
+    -- @brief Subtexture `$subtex.getId()` of texture `$id`.
+    $subtex.getId() = {
+        id = '$subtex.getId()',
+        filename = '$filename',
+        aspect = $LuaTypes.numberToStr($subtex.getAspect()),
+        u = $LuaTypes.numberToStr($subtex.getCoords().getU()),
+        v = $LuaTypes.numberToStr($subtex.getCoords().getV()),
+        width = $LuaTypes.numberToStr($subtex.getWidth()),
+#if($subtex.getPoints())
+        height = $LuaTypes.numberToStr($subtex.getHeight()),
+#else
+        height = $LuaTypes.numberToStr($subtex.getHeight())
+#end
+#if($subtex.getPoints())
+        points = {
+#set($pointsMax = $subtex.getPoints().size() - 1)
+#foreach ($pointIndex in [0..$pointsMax])
+#set($point = $subtex.getPoints().get($pointIndex))
+            $point.getId() = {
+                u = $LuaTypes.numberToStr($point.getCoords().getU()),
+                v = $LuaTypes.numberToStr($point.getCoords().getV())
+            }#if($pointIndex < $pointsMax),#end
+
+#end
+        }            
+#end
+    }#if($index < $max),#end
+    
+#end
+}
+
+return texture

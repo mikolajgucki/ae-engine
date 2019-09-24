@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40E3A2531DE084EA0013FD74 /* lua_unityads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A24E1DE084EA0013FD74 /* lua_unityads.cpp */; };
+		40E3A2541DE084EA0013FD74 /* LuaLibUnityAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A24F1DE084EA0013FD74 /* LuaLibUnityAds.cpp */; };
+		40E3A2551DE084EA0013FD74 /* LuaUnityAdsCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A2501DE084EA0013FD74 /* LuaUnityAdsCallback.cpp */; };
+		40E3A2561DE084EA0013FD74 /* UnityAdsCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A2511DE084EA0013FD74 /* UnityAdsCallback.cpp */; };
+		40E3A2571DE084EA0013FD74 /* UnityAdsLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A2521DE084EA0013FD74 /* UnityAdsLuaExtraLib.cpp */; };
+		40E3A25B1DE0F0D40013FD74 /* AEiOSLuaLibUnityAds.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A25A1DE0F0D40013FD74 /* AEiOSLuaLibUnityAds.mm */; };
+		40E3A2611DE0F3CF0013FD74 /* AEUnityAdsDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40E3A2601DE0F3CF0013FD74 /* AEUnityAdsDelegate.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40E3A23E1DE084380013FD74 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40E3A2401DE084380013FD74 /* libae_unityads.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_unityads.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E3A24E1DE084EA0013FD74 /* lua_unityads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_unityads.cpp; path = ../../../../common/src/cpp/lua_unityads.cpp; sourceTree = "<group>"; };
+		40E3A24F1DE084EA0013FD74 /* LuaLibUnityAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaLibUnityAds.cpp; path = ../../../../common/src/cpp/LuaLibUnityAds.cpp; sourceTree = "<group>"; };
+		40E3A2501DE084EA0013FD74 /* LuaUnityAdsCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaUnityAdsCallback.cpp; path = ../../../../common/src/cpp/LuaUnityAdsCallback.cpp; sourceTree = "<group>"; };
+		40E3A2511DE084EA0013FD74 /* UnityAdsCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnityAdsCallback.cpp; path = ../../../../common/src/cpp/UnityAdsCallback.cpp; sourceTree = "<group>"; };
+		40E3A2521DE084EA0013FD74 /* UnityAdsLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnityAdsLuaExtraLib.cpp; path = ../../../../common/src/cpp/UnityAdsLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40E3A25A1DE0F0D40013FD74 /* AEiOSLuaLibUnityAds.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEiOSLuaLibUnityAds.mm; path = ../../../src/AEiOSLuaLibUnityAds.mm; sourceTree = "<group>"; };
+		40E3A2601DE0F3CF0013FD74 /* AEUnityAdsDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEUnityAdsDelegate.mm; path = ../../../src/AEUnityAdsDelegate.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40E3A23D1DE084380013FD74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40E3A2371DE084380013FD74 = {
+			isa = PBXGroup;
+			children = (
+				40E3A2421DE084380013FD74 /* ae_unityads */,
+				40E3A2411DE084380013FD74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40E3A2411DE084380013FD74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A2401DE084380013FD74 /* libae_unityads.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40E3A2421DE084380013FD74 /* ae_unityads */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A2581DE0F0C00013FD74 /* ios */,
+				40E3A24C1DE084D30013FD74 /* common */,
+			);
+			path = ae_unityads;
+			sourceTree = "<group>";
+		};
+		40E3A24C1DE084D30013FD74 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A24D1DE084D70013FD74 /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40E3A24D1DE084D70013FD74 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A24E1DE084EA0013FD74 /* lua_unityads.cpp */,
+				40E3A24F1DE084EA0013FD74 /* LuaLibUnityAds.cpp */,
+				40E3A2501DE084EA0013FD74 /* LuaUnityAdsCallback.cpp */,
+				40E3A2511DE084EA0013FD74 /* UnityAdsCallback.cpp */,
+				40E3A2521DE084EA0013FD74 /* UnityAdsLuaExtraLib.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40E3A2581DE0F0C00013FD74 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A2591DE0F0C40013FD74 /* src */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40E3A2591DE0F0C40013FD74 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40E3A2601DE0F3CF0013FD74 /* AEUnityAdsDelegate.mm */,
+				40E3A25A1DE0F0D40013FD74 /* AEiOSLuaLibUnityAds.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40E3A23F1DE084380013FD74 /* ae_unityads */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40E3A2491DE084390013FD74 /* Build configuration list for PBXNativeTarget "ae_unityads" */;
+			buildPhases = (
+				40E3A23C1DE084380013FD74 /* Sources */,
+				40E3A23D1DE084380013FD74 /* Frameworks */,
+				40E3A23E1DE084380013FD74 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_unityads;
+			productName = ae_unityads;
+			productReference = 40E3A2401DE084380013FD74 /* libae_unityads.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40E3A2381DE084380013FD74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40E3A23F1DE084380013FD74 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 40E3A23B1DE084380013FD74 /* Build configuration list for PBXProject "ae_unityads" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40E3A2371DE084380013FD74;
+			productRefGroup = 40E3A2411DE084380013FD74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40E3A23F1DE084380013FD74 /* ae_unityads */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40E3A23C1DE084380013FD74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E3A2531DE084EA0013FD74 /* lua_unityads.cpp in Sources */,
+				40E3A2541DE084EA0013FD74 /* LuaLibUnityAds.cpp in Sources */,
+				40E3A2571DE084EA0013FD74 /* UnityAdsLuaExtraLib.cpp in Sources */,
+				40E3A2611DE0F3CF0013FD74 /* AEUnityAdsDelegate.mm in Sources */,
+				40E3A2551DE084EA0013FD74 /* LuaUnityAdsCallback.cpp in Sources */,
+				40E3A2561DE084EA0013FD74 /* UnityAdsCallback.cpp in Sources */,
+				40E3A25B1DE0F0D40013FD74 /* AEiOSLuaLibUnityAds.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40E3A2471DE084390013FD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40E3A2481DE084390013FD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40E3A24A1DE084390013FD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40E3A24B1DE084390013FD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40E3A23B1DE084380013FD74 /* Build configuration list for PBXProject "ae_unityads" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E3A2471DE084390013FD74 /* Debug */,
+				40E3A2481DE084390013FD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40E3A2491DE084390013FD74 /* Build configuration list for PBXNativeTarget "ae_unityads" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E3A24A1DE084390013FD74 /* Debug */,
+				40E3A24B1DE084390013FD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40E3A2381DE084380013FD74 /* Project object */;
+}

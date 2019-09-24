@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.headers">
+    <!-- Prints info on available targets -->
+    <target name="headers.info">
+        <echo>  headers.engine        Copies the engine header files (*.h) to the distribution</echo>
+        <echo>  headers.libs          Copies the common libraries header files (*.h) to the distribution</echo>
+    </target>
+    
+    <!-- The distribution directory with the header files -->
+    <property name="dir.dist.src" value="${abs.dir.dist}/src"/>    
+    
+    <!-- The distribution directory with the libraries header files -->
+    <property name="dir.dist.include.libs" value="${abs.dir.dist}/libs"/>    
+
+    <!-- Copies the engine header files (*.h) to the distribution -->
+    <target name="headers.engine">
+        <copy todir="${dir.dist.src}/ae/include" flatten="yes">
+            <fileset dir="${dir.root}/engine/common" includes="**/include/*.h"/>
+            <fileset dir="${dir.root}/engine/sdl2" includes="**/include/*.h"/>
+        </copy>
+    </target>
+    
+    <!-- Copies the common libraries header files (*.h) to the distribution -->
+    <target name="headers.libs">
+        <copy todir="${dir.dist.src}/lua/include" flatten="yes">
+            <fileset dir="${dir.libs.build}">
+                <include name="lua/src/*.h"/>
+                <include name="lua/src/*.hpp"/>
+            </fileset>
+        </copy>
+        <copy todir="${dir.dist.src}/SDL2/include" flatten="yes">
+            <fileset dir="${dir.libs.build}">
+                <include name="SDL2/include/*.h"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- Copies the header files (*.h,*.hpp) to the distribution -->
+    <target name="headers" depends="libs.unzip,headers.engine,headers.libs">
+    </target>
+</project>

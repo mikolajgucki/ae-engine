@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.ae_adcolony" default="info">
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>
+    
+    <!-- Verify the envrionment variable AE_DIST is set. -->
+    <condition property="ae.dist" value="${ae.env.AE_DIST}">
+        <isset property="ae.env.AE_DIST"/>
+    </condition>
+    <fail unless="ae.dist" message="Could not determine the path to the AE distribution"/>
+    
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin-types.xml"/>    
+    
+    <!-- The plugin name -->
+    <property name="plugin.name" value="adcolony"/>
+    
+    <!-- The Android JAR name (without the .jar suffix) -->
+    <property name="android.jar.name" value="ae_adcolony"/>    
+    
+    <!-- The Android dependecies put in build.gradle -->
+    <gradle-deps id="android.deps">
+    </gradle-deps>        
+    
+    <!-- Performs plugin-specific operations before the Android project is built -->
+    <target name="android.project.custom" unless="no.android">
+        <unzip src="${dir.libs}/AdColony-Android-SDK-3-master.zip" dest="${dir.build.android}/libs">
+            <patternset>
+                <include name="AdColony-Android-SDK-3-master/Library/adcolony.jar"/>
+            </patternset>
+            <mapper type="flatten"/>
+        </unzip>
+        <fetch-ae-jar/>
+    </target>
+
+    <!-- Performs plugin-specific operations before the iOS project is built -->
+    <target name="ios.project.custom" unless="no.ios">
+        <unzip src="${dir.libs}/AdColony-iOS-SDK-3-3.0.4.1.zip" dest="${dir.build.ios.libs}">
+            <patternset>
+                <include name="AdColony-iOS-SDK-3-3.0.4.1/AdColony.framework/Versions/A/**"/>
+            </patternset>
+        </unzip>    
+        <!-- We get rid of the references as it didn't work directly right after unzipping. -->        
+        <move file="${dir.build.ios.libs}/AdColony-iOS-SDK-3-3.0.4.1/AdColony.framework/Versions/A/AdColony"
+            tofile="${dir.build.ios.libs}/AdColony-iOS-SDK-3-3.0.4.1/AdColony.framework/AdColony"/>
+        <move file="${dir.build.ios.libs}/AdColony-iOS-SDK-3-3.0.4.1/AdColony.framework/Versions/A/Headers"
+            tofile="${dir.build.ios.libs}/AdColony-iOS-SDK-3-3.0.4.1/AdColony.framework/Headers"/>        
+    </target>
+    
+    <!-- Performs plugin-specific operations before the desktop project (plugin) is built -->
+    <target name="desktop.project.custom" unless="no.desktop">
+    </target>      
+    
+    <!-- Installs Android plugin-specific files -->
+    <target name="install.android.custom" unless="no.android">
+        <copy todir="${dir.install.android}/libs">        
+            <fileset dir="${dir.build.android}/libs" includes="adcolony.jar"/>
+        </copy>         
+        <unzip src="${dir.libs}/AdColony-Android-SDK-3-master.zip" dest="${dir.install.android}/libs/jni/armeabi">
+            <patternset>
+                <include name="AdColony-Android-SDK-3-master/Library/armeabi/*.so"/>
+            </patternset>
+            <mapper type="flatten"/>
+        </unzip>
+        <unzip src="${dir.libs}/AdColony-Android-SDK-3-master.zip" dest="${dir.install.android}/libs/jni/armeabi-v7a">
+            <patternset>
+                <include name="AdColony-Android-SDK-3-master/Library/armeabi-v7a/*.so"/>
+            </patternset>
+            <mapper type="flatten"/>
+        </unzip>
+    </target>
+    
+    <!-- Installs iOS plugin-specific files -->
+    <target name="install.ios.custom" unless="no.ios">
+        <copy todir="${dir.install.ios}/libs">        
+            <fileset dir="${dir.build.ios.libs}/AdColony-iOS-SDK-3-3.0.4.1" includes="AdColony.framework/**/*"/>
+        </copy>         
+    </target>
+    
+    <!-- Installs desktop plugin-specific files -->
+    <target name="install.desktop.custom" unless="no.desktop">
+    </target>    
+    
+    <!-- Uninstalls custom files from the AE distribution -->
+    <target name="uninstall.custom">
+    </target>    
+    
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin.xml"/>
+</project>

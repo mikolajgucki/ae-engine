@@ -1,0 +1,489 @@
+{
+    "vars":[
+        {
+            "name":"pi",
+            "prefix":"math.",
+            "desc":"The value of <i>pi</pi>.",
+            "definedIn":"Lua"
+        },
+        {
+            "name":"huge",
+            "prefix":"math.",
+            "desc":"The value <code>HUGE_VAL</code>, a value larger than or equal to any other numerical value.",
+            "definedIn":"Lua"
+        }
+    ],
+    "funcs":[     
+        {
+            "name":"abs",
+            "desc":"Returns the absolute value of <code>x</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.abs"
+                }
+            ]
+        },
+        {
+            "name":"acos",
+            "desc":"Returns the arc cosine of <code>x</code> (in radians).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.acos"
+                }
+            ]
+        },
+        {
+            "name":"asin",
+            "desc":"Returns the arc sine of <code>x</code> (in radians).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],                
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.asin"
+                }
+            ]
+        },
+        {
+            "name":"atan",
+            "desc":"Returns the arc tangent of <code>y/x</code> (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of <code>x</code> being zero.). The default value for <code>x</code> is 1, so that the call <code>math.atan(y)</code> returns the arc tangent of <code>y</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                },
+                {
+                    "name":"y",
+                    "desc":"The <code>y</code> value."
+                }
+            ],                
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x,y",
+                    "replace":"math.atan2"
+                }
+            ]
+        },
+        {
+            "name":"ceil",
+            "desc":"Returns the smallest integer larger than or equal to <code>x</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.ceil"
+                }
+            ]
+        },
+        {
+            "name":"cos",
+            "desc":"Returns the cosine of <code>x</code> (assumed to be in radians).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],             
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.cos"
+                }
+            ]
+        },
+        {
+            "name":"deg",
+            "desc":"Returns the angle <code>x</code> (given in radians) in degrees.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],             
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.deg"
+                }
+            ]
+        },
+        {
+            "name":"exp",
+            "desc":"Returns the value <i>e<sup>x</sup></i>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.exp"
+                }
+            ]
+        },
+        {
+            "name":"floor",
+            "desc":"Returns the largest integer smaller than or equal to <code>x</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.floor"
+                }
+            ]
+        },
+        {
+            "name":"fmod",
+            "desc":"Returns the remainder of the division of <code>x</code> by <code>y</code> that rounds the quotient towards zero.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                },
+                {
+                    "name":"y",
+                    "desc":"The <code>y</code> value."
+                }
+            ],             
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x,y",
+                    "replace":"math.fmod"
+                }
+            ]
+        },
+        {
+            "name":"log",
+            "definedIn":"Lua",           
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.log",
+                    "desc":"Returns the natural logarithm of <code>x</code>.",
+                    "params":[
+                        {
+                            "name":"x",
+                            "desc":"The <code>x</code> value."
+                        }
+                    ]                     
+                },
+                {
+                    "prefix":"math.",
+                    "args":"x,base",
+                    "replace":"math.log",
+                    "desc":"Returns the logarithm of <code>x</code> in the given <code>base</code>.",
+                    "params":[
+                        {
+                            "name":"x",
+                            "desc":"The <code>x</code> value."
+                        },
+                        {
+                            "name":"base",
+                            "desc":"The base."
+                        }
+                    ]                    
+                }
+            ]
+        },
+        {
+            "name":"max",
+            "desc":"Returns the maximum value among its arguments.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The first value."
+                },
+                {
+                    "name":"...",
+                    "desc":"The other values."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x,...",
+                    "replace":"math.max"
+                }
+            ]
+        },
+        {
+            "name":"min",
+            "desc":"Returns the minimum value among its arguments.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The first value."
+                },
+                {
+                    "name":"...",
+                    "desc":"The other values."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x,...",
+                    "replace":"math.min"
+                }
+            ]
+        },
+        {
+            "name":"modf",
+            "desc":"Returns two numbers, the integral part of <code>x</code> and the fractional part of <code>x</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.modf"
+                }
+            ]
+        },
+        {
+            "name":"rad",
+            "desc":"Returns the angle <code>x</code> (given in degrees) in radians.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> value."
+                }
+            ],
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.rad"
+                }
+            ]
+        },
+        {
+            "name":"random",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "replace":"math.random",
+                    "desc":"Returns a uniform pseudo-random real number in the range <i>[0,1)</i>."
+                },
+                {
+                    "prefix":"math.",
+                    "args":"m",
+                    "replace":"math.random",
+                    "desc":"Returns a uniform pseudo-random integer in the range <i>[1, <code>m</code>]</i>.",
+                    "params":[
+                        {
+                            "name":"m",
+                            "desc":"The maximum number."
+                        }
+                    ]                    
+                },
+                {
+                    "prefix":"math.",
+                    "args":"m,n",
+                    "replace":"math.random",
+                    "desc":"Returns a uniform pseudo-random integer in the range <i>[<code>m</code>, <code>n</code>]</i>.",
+                    "params":[
+                        {
+                            "name":"m",
+                            "desc":"The minimum number."
+                        },
+                        {
+                            "name":"n",
+                            "desc":"The maximum number."
+                        }
+                    ]
+                }
+            ]
+        },        
+        {
+            "name":"randomseed",
+            "desc":"Sets <code>x</code> as the \"seed\" for the pseudo-random generator: equal seeds produce equal sequences of numbers.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.randomseed"
+                }
+            ]
+        }   ,
+        {
+            "name":"sin",
+            "desc":"Returns the sine of <code>x</code> (assumed to be in radians).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.sin"
+                }
+            ]
+        },
+        {
+            "name":"sqrt",
+            "desc":"Returns the square root of <code>x</code>. (You can also use the expression <code>x^0.5</code> to compute this value.)",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.sqrt"
+                }
+            ]
+        },
+        {
+            "name":"tan",
+            "desc":"Returns the tangent of <code>x</code> (assumed to be in radians).",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.tan"
+                }
+            ]
+        },
+        {
+            "name":"tointeger",
+            "desc":"If the value <code>x</code> is convertible to an integer, returns that integer. Otherwise, returns <code>nil</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.tointeger"
+                }
+            ]
+        },
+        {
+            "name":"type",
+            "desc":"Returns <code>integer</code> if <code>x is an integer, <code>float</code> if it is a float, or <code>nil</code> if <code>x</code> is not a number.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"x",
+                    "desc":"The <code>x</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.type"
+                }
+            ]
+        },
+        {
+            "name":"ult",
+            "desc":"Returns a boolean, <code>true</code> if integer <code>m</code> is below integer <code>n</code> when they are compared as unsigned integers.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"m",
+                    "desc":"The <code>m</code> number."
+                },
+                {
+                    "name":"n",
+                    "desc":"The <code>n</code> number."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"math.",
+                    "args":"x",
+                    "replace":"math.ult"
+                }
+            ]
+        }
+    ]
+}

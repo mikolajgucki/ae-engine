@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>AndEngine to-do list</title>
+    <style>
+        body {
+           font-family: Helvetica, arial, sans-serif;
+           font-size: 13px;
+           background-color: white;
+           margin-left: 8em;
+           margin-right:8em
+        }      
+        
+        .header {
+            font-size: 20px;
+        }
+        
+        .todo {
+            margin-top: 1em;
+        }
+        
+        .filename {
+            font-size: 11px;
+            color: #808080;
+            padding-top: 0.25em;
+        }
+        
+        .desc {
+        }
+    </style>
+</head>
+<body>
+    <div class="header">To-do list</div>
+
+#foreach ($todo in $todos)
+    <div class="todo">
+        <div class="filename">$todo.getFilename():$todo.getLineNo()</div>
+        <div class="desc">$todo.getDesc()</div>
+    </div>
+#end
+</body>

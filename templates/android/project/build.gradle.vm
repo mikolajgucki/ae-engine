@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.0'
+    }
+}
+apply plugin: 'android'
+
+android {
+    compileSdkVersion '${compileSdkVersion}'
+    buildToolsVersion '25.0.1'
+
+    defaultConfig {
+        applicationId "${applicationId}"
+        minSdkVersion ${minSdkVersion}
+        targetSdkVersion ${targetSdkVersion}
+        versionCode ${versionCode}
+        versionName "${versionName}"
+#if (${nativeCode})
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+#if (${cmakeArgs})
+                arguments ${cmakeArgs}
+#end
+            }
+        }        
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
+#end
+    }    
+    
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }    
+#if (${nativeCode})
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+#end
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+#foreach ($dep in $dependencies)
+    ${dep}
+#end
+}
+
+allprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+}

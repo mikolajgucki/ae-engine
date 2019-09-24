@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<project name="ae.android.project" default="info">
+    <!-- Makes sure necessary properties are set -->
+    <fail message="Missing property ae.dist" unless="ae.dist"/>
+    <fail message="Missing property ae.project.dir" unless="ae.project.dir"/>
+    <fail message="Missing property ae.android.project.dir" unless="ae.android.project.dir"/>
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dist}/libs">
+            <include name="*.jar"/>
+        </fileset>
+    </path>     
+    
+    <!-- Updates Android project -->
+    <target name="ae.update">
+        <taskdef name="update-android" classpathref="java.classpath"
+            classname="com.andcreations.ae.sdk.update.android.UpdateAndroidProjectAntTask"/>            
+        <update-android>
+            <aedistdir path="${ae.dist}"/>
+            <projectdir path="${ae.project.dir}"/>
+            <androidprojectdir path="${ae.android.project.dir}"/>        
+        </update-android>
+    </target>
+    
+    <!-- Cleans Android project -->
+    <target name="ae.clean">
+        <taskdef name="clean-android" classpathref="java.classpath"
+            classname="com.andcreations.ae.sdk.update.android.CleanAndroidProjectAntTask"/>            
+        <clean-android>
+            <aedistdir path="${ae.dist}"/>
+            <projectdir path="${ae.project.dir}"/>
+            <androidprojectdir path="${ae.android.project.dir}"/>        
+        </clean-android>
+    </target>
+</project>

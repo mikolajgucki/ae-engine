@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.doc" default="info">
+    <!-- The property with the build directory for documentation -->
+    <property name="dir.build.doc" value="${dir.build}/doc"/>
+    
+    <!-- The property with the documentation installation directory -->
+    <property name="dir.install.doc" value="${dir.install}/doc"/>     
+
+    <!-- Prints info -->
+    <target name="info">
+        <echo>This file is included in another build.xml. Don't run it directly.</echo>
+    </target>
+    
+    <!-- Generates the API documents -->    
+    <target name="doc.api">
+        <taskdef name="luacapi" classpathref="java.classpath"
+            classname="com.andcreations.ae.doc.api.LuaCApiAntTask"/>
+        <luacapi>
+            <dstfile path="${dir.build.doc}/api/lua-c-api.json"/>
+            <srcfiles dir="${basedir}">
+                <include name="**/*.c"/>
+                <include name="**/*.cpp"/>
+            </srcfiles>
+        </luacapi>        
+    </target>
+    
+    <!-- Installs the documentation -->
+    <target name="install.doc" depends="clean,doc">
+        <copy todir="${dir.install.doc}" failonerror="false">        
+            <fileset dir="${dir.build.doc}" includes="**/*"/>
+        </copy>    
+    </target>
+    
+    <!-- Generates the documentation -->
+    <target name="doc" depends="doc.api">
+    </target>
+</project>

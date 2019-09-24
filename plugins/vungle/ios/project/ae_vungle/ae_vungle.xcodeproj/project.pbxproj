@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40A3F8521C0E4D9900E02F52 /* lua_vungle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F84E1C0E4D9900E02F52 /* lua_vungle.cpp */; };
+		40A3F8531C0E4D9900E02F52 /* LuaLibVungle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F84F1C0E4D9900E02F52 /* LuaLibVungle.cpp */; };
+		40A3F8541C0E4D9900E02F52 /* LuaVungleCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8501C0E4D9900E02F52 /* LuaVungleCallback.cpp */; };
+		40A3F8551C0E4D9900E02F52 /* VungleLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8511C0E4D9900E02F52 /* VungleLuaExtraLib.cpp */; };
+		40A3F8581C0E4DA400E02F52 /* AEiOSLuaLibVungle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8561C0E4DA400E02F52 /* AEiOSLuaLibVungle.mm */; };
+		40A3F8591C0E4DA400E02F52 /* AEVungleSDKDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F8571C0E4DA400E02F52 /* AEVungleSDKDelegate.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A3F8391C0E4C9700E02F52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40739B4E1DCA884B00734F8D /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../../../build/ios/libs/VungleSDK.embeddedframework/VungleSDK.framework; sourceTree = "<group>"; };
+		40A3F83B1C0E4C9700E02F52 /* libae_vungle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_vungle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A3F84E1C0E4D9900E02F52 /* lua_vungle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_vungle.cpp; path = ../../../common/src/cpp/lua_vungle.cpp; sourceTree = "<group>"; };
+		40A3F84F1C0E4D9900E02F52 /* LuaLibVungle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaLibVungle.cpp; path = ../../../common/src/cpp/LuaLibVungle.cpp; sourceTree = "<group>"; };
+		40A3F8501C0E4D9900E02F52 /* LuaVungleCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaVungleCallback.cpp; path = ../../../common/src/cpp/LuaVungleCallback.cpp; sourceTree = "<group>"; };
+		40A3F8511C0E4D9900E02F52 /* VungleLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VungleLuaExtraLib.cpp; path = ../../../common/src/cpp/VungleLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40A3F8561C0E4DA400E02F52 /* AEiOSLuaLibVungle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEiOSLuaLibVungle.mm; path = ../../src/AEiOSLuaLibVungle.mm; sourceTree = "<group>"; };
+		40A3F8571C0E4DA400E02F52 /* AEVungleSDKDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEVungleSDKDelegate.mm; path = ../../src/AEVungleSDKDelegate.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A3F8381C0E4C9700E02F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A3F8321C0E4C9700E02F52 = {
+			isa = PBXGroup;
+			children = (
+				40739B4E1DCA884B00734F8D /* VungleSDK.framework */,
+				40A3F8491C0E4D7600E02F52 /* ae_vungle */,
+				40A3F83C1C0E4C9700E02F52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A3F83C1C0E4C9700E02F52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F83B1C0E4C9700E02F52 /* libae_vungle.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A3F8491C0E4D7600E02F52 /* ae_vungle */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F84C1C0E4D8400E02F52 /* ios */,
+				40A3F84A1C0E4D7C00E02F52 /* common */,
+			);
+			name = ae_vungle;
+			sourceTree = "<group>";
+		};
+		40A3F84A1C0E4D7C00E02F52 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F84B1C0E4D8000E02F52 /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40A3F84B1C0E4D8000E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F84E1C0E4D9900E02F52 /* lua_vungle.cpp */,
+				40A3F84F1C0E4D9900E02F52 /* LuaLibVungle.cpp */,
+				40A3F8501C0E4D9900E02F52 /* LuaVungleCallback.cpp */,
+				40A3F8511C0E4D9900E02F52 /* VungleLuaExtraLib.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40A3F84C1C0E4D8400E02F52 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F84D1C0E4D8900E02F52 /* src */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40A3F84D1C0E4D8900E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F8561C0E4DA400E02F52 /* AEiOSLuaLibVungle.mm */,
+				40A3F8571C0E4DA400E02F52 /* AEVungleSDKDelegate.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A3F83A1C0E4C9700E02F52 /* ae_vungle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A3F8441C0E4C9700E02F52 /* Build configuration list for PBXNativeTarget "ae_vungle" */;
+			buildPhases = (
+				40A3F8371C0E4C9700E02F52 /* Sources */,
+				40A3F8381C0E4C9700E02F52 /* Frameworks */,
+				40A3F8391C0E4C9700E02F52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_vungle;
+			productName = ae_vungle;
+			productReference = 40A3F83B1C0E4C9700E02F52 /* libae_vungle.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A3F8331C0E4C9700E02F52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40A3F83A1C0E4C9700E02F52 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 40A3F8361C0E4C9700E02F52 /* Build configuration list for PBXProject "ae_vungle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40A3F8321C0E4C9700E02F52;
+			productRefGroup = 40A3F83C1C0E4C9700E02F52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A3F83A1C0E4C9700E02F52 /* ae_vungle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A3F8371C0E4C9700E02F52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A3F8551C0E4D9900E02F52 /* VungleLuaExtraLib.cpp in Sources */,
+				40A3F8521C0E4D9900E02F52 /* lua_vungle.cpp in Sources */,
+				40A3F8541C0E4D9900E02F52 /* LuaVungleCallback.cpp in Sources */,
+				40A3F8581C0E4DA400E02F52 /* AEiOSLuaLibVungle.mm in Sources */,
+				40A3F8591C0E4DA400E02F52 /* AEVungleSDKDelegate.mm in Sources */,
+				40A3F8531C0E4D9900E02F52 /* LuaLibVungle.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40A3F8421C0E4C9700E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A3F8431C0E4C9700E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A3F8451C0E4C9700E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/VungleSDK.embeddedframework";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40A3F8461C0E4C9700E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				FRAMEWORK_SEARCH_PATHS = "$(PLUGIN_DIR)/build/ios/libs/VungleSDK.embeddedframework";
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(AE_DIST)/src/SDL2/include",
+					"$(AE_DIST)/ios/src/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A3F8361C0E4C9700E02F52 /* Build configuration list for PBXProject "ae_vungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F8421C0E4C9700E02F52 /* Debug */,
+				40A3F8431C0E4C9700E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A3F8441C0E4C9700E02F52 /* Build configuration list for PBXNativeTarget "ae_vungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F8451C0E4C9700E02F52 /* Debug */,
+				40A3F8461C0E4C9700E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A3F8331C0E4C9700E02F52 /* Project object */;
+}

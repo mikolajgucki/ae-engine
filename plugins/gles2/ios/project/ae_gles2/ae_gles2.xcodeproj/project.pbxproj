@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40B2BA421D0DFD7E0064691C /* GLES2LuaEngineDisplayListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA311D0DFD7E0064691C /* GLES2LuaEngineDisplayListener.cpp */; };
+		40B2BA431D0DFD7E0064691C /* GLES2LuaEnginePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA321D0DFD7E0064691C /* GLES2LuaEnginePlugin.cpp */; };
+		40B2BA441D0DFD7E0064691C /* GLESError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA331D0DFD7E0064691C /* GLESError.cpp */; };
+		40B2BA451D0DFD7E0064691C /* GLESTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA341D0DFD7E0064691C /* GLESTexture.cpp */; };
+		40B2BA461D0DFD7E0064691C /* GLESTextureFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA351D0DFD7E0064691C /* GLESTextureFactory.cpp */; };
+		40B2BA471D0DFD7E0064691C /* GLSLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA361D0DFD7E0064691C /* GLSLProgram.cpp */; };
+		40B2BA481D0DFD7E0064691C /* GLSLShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA371D0DFD7E0064691C /* GLSLShader.cpp */; };
+		40B2BA491D0DFD7E0064691C /* lua_glerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA381D0DFD7E0064691C /* lua_glerror.cpp */; };
+		40B2BA4A1D0DFD7E0064691C /* lua_gles2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA391D0DFD7E0064691C /* lua_gles2.cpp */; };
+		40B2BA4B1D0DFD7E0064691C /* luaGLESTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3A1D0DFD7E0064691C /* luaGLESTexture.cpp */; };
+		40B2BA4C1D0DFD7E0064691C /* luaGLSLAttrib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3B1D0DFD7E0064691C /* luaGLSLAttrib.cpp */; };
+		40B2BA4D1D0DFD7E0064691C /* luaGLSLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3C1D0DFD7E0064691C /* luaGLSLProgram.cpp */; };
+		40B2BA4E1D0DFD7E0064691C /* luaGLSLShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3D1D0DFD7E0064691C /* luaGLSLShader.cpp */; };
+		40B2BA4F1D0DFD7E0064691C /* luaGLSLUniform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3E1D0DFD7E0064691C /* luaGLSLUniform.cpp */; };
+		40B2BA501D0DFD7E0064691C /* luaVertexBufferData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA3F1D0DFD7E0064691C /* luaVertexBufferData.cpp */; };
+		40B2BA511D0DFD7E0064691C /* luaVertexBufferObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA401D0DFD7E0064691C /* luaVertexBufferObject.cpp */; };
+		40B2BA521D0DFD7E0064691C /* VertexBufferData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B2BA411D0DFD7E0064691C /* VertexBufferData.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40B2BA1F1D0DFA1C0064691C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40B2BA211D0DFA1C0064691C /* libae_gles2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_gles2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B2BA311D0DFD7E0064691C /* GLES2LuaEngineDisplayListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2LuaEngineDisplayListener.cpp; path = ../../../common/src/cpp/GLES2LuaEngineDisplayListener.cpp; sourceTree = "<group>"; };
+		40B2BA321D0DFD7E0064691C /* GLES2LuaEnginePlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLES2LuaEnginePlugin.cpp; path = ../../../common/src/cpp/GLES2LuaEnginePlugin.cpp; sourceTree = "<group>"; };
+		40B2BA331D0DFD7E0064691C /* GLESError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLESError.cpp; path = ../../../common/src/cpp/GLESError.cpp; sourceTree = "<group>"; };
+		40B2BA341D0DFD7E0064691C /* GLESTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLESTexture.cpp; path = ../../../common/src/cpp/GLESTexture.cpp; sourceTree = "<group>"; };
+		40B2BA351D0DFD7E0064691C /* GLESTextureFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLESTextureFactory.cpp; path = ../../../common/src/cpp/GLESTextureFactory.cpp; sourceTree = "<group>"; };
+		40B2BA361D0DFD7E0064691C /* GLSLProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLSLProgram.cpp; path = ../../../common/src/cpp/GLSLProgram.cpp; sourceTree = "<group>"; };
+		40B2BA371D0DFD7E0064691C /* GLSLShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLSLShader.cpp; path = ../../../common/src/cpp/GLSLShader.cpp; sourceTree = "<group>"; };
+		40B2BA381D0DFD7E0064691C /* lua_glerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_glerror.cpp; path = ../../../common/src/cpp/lua_glerror.cpp; sourceTree = "<group>"; };
+		40B2BA391D0DFD7E0064691C /* lua_gles2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_gles2.cpp; path = ../../../common/src/cpp/lua_gles2.cpp; sourceTree = "<group>"; };
+		40B2BA3A1D0DFD7E0064691C /* luaGLESTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaGLESTexture.cpp; path = ../../../common/src/cpp/luaGLESTexture.cpp; sourceTree = "<group>"; };
+		40B2BA3B1D0DFD7E0064691C /* luaGLSLAttrib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaGLSLAttrib.cpp; path = ../../../common/src/cpp/luaGLSLAttrib.cpp; sourceTree = "<group>"; };
+		40B2BA3C1D0DFD7E0064691C /* luaGLSLProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaGLSLProgram.cpp; path = ../../../common/src/cpp/luaGLSLProgram.cpp; sourceTree = "<group>"; };
+		40B2BA3D1D0DFD7E0064691C /* luaGLSLShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaGLSLShader.cpp; path = ../../../common/src/cpp/luaGLSLShader.cpp; sourceTree = "<group>"; };
+		40B2BA3E1D0DFD7E0064691C /* luaGLSLUniform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaGLSLUniform.cpp; path = ../../../common/src/cpp/luaGLSLUniform.cpp; sourceTree = "<group>"; };
+		40B2BA3F1D0DFD7E0064691C /* luaVertexBufferData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaVertexBufferData.cpp; path = ../../../common/src/cpp/luaVertexBufferData.cpp; sourceTree = "<group>"; };
+		40B2BA401D0DFD7E0064691C /* luaVertexBufferObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaVertexBufferObject.cpp; path = ../../../common/src/cpp/luaVertexBufferObject.cpp; sourceTree = "<group>"; };
+		40B2BA411D0DFD7E0064691C /* VertexBufferData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBufferData.cpp; path = ../../../common/src/cpp/VertexBufferData.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40B2BA1E1D0DFA1C0064691C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40B2BA181D0DFA1C0064691C = {
+			isa = PBXGroup;
+			children = (
+				40B2BA2D1D0DFCF10064691C /* ae_gles2 */,
+				40B2BA221D0DFA1C0064691C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40B2BA221D0DFA1C0064691C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA211D0DFA1C0064691C /* libae_gles2.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40B2BA2D1D0DFCF10064691C /* ae_gles2 */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA2F1D0DFD030064691C /* common */,
+				40B2BA2E1D0DFCFF0064691C /* ios */,
+			);
+			name = ae_gles2;
+			sourceTree = "<group>";
+		};
+		40B2BA2E1D0DFCFF0064691C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40B2BA2F1D0DFD030064691C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA301D0DFD070064691C /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40B2BA301D0DFD070064691C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40B2BA311D0DFD7E0064691C /* GLES2LuaEngineDisplayListener.cpp */,
+				40B2BA321D0DFD7E0064691C /* GLES2LuaEnginePlugin.cpp */,
+				40B2BA331D0DFD7E0064691C /* GLESError.cpp */,
+				40B2BA341D0DFD7E0064691C /* GLESTexture.cpp */,
+				40B2BA351D0DFD7E0064691C /* GLESTextureFactory.cpp */,
+				40B2BA361D0DFD7E0064691C /* GLSLProgram.cpp */,
+				40B2BA371D0DFD7E0064691C /* GLSLShader.cpp */,
+				40B2BA381D0DFD7E0064691C /* lua_glerror.cpp */,
+				40B2BA391D0DFD7E0064691C /* lua_gles2.cpp */,
+				40B2BA3A1D0DFD7E0064691C /* luaGLESTexture.cpp */,
+				40B2BA3B1D0DFD7E0064691C /* luaGLSLAttrib.cpp */,
+				40B2BA3C1D0DFD7E0064691C /* luaGLSLProgram.cpp */,
+				40B2BA3D1D0DFD7E0064691C /* luaGLSLShader.cpp */,
+				40B2BA3E1D0DFD7E0064691C /* luaGLSLUniform.cpp */,
+				40B2BA3F1D0DFD7E0064691C /* luaVertexBufferData.cpp */,
+				40B2BA401D0DFD7E0064691C /* luaVertexBufferObject.cpp */,
+				40B2BA411D0DFD7E0064691C /* VertexBufferData.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40B2BA201D0DFA1C0064691C /* ae_gles2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40B2BA2A1D0DFA1D0064691C /* Build configuration list for PBXNativeTarget "ae_gles2" */;
+			buildPhases = (
+				40B2BA1D1D0DFA1C0064691C /* Sources */,
+				40B2BA1E1D0DFA1C0064691C /* Frameworks */,
+				40B2BA1F1D0DFA1C0064691C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_gles2;
+			productName = ae_gles2;
+			productReference = 40B2BA211D0DFA1C0064691C /* libae_gles2.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40B2BA191D0DFA1C0064691C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40B2BA201D0DFA1C0064691C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 40B2BA1C1D0DFA1C0064691C /* Build configuration list for PBXProject "ae_gles2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40B2BA181D0DFA1C0064691C;
+			productRefGroup = 40B2BA221D0DFA1C0064691C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40B2BA201D0DFA1C0064691C /* ae_gles2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40B2BA1D1D0DFA1C0064691C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B2BA451D0DFD7E0064691C /* GLESTexture.cpp in Sources */,
+				40B2BA4F1D0DFD7E0064691C /* luaGLSLUniform.cpp in Sources */,
+				40B2BA461D0DFD7E0064691C /* GLESTextureFactory.cpp in Sources */,
+				40B2BA521D0DFD7E0064691C /* VertexBufferData.cpp in Sources */,
+				40B2BA4A1D0DFD7E0064691C /* lua_gles2.cpp in Sources */,
+				40B2BA471D0DFD7E0064691C /* GLSLProgram.cpp in Sources */,
+				40B2BA441D0DFD7E0064691C /* GLESError.cpp in Sources */,
+				40B2BA4B1D0DFD7E0064691C /* luaGLESTexture.cpp in Sources */,
+				40B2BA4C1D0DFD7E0064691C /* luaGLSLAttrib.cpp in Sources */,
+				40B2BA421D0DFD7E0064691C /* GLES2LuaEngineDisplayListener.cpp in Sources */,
+				40B2BA4E1D0DFD7E0064691C /* luaGLSLShader.cpp in Sources */,
+				40B2BA481D0DFD7E0064691C /* GLSLShader.cpp in Sources */,
+				40B2BA511D0DFD7E0064691C /* luaVertexBufferObject.cpp in Sources */,
+				40B2BA491D0DFD7E0064691C /* lua_glerror.cpp in Sources */,
+				40B2BA431D0DFD7E0064691C /* GLES2LuaEnginePlugin.cpp in Sources */,
+				40B2BA4D1D0DFD7E0064691C /* luaGLSLProgram.cpp in Sources */,
+				40B2BA501D0DFD7E0064691C /* luaVertexBufferData.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40B2BA281D0DFA1D0064691C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40B2BA291D0DFA1D0064691C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40B2BA2B1D0DFA1D0064691C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40B2BA2C1D0DFA1D0064691C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40B2BA1C1D0DFA1C0064691C /* Build configuration list for PBXProject "ae_gles2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B2BA281D0DFA1D0064691C /* Debug */,
+				40B2BA291D0DFA1D0064691C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40B2BA2A1D0DFA1D0064691C /* Build configuration list for PBXNativeTarget "ae_gles2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B2BA2B1D0DFA1D0064691C /* Debug */,
+				40B2BA2C1D0DFA1D0064691C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40B2BA191D0DFA1C0064691C /* Project object */;
+}

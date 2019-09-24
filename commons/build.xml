@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<project name="ae.commons" default="info">
+    <!-- The root directory of the entire AndEngine project -->
+    <property name="dir.root" value="${basedir}/.."/>
+    
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="src"/>
+    
+    <!-- The directories the the build files -->
+    <property name="dir.build" value="build"/>    
+
+    <!-- The directory with libraries -->
+    <property name="dir.libs" value="${dir.root}/libs"/>
+
+    <!-- The directory with Java libraries -->
+    <property name="dir.libs.java" value="${dir.libs}/java"/>    
+    
+    <!-- Java related build -->
+    <import file="${basedir}/build-java.xml"/>
+
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${dir.libs.java}">
+            <include name="*.jar"/>
+        </fileset>     
+    </path>
+    
+    <!-- Prints info on available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  compile    Compiles the sources</echo>
+        <echo>  clean      Removes the build directory</echo>
+        <echo>  build      Builds the project</echo>
+        <antcall target="java.info"/>
+    </target>
+    
+    <!-- Compiles the sources -->
+    <target name="compile" depends="java.compile">
+    </target>
+    
+    <!-- Removes the build directory -->
+    <target name="clean">    
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Builds the project -->
+    <target name="build" depends="compile,java.jar">
+    </target>
+</project>

@@ -1,0 +1,1247 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		400163921A24687D007B9A1D /* RWopsFileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 400163911A24687D007B9A1D /* RWopsFileSystem.cpp */; };
+		40339AA71A7EC99600F84382 /* SDLGetTicksFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40339AA61A7EC99600F84382 /* SDLGetTicksFunc.cpp */; };
+		408671961A3A2D0500C62759 /* SDLLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 408671951A3A2D0500C62759 /* SDLLogger.cpp */; };
+		40A32D581A49E69F00E1EA1D /* SDLEngineMutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A32D551A49E69F00E1EA1D /* SDLEngineMutex.cpp */; };
+		40A32D591A49E69F00E1EA1D /* SDLEngineMutexFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A32D561A49E69F00E1EA1D /* SDLEngineMutexFactory.cpp */; };
+		40A32D5A1A49E69F00E1EA1D /* SDLSleepFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A32D571A49E69F00E1EA1D /* SDLSleepFunc.cpp */; };
+		40AA83FF1DE9CDB300FEBDB7 /* ae_lock_sdl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40AA83FE1DE9CDB300FEBDB7 /* ae_lock_sdl2.cpp */; };
+		40CB0C181B7153B3001D860A /* SDL_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40CB0C171B7153B3001D860A /* SDL_helper.cpp */; };
+		40D8187119A124B900FEAD6A /* RWopsInputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D8186F19A124B900FEAD6A /* RWopsInputStream.cpp */; };
+		40D8187219A124B900FEAD6A /* RWopsInputStreamProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D8187019A124B900FEAD6A /* RWopsInputStreamProvider.cpp */; };
+		40D8188619A1255600FEAD6A /* ae_sdl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D8188419A1255600FEAD6A /* ae_sdl2.cpp */; };
+		40DFD65C19FECB5B00A65E4C /* RWopsAssets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40DFD65B19FECB5B00A65E4C /* RWopsAssets.cpp */; };
+		40DFD66419FECD0000A65E4C /* SDLLuaEngineListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40DFD66319FECD0000A65E4C /* SDLLuaEngineListener.cpp */; };
+		40E049991A647DCF001CA95D /* ae_sdl2_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40E049981A647DCF001CA95D /* ae_sdl2_ios.mm */; };
+		40E049A01A647F2A001CA95D /* NSLogger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40E0499F1A647F2A001CA95D /* NSLogger.mm */; };
+		40E12C5C19B507A700482702 /* RWopsOutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E12C5919B507A700482702 /* RWopsOutputStream.cpp */; };
+		40E12C5D19B507A700482702 /* RWopsOutputStreamProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E12C5A19B507A700482702 /* RWopsOutputStreamProvider.cpp */; };
+		40E12C5E19B507A700482702 /* RWopsStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E12C5B19B507A700482702 /* RWopsStorage.cpp */; };
+		40EE4ED919A3ED81006CB7DA /* SDLAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40EE4ED619A3ED81006CB7DA /* SDLAudio.cpp */; };
+		40EE4EDA19A3ED82006CB7DA /* SDLMusic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40EE4ED719A3ED81006CB7DA /* SDLMusic.cpp */; };
+		40EE4EDB19A3ED82006CB7DA /* SDLSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40EE4ED819A3ED81006CB7DA /* SDLSound.cpp */; };
+		40EE4EF119A3EE08006CB7DA /* luaMusic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40EE4EEF19A3EE08006CB7DA /* luaMusic.cpp */; };
+		40EE4EF219A3EE08006CB7DA /* luaSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40EE4EF019A3EE08006CB7DA /* luaSound.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40D8183919A1239500FEAD6A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		400163911A24687D007B9A1D /* RWopsFileSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsFileSystem.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsFileSystem.cpp; sourceTree = "<group>"; };
+		400163931A246890007B9A1D /* RWopsFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWopsFileSystem.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsFileSystem.h; sourceTree = "<group>"; };
+		400163941A246A37007B9A1D /* FileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSystem.h; path = ../../engine/common/io/src/cpp/include/FileSystem.h; sourceTree = "<group>"; };
+		400163951A246A37007B9A1D /* lua_filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua_filesystem.h; path = ../../engine/common/io/src/cpp/include/lua_filesystem.h; sourceTree = "<group>"; };
+		400163961A246D17007B9A1D /* LuaGC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LuaGC.h; path = ../../engine/common/core/src/cpp/include/LuaGC.h; sourceTree = "<group>"; };
+		401EB70C1C57F75E0038640A /* DLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DLog.h; path = ../../engine/common/core/src/cpp/include/DLog.h; sourceTree = "<group>"; };
+		40339AA51A7EC98C00F84382 /* SDLGetTicksFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDLGetTicksFunc.h; path = ../../../engine/sdl2/engine/src/cpp/include/SDLGetTicksFunc.h; sourceTree = "<group>"; };
+		40339AA61A7EC99600F84382 /* SDLGetTicksFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLGetTicksFunc.cpp; path = ../../../engine/sdl2/engine/src/cpp/SDLGetTicksFunc.cpp; sourceTree = "<group>"; };
+		404ACF981E5D8576000E750E /* ae_sdl2_ios_screen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_sdl2_ios_screen.h; path = ../../../engine/ios/sdl2/src/include/ae_sdl2_ios_screen.h; sourceTree = "<group>"; };
+		408671941A3A2CF700C62759 /* SDLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLLogger.h; path = ../../../engine/sdl2/core/src/cpp/include/SDLLogger.h; sourceTree = "<group>"; };
+		408671951A3A2D0500C62759 /* SDLLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLLogger.cpp; path = ../../../engine/sdl2/core/src/cpp/SDLLogger.cpp; sourceTree = "<group>"; };
+		4096AE941C236BB200720CB9 /* ae_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_platform.h; path = ../../engine/common/core/src/cpp/include/ae_platform.h; sourceTree = "<group>"; };
+		40A32D521A49E69000E1EA1D /* SDLEngineMutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLEngineMutex.h; path = ../../../engine/sdl2/engine/src/cpp/include/SDLEngineMutex.h; sourceTree = "<group>"; };
+		40A32D531A49E69000E1EA1D /* SDLEngineMutexFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLEngineMutexFactory.h; path = ../../../engine/sdl2/engine/src/cpp/include/SDLEngineMutexFactory.h; sourceTree = "<group>"; };
+		40A32D541A49E69000E1EA1D /* SDLSleepFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLSleepFunc.h; path = ../../../engine/sdl2/engine/src/cpp/include/SDLSleepFunc.h; sourceTree = "<group>"; };
+		40A32D551A49E69F00E1EA1D /* SDLEngineMutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLEngineMutex.cpp; path = ../../../engine/sdl2/engine/src/cpp/SDLEngineMutex.cpp; sourceTree = "<group>"; };
+		40A32D561A49E69F00E1EA1D /* SDLEngineMutexFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLEngineMutexFactory.cpp; path = ../../../engine/sdl2/engine/src/cpp/SDLEngineMutexFactory.cpp; sourceTree = "<group>"; };
+		40A32D571A49E69F00E1EA1D /* SDLSleepFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLSleepFunc.cpp; path = ../../../engine/sdl2/engine/src/cpp/SDLSleepFunc.cpp; sourceTree = "<group>"; };
+		40AA83F91DE9CC6B00FEBDB7 /* ae_lock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_lock.h; path = ../../engine/common/engine/src/cpp/include/ae_lock.h; sourceTree = "<group>"; };
+		40AA83FA1DE9CCEE00FEBDB7 /* ae_lock_sdl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_lock_sdl2.h; path = ../../../engine/sdl2/engine/src/cpp/include/ae_lock_sdl2.h; sourceTree = "<group>"; };
+		40AA83FE1DE9CDB300FEBDB7 /* ae_lock_sdl2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ae_lock_sdl2.cpp; path = ../../../engine/sdl2/engine/src/cpp/ae_lock_sdl2.cpp; sourceTree = "<group>"; };
+		40B3723F1C21F4A5001822D4 /* UnhashInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UnhashInputStream.h; path = ../../engine/common/io/src/cpp/include/UnhashInputStream.h; sourceTree = "<group>"; };
+		40B372401C21F4A5001822D4 /* UnhashInputStreamProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UnhashInputStreamProvider.h; path = ../../engine/common/io/src/cpp/include/UnhashInputStreamProvider.h; sourceTree = "<group>"; };
+		40B753DC1A705A0A0092C87E /* Interpolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Interpolation.h; path = ../../engine/common/math/src/cpp/include/Interpolation.h; sourceTree = "<group>"; };
+		40B753DD1A705A0A0092C87E /* LinearInterpolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LinearInterpolation.h; path = ../../engine/common/math/src/cpp/include/LinearInterpolation.h; sourceTree = "<group>"; };
+		40B753DE1A705A1B0092C87E /* ImageUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageUtil.h; path = ../../engine/common/image/src/cpp/include/ImageUtil.h; sourceTree = "<group>"; };
+		40B753DF1A705A1B0092C87E /* luaImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaImage.h; path = ../../engine/common/image/src/cpp/include/luaImage.h; sourceTree = "<group>"; };
+		40CB0C161B7153A4001D860A /* SDL_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_helper.h; path = ../../../engine/sdl2/core/src/cpp/include/SDL_helper.h; sourceTree = "<group>"; };
+		40CB0C171B7153B3001D860A /* SDL_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDL_helper.cpp; path = ../../../engine/sdl2/core/src/cpp/SDL_helper.cpp; sourceTree = "<group>"; };
+		40D8183B19A1239600FEAD6A /* libae_sdl2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_sdl2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D8186D19A124B000FEAD6A /* RWopsInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RWopsInputStream.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsInputStream.h; sourceTree = "<group>"; };
+		40D8186E19A124B000FEAD6A /* RWopsInputStreamProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RWopsInputStreamProvider.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsInputStreamProvider.h; sourceTree = "<group>"; };
+		40D8186F19A124B900FEAD6A /* RWopsInputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsInputStream.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsInputStream.cpp; sourceTree = "<group>"; };
+		40D8187019A124B900FEAD6A /* RWopsInputStreamProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsInputStreamProvider.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsInputStreamProvider.cpp; sourceTree = "<group>"; };
+		40D8188419A1255600FEAD6A /* ae_sdl2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ae_sdl2.cpp; path = ../../../engine/sdl2/sdl2/src/cpp/ae_sdl2.cpp; sourceTree = "<group>"; };
+		40D8188C19A1261000FEAD6A /* begin_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = begin_code.h; path = ../../libs/build/SDL2/include/begin_code.h; sourceTree = "<group>"; };
+		40D8188D19A1261000FEAD6A /* close_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = close_code.h; path = ../../libs/build/SDL2/include/close_code.h; sourceTree = "<group>"; };
+		40D8188E19A1261000FEAD6A /* SDL_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_assert.h; path = ../../libs/build/SDL2/include/SDL_assert.h; sourceTree = "<group>"; };
+		40D8188F19A1261000FEAD6A /* SDL_atomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_atomic.h; path = ../../libs/build/SDL2/include/SDL_atomic.h; sourceTree = "<group>"; };
+		40D8189019A1261000FEAD6A /* SDL_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_audio.h; path = ../../libs/build/SDL2/include/SDL_audio.h; sourceTree = "<group>"; };
+		40D8189119A1261000FEAD6A /* SDL_bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_bits.h; path = ../../libs/build/SDL2/include/SDL_bits.h; sourceTree = "<group>"; };
+		40D8189219A1261000FEAD6A /* SDL_blendmode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_blendmode.h; path = ../../libs/build/SDL2/include/SDL_blendmode.h; sourceTree = "<group>"; };
+		40D8189319A1261000FEAD6A /* SDL_clipboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_clipboard.h; path = ../../libs/build/SDL2/include/SDL_clipboard.h; sourceTree = "<group>"; };
+		40D8189419A1261000FEAD6A /* SDL_config_android.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_android.h; path = ../../libs/build/SDL2/include/SDL_config_android.h; sourceTree = "<group>"; };
+		40D8189519A1261000FEAD6A /* SDL_config_iphoneos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_iphoneos.h; path = ../../libs/build/SDL2/include/SDL_config_iphoneos.h; sourceTree = "<group>"; };
+		40D8189619A1261000FEAD6A /* SDL_config_macosx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_macosx.h; path = ../../libs/build/SDL2/include/SDL_config_macosx.h; sourceTree = "<group>"; };
+		40D8189719A1261000FEAD6A /* SDL_config_minimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_minimal.h; path = ../../libs/build/SDL2/include/SDL_config_minimal.h; sourceTree = "<group>"; };
+		40D8189819A1261000FEAD6A /* SDL_config_pandora.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_pandora.h; path = ../../libs/build/SDL2/include/SDL_config_pandora.h; sourceTree = "<group>"; };
+		40D8189919A1261000FEAD6A /* SDL_config_psp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_psp.h; path = ../../libs/build/SDL2/include/SDL_config_psp.h; sourceTree = "<group>"; };
+		40D8189A19A1261000FEAD6A /* SDL_config_windows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_windows.h; path = ../../libs/build/SDL2/include/SDL_config_windows.h; sourceTree = "<group>"; };
+		40D8189B19A1261000FEAD6A /* SDL_config_winrt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_winrt.h; path = ../../libs/build/SDL2/include/SDL_config_winrt.h; sourceTree = "<group>"; };
+		40D8189C19A1261000FEAD6A /* SDL_config_wiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config_wiz.h; path = ../../libs/build/SDL2/include/SDL_config_wiz.h; sourceTree = "<group>"; };
+		40D8189D19A1261000FEAD6A /* SDL_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config.h; path = ../../libs/build/SDL2/include/SDL_config.h; sourceTree = "<group>"; };
+		40D8189E19A1261000FEAD6A /* SDL_copying.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_copying.h; path = ../../libs/build/SDL2/include/SDL_copying.h; sourceTree = "<group>"; };
+		40D8189F19A1261000FEAD6A /* SDL_cpuinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_cpuinfo.h; path = ../../libs/build/SDL2/include/SDL_cpuinfo.h; sourceTree = "<group>"; };
+		40D818A019A1261000FEAD6A /* SDL_egl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_egl.h; path = ../../libs/build/SDL2/include/SDL_egl.h; sourceTree = "<group>"; };
+		40D818A119A1261000FEAD6A /* SDL_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_endian.h; path = ../../libs/build/SDL2/include/SDL_endian.h; sourceTree = "<group>"; };
+		40D818A219A1261000FEAD6A /* SDL_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_error.h; path = ../../libs/build/SDL2/include/SDL_error.h; sourceTree = "<group>"; };
+		40D818A319A1261000FEAD6A /* SDL_events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_events.h; path = ../../libs/build/SDL2/include/SDL_events.h; sourceTree = "<group>"; };
+		40D818A419A1261000FEAD6A /* SDL_filesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_filesystem.h; path = ../../libs/build/SDL2/include/SDL_filesystem.h; sourceTree = "<group>"; };
+		40D818A519A1261000FEAD6A /* SDL_gamecontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_gamecontroller.h; path = ../../libs/build/SDL2/include/SDL_gamecontroller.h; sourceTree = "<group>"; };
+		40D818A619A1261000FEAD6A /* SDL_gesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_gesture.h; path = ../../libs/build/SDL2/include/SDL_gesture.h; sourceTree = "<group>"; };
+		40D818A719A1261000FEAD6A /* SDL_haptic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_haptic.h; path = ../../libs/build/SDL2/include/SDL_haptic.h; sourceTree = "<group>"; };
+		40D818A819A1261000FEAD6A /* SDL_hints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_hints.h; path = ../../libs/build/SDL2/include/SDL_hints.h; sourceTree = "<group>"; };
+		40D818A919A1261000FEAD6A /* SDL_joystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_joystick.h; path = ../../libs/build/SDL2/include/SDL_joystick.h; sourceTree = "<group>"; };
+		40D818AA19A1261000FEAD6A /* SDL_keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_keyboard.h; path = ../../libs/build/SDL2/include/SDL_keyboard.h; sourceTree = "<group>"; };
+		40D818AB19A1261000FEAD6A /* SDL_keycode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_keycode.h; path = ../../libs/build/SDL2/include/SDL_keycode.h; sourceTree = "<group>"; };
+		40D818AC19A1261000FEAD6A /* SDL_loadso.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_loadso.h; path = ../../libs/build/SDL2/include/SDL_loadso.h; sourceTree = "<group>"; };
+		40D818AD19A1261000FEAD6A /* SDL_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_log.h; path = ../../libs/build/SDL2/include/SDL_log.h; sourceTree = "<group>"; };
+		40D818AE19A1261000FEAD6A /* SDL_main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_main.h; path = ../../libs/build/SDL2/include/SDL_main.h; sourceTree = "<group>"; };
+		40D818AF19A1261000FEAD6A /* SDL_messagebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_messagebox.h; path = ../../libs/build/SDL2/include/SDL_messagebox.h; sourceTree = "<group>"; };
+		40D818B019A1261000FEAD6A /* SDL_mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mouse.h; path = ../../libs/build/SDL2/include/SDL_mouse.h; sourceTree = "<group>"; };
+		40D818B119A1261000FEAD6A /* SDL_mutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mutex.h; path = ../../libs/build/SDL2/include/SDL_mutex.h; sourceTree = "<group>"; };
+		40D818B219A1261000FEAD6A /* SDL_name.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_name.h; path = ../../libs/build/SDL2/include/SDL_name.h; sourceTree = "<group>"; };
+		40D818B319A1261000FEAD6A /* SDL_opengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengl.h; path = ../../libs/build/SDL2/include/SDL_opengl.h; sourceTree = "<group>"; };
+		40D818B419A1261000FEAD6A /* SDL_opengles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles.h; path = ../../libs/build/SDL2/include/SDL_opengles.h; sourceTree = "<group>"; };
+		40D818B519A1261000FEAD6A /* SDL_opengles2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2.h; path = ../../libs/build/SDL2/include/SDL_opengles2.h; sourceTree = "<group>"; };
+		40D818B619A1261000FEAD6A /* SDL_pixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_pixels.h; path = ../../libs/build/SDL2/include/SDL_pixels.h; sourceTree = "<group>"; };
+		40D818B719A1261000FEAD6A /* SDL_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_platform.h; path = ../../libs/build/SDL2/include/SDL_platform.h; sourceTree = "<group>"; };
+		40D818B819A1261100FEAD6A /* SDL_power.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_power.h; path = ../../libs/build/SDL2/include/SDL_power.h; sourceTree = "<group>"; };
+		40D818B919A1261100FEAD6A /* SDL_quit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_quit.h; path = ../../libs/build/SDL2/include/SDL_quit.h; sourceTree = "<group>"; };
+		40D818BA19A1261100FEAD6A /* SDL_rect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_rect.h; path = ../../libs/build/SDL2/include/SDL_rect.h; sourceTree = "<group>"; };
+		40D818BB19A1261100FEAD6A /* SDL_render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_render.h; path = ../../libs/build/SDL2/include/SDL_render.h; sourceTree = "<group>"; };
+		40D818BC19A1261100FEAD6A /* SDL_revision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_revision.h; path = ../../libs/build/SDL2/include/SDL_revision.h; sourceTree = "<group>"; };
+		40D818BD19A1261100FEAD6A /* SDL_rwops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_rwops.h; path = ../../libs/build/SDL2/include/SDL_rwops.h; sourceTree = "<group>"; };
+		40D818BE19A1261100FEAD6A /* SDL_scancode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_scancode.h; path = ../../libs/build/SDL2/include/SDL_scancode.h; sourceTree = "<group>"; };
+		40D818BF19A1261100FEAD6A /* SDL_shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_shape.h; path = ../../libs/build/SDL2/include/SDL_shape.h; sourceTree = "<group>"; };
+		40D818C019A1261100FEAD6A /* SDL_stdinc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_stdinc.h; path = ../../libs/build/SDL2/include/SDL_stdinc.h; sourceTree = "<group>"; };
+		40D818C119A1261100FEAD6A /* SDL_surface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_surface.h; path = ../../libs/build/SDL2/include/SDL_surface.h; sourceTree = "<group>"; };
+		40D818C219A1261100FEAD6A /* SDL_system.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_system.h; path = ../../libs/build/SDL2/include/SDL_system.h; sourceTree = "<group>"; };
+		40D818C319A1261100FEAD6A /* SDL_syswm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_syswm.h; path = ../../libs/build/SDL2/include/SDL_syswm.h; sourceTree = "<group>"; };
+		40D818C419A1261100FEAD6A /* SDL_thread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_thread.h; path = ../../libs/build/SDL2/include/SDL_thread.h; sourceTree = "<group>"; };
+		40D818C519A1261100FEAD6A /* SDL_timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_timer.h; path = ../../libs/build/SDL2/include/SDL_timer.h; sourceTree = "<group>"; };
+		40D818C619A1261100FEAD6A /* SDL_touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_touch.h; path = ../../libs/build/SDL2/include/SDL_touch.h; sourceTree = "<group>"; };
+		40D818C719A1261100FEAD6A /* SDL_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_types.h; path = ../../libs/build/SDL2/include/SDL_types.h; sourceTree = "<group>"; };
+		40D818C819A1261100FEAD6A /* SDL_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_version.h; path = ../../libs/build/SDL2/include/SDL_version.h; sourceTree = "<group>"; };
+		40D818C919A1261100FEAD6A /* SDL_video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_video.h; path = ../../libs/build/SDL2/include/SDL_video.h; sourceTree = "<group>"; };
+		40D818CA19A1261100FEAD6A /* SDL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL.h; path = ../../libs/build/SDL2/include/SDL.h; sourceTree = "<group>"; };
+		40D818CF19A134AC00FEAD6A /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Error.h; path = ../../engine/common/core/src/cpp/include/Error.h; sourceTree = "<group>"; };
+		40D818D019A134AC00FEAD6A /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Log.h; path = ../../engine/common/core/src/cpp/include/Log.h; sourceTree = "<group>"; };
+		40D818D119A134AC00FEAD6A /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = ../../engine/common/core/src/cpp/include/Logger.h; sourceTree = "<group>"; };
+		40D818D219A134AC00FEAD6A /* lua_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua_common.h; path = ../../engine/common/core/src/cpp/include/lua_common.h; sourceTree = "<group>"; };
+		40D818D419A134AC00FEAD6A /* lua_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua_log.h; path = ../../engine/common/core/src/cpp/include/lua_log.h; sourceTree = "<group>"; };
+		40D818D519A134AC00FEAD6A /* LuaGetField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaGetField.h; path = ../../engine/common/core/src/cpp/include/LuaGetField.h; sourceTree = "<group>"; };
+		40D818D619A134AC00FEAD6A /* LuaGetGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaGetGlobal.h; path = ../../engine/common/core/src/cpp/include/LuaGetGlobal.h; sourceTree = "<group>"; };
+		40D818D719A134AC00FEAD6A /* LuaLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaLoader.h; path = ../../engine/common/core/src/cpp/include/LuaLoader.h; sourceTree = "<group>"; };
+		40D818D819A134AC00FEAD6A /* LuaPCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaPCall.h; path = ../../engine/common/core/src/cpp/include/LuaPCall.h; sourceTree = "<group>"; };
+		40D818DA19A134AC00FEAD6A /* Runnable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Runnable.h; path = ../../engine/common/core/src/cpp/include/Runnable.h; sourceTree = "<group>"; };
+		40D818EC19A1352100FEAD6A /* ae_GLES2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_GLES2.h; path = ../../engine/common/gles2/src/cpp/include/ae_GLES2.h; sourceTree = "<group>"; };
+		40D818ED19A1352100FEAD6A /* GLError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLError.h; path = ../../engine/common/gles2/src/cpp/include/GLError.h; sourceTree = "<group>"; };
+		40D818EE19A1352100FEAD6A /* GLSLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLSLProgram.h; path = ../../engine/common/gles2/src/cpp/include/GLSLProgram.h; sourceTree = "<group>"; };
+		40D818EF19A1352100FEAD6A /* GLSLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLSLShader.h; path = ../../engine/common/gles2/src/cpp/include/GLSLShader.h; sourceTree = "<group>"; };
+		40D818F019A1352100FEAD6A /* lua_glerror.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua_glerror.h; path = ../../engine/common/gles2/src/cpp/include/lua_glerror.h; sourceTree = "<group>"; };
+		40D818F119A1352100FEAD6A /* lua_gles2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua_gles2.h; path = ../../engine/common/gles2/src/cpp/include/lua_gles2.h; sourceTree = "<group>"; };
+		40D818F219A1352100FEAD6A /* luaGLSLAttrib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaGLSLAttrib.h; path = ../../engine/common/gles2/src/cpp/include/luaGLSLAttrib.h; sourceTree = "<group>"; };
+		40D818F319A1352100FEAD6A /* luaGLSLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaGLSLProgram.h; path = ../../engine/common/gles2/src/cpp/include/luaGLSLProgram.h; sourceTree = "<group>"; };
+		40D818F419A1352100FEAD6A /* luaGLSLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaGLSLShader.h; path = ../../engine/common/gles2/src/cpp/include/luaGLSLShader.h; sourceTree = "<group>"; };
+		40D818F519A1352100FEAD6A /* luaGLSLUniform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaGLSLUniform.h; path = ../../engine/common/gles2/src/cpp/include/luaGLSLUniform.h; sourceTree = "<group>"; };
+		40D818F619A1352200FEAD6A /* luaVertexBufferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaVertexBufferData.h; path = ../../engine/common/gles2/src/cpp/include/luaVertexBufferData.h; sourceTree = "<group>"; };
+		40D818F719A1352200FEAD6A /* luaVertexBufferObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaVertexBufferObject.h; path = ../../engine/common/gles2/src/cpp/include/luaVertexBufferObject.h; sourceTree = "<group>"; };
+		40D818F819A1352200FEAD6A /* VertexBufferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexBufferData.h; path = ../../engine/common/gles2/src/cpp/include/VertexBufferData.h; sourceTree = "<group>"; };
+		40D818F919A1352200FEAD6A /* VertexBufferObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexBufferObject.h; path = ../../engine/common/gles2/src/cpp/include/VertexBufferObject.h; sourceTree = "<group>"; };
+		40D818FC19A1355A00FEAD6A /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../../engine/common/image/src/cpp/include/Image.h; sourceTree = "<group>"; };
+		40D818FD19A1355A00FEAD6A /* ImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageLoader.h; path = ../../engine/common/image/src/cpp/include/ImageLoader.h; sourceTree = "<group>"; };
+		40D818FE19A1355A00FEAD6A /* PNGImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PNGImageLoader.h; path = ../../engine/common/image/src/cpp/include/PNGImageLoader.h; sourceTree = "<group>"; };
+		40D8190119A1357500FEAD6A /* BufferedInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BufferedInputStream.h; path = ../../engine/common/io/src/cpp/include/BufferedInputStream.h; sourceTree = "<group>"; };
+		40D8190219A1357500FEAD6A /* InputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InputStream.h; path = ../../engine/common/io/src/cpp/include/InputStream.h; sourceTree = "<group>"; };
+		40D8190319A1357500FEAD6A /* InputStreamContentReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InputStreamContentReader.h; path = ../../engine/common/io/src/cpp/include/InputStreamContentReader.h; sourceTree = "<group>"; };
+		40D8190419A1357500FEAD6A /* InputStreamProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InputStreamProvider.h; path = ../../engine/common/io/src/cpp/include/InputStreamProvider.h; sourceTree = "<group>"; };
+		40D8190519A1357500FEAD6A /* PropertiesReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PropertiesReader.h; path = ../../engine/common/io/src/cpp/include/PropertiesReader.h; sourceTree = "<group>"; };
+		40D8190819A1359000FEAD6A /* BasicMat4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BasicMat4.h; path = ../../engine/common/math/src/cpp/include/BasicMat4.h; sourceTree = "<group>"; };
+		40D8190919A1359000FEAD6A /* luaMat4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaMat4.h; path = ../../engine/common/math/src/cpp/include/luaMat4.h; sourceTree = "<group>"; };
+		40D8190A19A1359000FEAD6A /* Mat4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Mat4.h; path = ../../engine/common/math/src/cpp/include/Mat4.h; sourceTree = "<group>"; };
+		40D8192119A1362E00FEAD6A /* dynamic_flac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_flac.h; path = ../../libs/build/SDL2_mixer/dynamic_flac.h; sourceTree = "<group>"; };
+		40D8192219A1362F00FEAD6A /* dynamic_fluidsynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_fluidsynth.h; path = ../../libs/build/SDL2_mixer/dynamic_fluidsynth.h; sourceTree = "<group>"; };
+		40D8192319A1362F00FEAD6A /* dynamic_mod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_mod.h; path = ../../libs/build/SDL2_mixer/dynamic_mod.h; sourceTree = "<group>"; };
+		40D8192419A1362F00FEAD6A /* dynamic_modplug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_modplug.h; path = ../../libs/build/SDL2_mixer/dynamic_modplug.h; sourceTree = "<group>"; };
+		40D8192519A1362F00FEAD6A /* dynamic_mp3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_mp3.h; path = ../../libs/build/SDL2_mixer/dynamic_mp3.h; sourceTree = "<group>"; };
+		40D8192619A1362F00FEAD6A /* dynamic_ogg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dynamic_ogg.h; path = ../../libs/build/SDL2_mixer/dynamic_ogg.h; sourceTree = "<group>"; };
+		40D8192719A1362F00FEAD6A /* effects_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = effects_internal.h; path = ../../libs/build/SDL2_mixer/effects_internal.h; sourceTree = "<group>"; };
+		40D8192819A1362F00FEAD6A /* fluidsynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fluidsynth.h; path = ../../libs/build/SDL2_mixer/fluidsynth.h; sourceTree = "<group>"; };
+		40D8192919A1362F00FEAD6A /* load_aiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = load_aiff.h; path = ../../libs/build/SDL2_mixer/load_aiff.h; sourceTree = "<group>"; };
+		40D8192A19A1362F00FEAD6A /* load_flac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = load_flac.h; path = ../../libs/build/SDL2_mixer/load_flac.h; sourceTree = "<group>"; };
+		40D8192B19A1362F00FEAD6A /* load_ogg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = load_ogg.h; path = ../../libs/build/SDL2_mixer/load_ogg.h; sourceTree = "<group>"; };
+		40D8192C19A1362F00FEAD6A /* load_voc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = load_voc.h; path = ../../libs/build/SDL2_mixer/load_voc.h; sourceTree = "<group>"; };
+		40D8192D19A1362F00FEAD6A /* music_cmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_cmd.h; path = ../../libs/build/SDL2_mixer/music_cmd.h; sourceTree = "<group>"; };
+		40D8192E19A1362F00FEAD6A /* music_flac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_flac.h; path = ../../libs/build/SDL2_mixer/music_flac.h; sourceTree = "<group>"; };
+		40D8192F19A1362F00FEAD6A /* music_mad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_mad.h; path = ../../libs/build/SDL2_mixer/music_mad.h; sourceTree = "<group>"; };
+		40D8193019A1362F00FEAD6A /* music_mod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_mod.h; path = ../../libs/build/SDL2_mixer/music_mod.h; sourceTree = "<group>"; };
+		40D8193119A1362F00FEAD6A /* music_modplug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_modplug.h; path = ../../libs/build/SDL2_mixer/music_modplug.h; sourceTree = "<group>"; };
+		40D8193219A1362F00FEAD6A /* music_ogg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = music_ogg.h; path = ../../libs/build/SDL2_mixer/music_ogg.h; sourceTree = "<group>"; };
+		40D8193319A1362F00FEAD6A /* wavestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = wavestream.h; path = ../../libs/build/SDL2_mixer/wavestream.h; sourceTree = "<group>"; };
+		40D8193419A1363B00FEAD6A /* SDL_mixer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mixer.h; path = ../../libs/build/SDL2_mixer/SDL_mixer.h; sourceTree = "<group>"; };
+		40D8193719A1366D00FEAD6A /* png.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = png.h; path = ../../libs/build/lpng/png.h; sourceTree = "<group>"; };
+		40D8193819A1366D00FEAD6A /* pngconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pngconf.h; path = ../../libs/build/lpng/pngconf.h; sourceTree = "<group>"; };
+		40D8193919A1366D00FEAD6A /* pngdebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pngdebug.h; path = ../../libs/build/lpng/pngdebug.h; sourceTree = "<group>"; };
+		40D8193A19A1366D00FEAD6A /* pnginfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pnginfo.h; path = ../../libs/build/lpng/pnginfo.h; sourceTree = "<group>"; };
+		40D8193B19A1366D00FEAD6A /* pnglibconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pnglibconf.h; path = ../../libs/build/lpng/pnglibconf.h; sourceTree = "<group>"; };
+		40D8193C19A1366D00FEAD6A /* pngpriv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pngpriv.h; path = ../../libs/build/lpng/pngpriv.h; sourceTree = "<group>"; };
+		40D8193D19A1366D00FEAD6A /* pngstruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pngstruct.h; path = ../../libs/build/lpng/pngstruct.h; sourceTree = "<group>"; };
+		40D8194019A136A600FEAD6A /* lapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lapi.h; path = ../../libs/build/lua/src/lapi.h; sourceTree = "<group>"; };
+		40D8194119A136A600FEAD6A /* lauxlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = ../../libs/build/lua/src/lauxlib.h; sourceTree = "<group>"; };
+		40D8194219A136A600FEAD6A /* lcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lcode.h; path = ../../libs/build/lua/src/lcode.h; sourceTree = "<group>"; };
+		40D8194319A136A600FEAD6A /* lctype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lctype.h; path = ../../libs/build/lua/src/lctype.h; sourceTree = "<group>"; };
+		40D8194419A136A600FEAD6A /* ldebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ldebug.h; path = ../../libs/build/lua/src/ldebug.h; sourceTree = "<group>"; };
+		40D8194519A136A600FEAD6A /* ldo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ldo.h; path = ../../libs/build/lua/src/ldo.h; sourceTree = "<group>"; };
+		40D8194619A136A600FEAD6A /* lfunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lfunc.h; path = ../../libs/build/lua/src/lfunc.h; sourceTree = "<group>"; };
+		40D8194719A136A600FEAD6A /* lgc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lgc.h; path = ../../libs/build/lua/src/lgc.h; sourceTree = "<group>"; };
+		40D8194819A136A600FEAD6A /* llex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = llex.h; path = ../../libs/build/lua/src/llex.h; sourceTree = "<group>"; };
+		40D8194919A136A600FEAD6A /* llimits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = llimits.h; path = ../../libs/build/lua/src/llimits.h; sourceTree = "<group>"; };
+		40D8194A19A136A600FEAD6A /* lmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lmem.h; path = ../../libs/build/lua/src/lmem.h; sourceTree = "<group>"; };
+		40D8194B19A136A600FEAD6A /* lobject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lobject.h; path = ../../libs/build/lua/src/lobject.h; sourceTree = "<group>"; };
+		40D8194C19A136A600FEAD6A /* lopcodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lopcodes.h; path = ../../libs/build/lua/src/lopcodes.h; sourceTree = "<group>"; };
+		40D8194D19A136A600FEAD6A /* lparser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lparser.h; path = ../../libs/build/lua/src/lparser.h; sourceTree = "<group>"; };
+		40D8194E19A136A600FEAD6A /* lstate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstate.h; path = ../../libs/build/lua/src/lstate.h; sourceTree = "<group>"; };
+		40D8194F19A136A600FEAD6A /* lstring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstring.h; path = ../../libs/build/lua/src/lstring.h; sourceTree = "<group>"; };
+		40D8195019A136A600FEAD6A /* ltable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ltable.h; path = ../../libs/build/lua/src/ltable.h; sourceTree = "<group>"; };
+		40D8195119A136A600FEAD6A /* ltm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ltm.h; path = ../../libs/build/lua/src/ltm.h; sourceTree = "<group>"; };
+		40D8195219A136A600FEAD6A /* lua.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua.h; path = ../../libs/build/lua/src/lua.h; sourceTree = "<group>"; };
+		40D8195319A136A600FEAD6A /* lua.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lua.hpp; path = ../../libs/build/lua/src/lua.hpp; sourceTree = "<group>"; };
+		40D8195419A136A600FEAD6A /* luaconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaconf.h; path = ../../libs/build/lua/src/luaconf.h; sourceTree = "<group>"; };
+		40D8195519A136A600FEAD6A /* lualib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = ../../libs/build/lua/src/lualib.h; sourceTree = "<group>"; };
+		40D8195619A136A600FEAD6A /* lundump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lundump.h; path = ../../libs/build/lua/src/lundump.h; sourceTree = "<group>"; };
+		40D8195719A136A600FEAD6A /* lvm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lvm.h; path = ../../libs/build/lua/src/lvm.h; sourceTree = "<group>"; };
+		40D8195819A136A600FEAD6A /* lzio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lzio.h; path = ../../libs/build/lua/src/lzio.h; sourceTree = "<group>"; };
+		40DFD65A19FECB3F00A65E4C /* RWopsAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWopsAssets.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsAssets.h; sourceTree = "<group>"; };
+		40DFD65B19FECB5B00A65E4C /* RWopsAssets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsAssets.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsAssets.cpp; sourceTree = "<group>"; };
+		40DFD65D19FECBD200A65E4C /* Assets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assets.h; path = ../../engine/common/io/src/cpp/include/Assets.h; sourceTree = "<group>"; };
+		40DFD65E19FECBD200A65E4C /* lua_assets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua_assets.h; path = ../../engine/common/io/src/cpp/include/lua_assets.h; sourceTree = "<group>"; };
+		40DFD66119FECC9F00A65E4C /* FPSMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPSMax.h; path = ../../engine/common/util/src/cpp/include/FPSMax.h; sourceTree = "<group>"; };
+		40DFD66219FECCE900A65E4C /* SDLLuaEngineListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLLuaEngineListener.h; path = ../../../engine/sdl2/sdl2/src/cpp/include/SDLLuaEngineListener.h; sourceTree = "<group>"; };
+		40DFD66319FECD0000A65E4C /* SDLLuaEngineListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLLuaEngineListener.cpp; path = ../../../engine/sdl2/sdl2/src/cpp/SDLLuaEngineListener.cpp; sourceTree = "<group>"; };
+		40E049971A647DC7001CA95D /* ae_sdl2_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_sdl2_ios.h; path = ../../../engine/ios/sdl2/src/include/ae_sdl2_ios.h; sourceTree = "<group>"; };
+		40E049981A647DCF001CA95D /* ae_sdl2_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ae_sdl2_ios.mm; path = ../../../engine/ios/sdl2/src/ae_sdl2_ios.mm; sourceTree = "<group>"; };
+		40E0499E1A647F24001CA95D /* NSLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NSLogger.h; path = ../../../engine/ios/core/src/include/NSLogger.h; sourceTree = "<group>"; };
+		40E0499F1A647F2A001CA95D /* NSLogger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSLogger.mm; path = ../../../engine/ios/core/src/NSLogger.mm; sourceTree = "<group>"; };
+		40E12C3B19B5054300482702 /* FPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPSCounter.h; path = ../../engine/common/util/src/cpp/include/FPSCounter.h; sourceTree = "<group>"; };
+		40E12C3C19B5054300482702 /* lua_MessagePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua_MessagePack.h; path = ../../engine/common/util/src/cpp/include/lua_MessagePack.h; sourceTree = "<group>"; };
+		40E12C3D19B5054300482702 /* luaMessagePackPacker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaMessagePackPacker.h; path = ../../engine/common/util/src/cpp/include/luaMessagePackPacker.h; sourceTree = "<group>"; };
+		40E12C3E19B5054300482702 /* luaMessagePackUnpacker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaMessagePackUnpacker.h; path = ../../engine/common/util/src/cpp/include/luaMessagePackUnpacker.h; sourceTree = "<group>"; };
+		40E12C3F19B5054300482702 /* MessagePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagePack.h; path = ../../engine/common/util/src/cpp/include/MessagePack.h; sourceTree = "<group>"; };
+		40E12C4019B5054300482702 /* MessagePackPacker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagePackPacker.h; path = ../../engine/common/util/src/cpp/include/MessagePackPacker.h; sourceTree = "<group>"; };
+		40E12C4119B5054300482702 /* MessagePackUnpacker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagePackUnpacker.h; path = ../../engine/common/util/src/cpp/include/MessagePackUnpacker.h; sourceTree = "<group>"; };
+		40E12C5019B5058900482702 /* lua_storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua_storage.h; path = ../../engine/common/io/src/cpp/include/lua_storage.h; sourceTree = "<group>"; };
+		40E12C5119B5058900482702 /* luaInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaInputStream.h; path = ../../engine/common/io/src/cpp/include/luaInputStream.h; sourceTree = "<group>"; };
+		40E12C5219B5058900482702 /* luaOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaOutputStream.h; path = ../../engine/common/io/src/cpp/include/luaOutputStream.h; sourceTree = "<group>"; };
+		40E12C5319B5058900482702 /* OutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutputStream.h; path = ../../engine/common/io/src/cpp/include/OutputStream.h; sourceTree = "<group>"; };
+		40E12C5419B5058900482702 /* OutputStreamProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutputStreamProvider.h; path = ../../engine/common/io/src/cpp/include/OutputStreamProvider.h; sourceTree = "<group>"; };
+		40E12C5519B5058900482702 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Storage.h; path = ../../engine/common/io/src/cpp/include/Storage.h; sourceTree = "<group>"; };
+		40E12C5919B507A700482702 /* RWopsOutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsOutputStream.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsOutputStream.cpp; sourceTree = "<group>"; };
+		40E12C5A19B507A700482702 /* RWopsOutputStreamProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsOutputStreamProvider.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsOutputStreamProvider.cpp; sourceTree = "<group>"; };
+		40E12C5B19B507A700482702 /* RWopsStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RWopsStorage.cpp; path = ../../../engine/sdl2/io/src/cpp/RWopsStorage.cpp; sourceTree = "<group>"; };
+		40E12C5F19B507D400482702 /* RWopsOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWopsOutputStream.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsOutputStream.h; sourceTree = "<group>"; };
+		40E12C6019B507D400482702 /* RWopsOutputStreamProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWopsOutputStreamProvider.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsOutputStreamProvider.h; sourceTree = "<group>"; };
+		40E12C6119B507D400482702 /* RWopsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWopsStorage.h; path = ../../../engine/sdl2/io/src/cpp/include/RWopsStorage.h; sourceTree = "<group>"; };
+		40E16E6F1D0CB8ED009E1909 /* AppendLuaModelRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppendLuaModelRequest.h; path = ../../engine/common/engine/src/cpp/include/AppendLuaModelRequest.h; sourceTree = "<group>"; };
+		40E16E701D0CB8ED009E1909 /* DummyEngineMutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DummyEngineMutex.h; path = ../../engine/common/engine/src/cpp/include/DummyEngineMutex.h; sourceTree = "<group>"; };
+		40E16E711D0CB8ED009E1909 /* DummyEngineMutexFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DummyEngineMutexFactory.h; path = ../../engine/common/engine/src/cpp/include/DummyEngineMutexFactory.h; sourceTree = "<group>"; };
+		40E16E721D0CB8ED009E1909 /* Engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = ../../engine/common/engine/src/cpp/include/Engine.h; sourceTree = "<group>"; };
+		40E16E731D0CB8ED009E1909 /* EngineCfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EngineCfg.h; path = ../../engine/common/engine/src/cpp/include/EngineCfg.h; sourceTree = "<group>"; };
+		40E16E741D0CB8ED009E1909 /* EngineMutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EngineMutex.h; path = ../../engine/common/engine/src/cpp/include/EngineMutex.h; sourceTree = "<group>"; };
+		40E16E751D0CB8ED009E1909 /* EngineMutexFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EngineMutexFactory.h; path = ../../engine/common/engine/src/cpp/include/EngineMutexFactory.h; sourceTree = "<group>"; };
+		40E16E761D0CB8ED009E1909 /* EngineRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EngineRequest.h; path = ../../engine/common/engine/src/cpp/include/EngineRequest.h; sourceTree = "<group>"; };
+		40E16E771D0CB8ED009E1909 /* GetTicksFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GetTicksFunc.h; path = ../../engine/common/engine/src/cpp/include/GetTicksFunc.h; sourceTree = "<group>"; };
+		40E16E781D0CB8ED009E1909 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key.h; path = ../../engine/common/engine/src/cpp/include/Key.h; sourceTree = "<group>"; };
+		40E16E791D0CB8ED009E1909 /* KeyListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KeyListener.h; path = ../../engine/common/engine/src/cpp/include/KeyListener.h; sourceTree = "<group>"; };
+		40E16E7A1D0CB8ED009E1909 /* lua_ae.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lua_ae.h; path = ../../engine/common/engine/src/cpp/include/lua_ae.h; sourceTree = "<group>"; };
+		40E16E7B1D0CB8ED009E1909 /* LuaCallBooleanFuncRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaCallBooleanFuncRequest.h; path = ../../engine/common/engine/src/cpp/include/LuaCallBooleanFuncRequest.h; sourceTree = "<group>"; };
+		40E16E7C1D0CB8ED009E1909 /* LuaCallFuncRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaCallFuncRequest.h; path = ../../engine/common/engine/src/cpp/include/LuaCallFuncRequest.h; sourceTree = "<group>"; };
+		40E16E7D1D0CB8ED009E1909 /* LuaCallNoArgFuncRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaCallNoArgFuncRequest.h; path = ../../engine/common/engine/src/cpp/include/LuaCallNoArgFuncRequest.h; sourceTree = "<group>"; };
+		40E16E7E1D0CB8ED009E1909 /* LuaCallStrFuncRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaCallStrFuncRequest.h; path = ../../engine/common/engine/src/cpp/include/LuaCallStrFuncRequest.h; sourceTree = "<group>"; };
+		40E16E7F1D0CB8ED009E1909 /* LuaEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngine.h; path = ../../engine/common/engine/src/cpp/include/LuaEngine.h; sourceTree = "<group>"; };
+		40E16E801D0CB8ED009E1909 /* LuaEngineCfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngineCfg.h; path = ../../engine/common/engine/src/cpp/include/LuaEngineCfg.h; sourceTree = "<group>"; };
+		40E16E811D0CB8ED009E1909 /* LuaEngineCfgOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngineCfgOS.h; path = ../../engine/common/engine/src/cpp/include/LuaEngineCfgOS.h; sourceTree = "<group>"; };
+		40E16E821D0CB8ED009E1909 /* LuaEngineDisplayListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngineDisplayListener.h; path = ../../engine/common/engine/src/cpp/include/LuaEngineDisplayListener.h; sourceTree = "<group>"; };
+		40E16E831D0CB8ED009E1909 /* LuaEnginePauseListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEnginePauseListener.h; path = ../../engine/common/engine/src/cpp/include/LuaEnginePauseListener.h; sourceTree = "<group>"; };
+		40E16E841D0CB8ED009E1909 /* LuaEnginePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEnginePlugin.h; path = ../../engine/common/engine/src/cpp/include/LuaEnginePlugin.h; sourceTree = "<group>"; };
+		40E16E851D0CB8ED009E1909 /* LuaEnginePluginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEnginePluginManager.h; path = ../../engine/common/engine/src/cpp/include/LuaEnginePluginManager.h; sourceTree = "<group>"; };
+		40E16E861D0CB8ED009E1909 /* LuaEngineQuitListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngineQuitListener.h; path = ../../engine/common/engine/src/cpp/include/LuaEngineQuitListener.h; sourceTree = "<group>"; };
+		40E16E871D0CB8ED009E1909 /* LuaEngineRestartListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaEngineRestartListener.h; path = ../../engine/common/engine/src/cpp/include/LuaEngineRestartListener.h; sourceTree = "<group>"; };
+		40E16E881D0CB8ED009E1909 /* LuaExtraLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaExtraLib.h; path = ../../engine/common/engine/src/cpp/include/LuaExtraLib.h; sourceTree = "<group>"; };
+		40E16E891D0CB8ED009E1909 /* LuaExtraLibManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaExtraLibManager.h; path = ../../engine/common/engine/src/cpp/include/LuaExtraLibManager.h; sourceTree = "<group>"; };
+		40E16E8A1D0CB8ED009E1909 /* LuaKeyHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaKeyHandler.h; path = ../../engine/common/engine/src/cpp/include/LuaKeyHandler.h; sourceTree = "<group>"; };
+		40E16E8B1D0CB8ED009E1909 /* LuaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaModel.h; path = ../../engine/common/engine/src/cpp/include/LuaModel.h; sourceTree = "<group>"; };
+		40E16E8C1D0CB8ED009E1909 /* LuaTouchHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaTouchHandler.h; path = ../../engine/common/engine/src/cpp/include/LuaTouchHandler.h; sourceTree = "<group>"; };
+		40E16E8D1D0CB8ED009E1909 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Model.h; path = ../../engine/common/engine/src/cpp/include/Model.h; sourceTree = "<group>"; };
+		40E16E8E1D0CB8ED009E1909 /* PrependLuaModelRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrependLuaModelRequest.h; path = ../../engine/common/engine/src/cpp/include/PrependLuaModelRequest.h; sourceTree = "<group>"; };
+		40E16E8F1D0CB8ED009E1909 /* RemoveLuaModelRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RemoveLuaModelRequest.h; path = ../../engine/common/engine/src/cpp/include/RemoveLuaModelRequest.h; sourceTree = "<group>"; };
+		40E16E901D0CB8ED009E1909 /* SleepFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SleepFunc.h; path = ../../engine/common/engine/src/cpp/include/SleepFunc.h; sourceTree = "<group>"; };
+		40E16E911D0CB8ED009E1909 /* TouchListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchListener.h; path = ../../engine/common/engine/src/cpp/include/TouchListener.h; sourceTree = "<group>"; };
+		40E16E921D0CB905009E1909 /* ImageTextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageTextureLoader.h; path = ../../engine/common/texture/src/cpp/include/ImageTextureLoader.h; sourceTree = "<group>"; };
+		40E16E931D0CB905009E1909 /* luaTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaTexture.h; path = ../../engine/common/texture/src/cpp/include/luaTexture.h; sourceTree = "<group>"; };
+		40E16E941D0CB905009E1909 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = ../../engine/common/texture/src/cpp/include/Texture.h; sourceTree = "<group>"; };
+		40E16E951D0CB905009E1909 /* TextureFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureFactory.h; path = ../../engine/common/texture/src/cpp/include/TextureFactory.h; sourceTree = "<group>"; };
+		40E16E961D0CB905009E1909 /* TextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureLoader.h; path = ../../engine/common/texture/src/cpp/include/TextureLoader.h; sourceTree = "<group>"; };
+		40EA50921C28216C0071DD90 /* NullLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NullLogger.h; path = ../../engine/common/core/src/cpp/include/NullLogger.h; sourceTree = "<group>"; };
+		40EE4ECD19A3ED44006CB7DA /* ae_sdl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ae_sdl2.h; path = ../../../engine/sdl2/sdl2/src/cpp/include/ae_sdl2.h; sourceTree = "<group>"; };
+		40EE4ED319A3ED78006CB7DA /* SDLAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDLAudio.h; path = ../../../engine/sdl2/audio/src/cpp/include/SDLAudio.h; sourceTree = "<group>"; };
+		40EE4ED419A3ED78006CB7DA /* SDLMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDLMusic.h; path = ../../../engine/sdl2/audio/src/cpp/include/SDLMusic.h; sourceTree = "<group>"; };
+		40EE4ED519A3ED78006CB7DA /* SDLSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDLSound.h; path = ../../../engine/sdl2/audio/src/cpp/include/SDLSound.h; sourceTree = "<group>"; };
+		40EE4ED619A3ED81006CB7DA /* SDLAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLAudio.cpp; path = ../../../engine/sdl2/audio/src/cpp/SDLAudio.cpp; sourceTree = "<group>"; };
+		40EE4ED719A3ED81006CB7DA /* SDLMusic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLMusic.cpp; path = ../../../engine/sdl2/audio/src/cpp/SDLMusic.cpp; sourceTree = "<group>"; };
+		40EE4ED819A3ED81006CB7DA /* SDLSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLSound.cpp; path = ../../../engine/sdl2/audio/src/cpp/SDLSound.cpp; sourceTree = "<group>"; };
+		40EE4EE019A3EDCA006CB7DA /* string_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = string_util.h; path = ../../engine/common/util/src/cpp/include/string_util.h; sourceTree = "<group>"; };
+		40EE4EE719A3EDFB006CB7DA /* Audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Audio.h; path = ../../engine/common/audio/src/cpp/include/Audio.h; sourceTree = "<group>"; };
+		40EE4EE819A3EDFB006CB7DA /* DummyAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DummyAudio.h; path = ../../engine/common/audio/src/cpp/include/DummyAudio.h; sourceTree = "<group>"; };
+		40EE4EE919A3EDFB006CB7DA /* DummyMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DummyMusic.h; path = ../../engine/common/audio/src/cpp/include/DummyMusic.h; sourceTree = "<group>"; };
+		40EE4EEA19A3EDFB006CB7DA /* DummySound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DummySound.h; path = ../../engine/common/audio/src/cpp/include/DummySound.h; sourceTree = "<group>"; };
+		40EE4EEB19A3EDFB006CB7DA /* luaMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaMusic.h; path = ../../engine/common/audio/src/cpp/include/luaMusic.h; sourceTree = "<group>"; };
+		40EE4EEC19A3EDFB006CB7DA /* luaSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = luaSound.h; path = ../../engine/common/audio/src/cpp/include/luaSound.h; sourceTree = "<group>"; };
+		40EE4EED19A3EDFB006CB7DA /* Music.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Music.h; path = ../../engine/common/audio/src/cpp/include/Music.h; sourceTree = "<group>"; };
+		40EE4EEE19A3EDFB006CB7DA /* Sound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = ../../engine/common/audio/src/cpp/include/Sound.h; sourceTree = "<group>"; };
+		40EE4EEF19A3EE08006CB7DA /* luaMusic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaMusic.cpp; path = ../../engine/common/audio/src/cpp/luaMusic.cpp; sourceTree = "<group>"; };
+		40EE4EF019A3EE08006CB7DA /* luaSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaSound.cpp; path = ../../engine/common/audio/src/cpp/luaSound.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40D8183819A1239500FEAD6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A32D4F1A49E65C00E1EA1D /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				40A32D511A49E67900E1EA1D /* src */,
+				40A32D501A49E67200E1EA1D /* include */,
+			);
+			name = engine;
+			sourceTree = "<group>";
+		};
+		40A32D501A49E67200E1EA1D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40AA83FA1DE9CCEE00FEBDB7 /* ae_lock_sdl2.h */,
+				40339AA51A7EC98C00F84382 /* SDLGetTicksFunc.h */,
+				40A32D521A49E69000E1EA1D /* SDLEngineMutex.h */,
+				40A32D531A49E69000E1EA1D /* SDLEngineMutexFactory.h */,
+				40A32D541A49E69000E1EA1D /* SDLSleepFunc.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40A32D511A49E67900E1EA1D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40AA83FE1DE9CDB300FEBDB7 /* ae_lock_sdl2.cpp */,
+				40339AA61A7EC99600F84382 /* SDLGetTicksFunc.cpp */,
+				40A32D551A49E69F00E1EA1D /* SDLEngineMutex.cpp */,
+				40A32D561A49E69F00E1EA1D /* SDLEngineMutexFactory.cpp */,
+				40A32D571A49E69F00E1EA1D /* SDLSleepFunc.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40D8183219A1239500FEAD6A = {
+			isa = PBXGroup;
+			children = (
+				40D8193E19A1367300FEAD6A /* lua */,
+				40D8193519A1364D00FEAD6A /* lpng */,
+				40D8188819A1258200FEAD6A /* SDL2 */,
+				40D8191F19A135EE00FEAD6A /* SDL2_mixer */,
+				40D818CC19A1344600FEAD6A /* ae */,
+				40D8184019A1239600FEAD6A /* ae_sdl2 */,
+				40D8183D19A1239600FEAD6A /* Frameworks */,
+				40D8183C19A1239600FEAD6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40D8183C19A1239600FEAD6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40D8183B19A1239600FEAD6A /* libae_sdl2.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40D8183D19A1239600FEAD6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40D8184019A1239600FEAD6A /* ae_sdl2 */ = {
+			isa = PBXGroup;
+			children = (
+				40E049A11A647F2F001CA95D /* common */,
+				40E049941A647D9C001CA95D /* ios */,
+			);
+			path = ae_sdl2;
+			sourceTree = "<group>";
+		};
+		40D8186419A1245F00FEAD6A /* core */ = {
+			isa = PBXGroup;
+			children = (
+				40D8186619A1246C00FEAD6A /* src */,
+				40D8186519A1246500FEAD6A /* include */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		40D8186519A1246500FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				408671941A3A2CF700C62759 /* SDLLogger.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8186619A1246C00FEAD6A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				408671951A3A2D0500C62759 /* SDLLogger.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40D8186A19A1249600FEAD6A /* io */ = {
+			isa = PBXGroup;
+			children = (
+				40D8186C19A1249F00FEAD6A /* src */,
+				40D8186B19A1249A00FEAD6A /* include */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+		40D8186B19A1249A00FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				400163931A246890007B9A1D /* RWopsFileSystem.h */,
+				40DFD65A19FECB3F00A65E4C /* RWopsAssets.h */,
+				40E12C5F19B507D400482702 /* RWopsOutputStream.h */,
+				40E12C6019B507D400482702 /* RWopsOutputStreamProvider.h */,
+				40E12C6119B507D400482702 /* RWopsStorage.h */,
+				40D8186D19A124B000FEAD6A /* RWopsInputStream.h */,
+				40D8186E19A124B000FEAD6A /* RWopsInputStreamProvider.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8186C19A1249F00FEAD6A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				400163911A24687D007B9A1D /* RWopsFileSystem.cpp */,
+				40DFD65B19FECB5B00A65E4C /* RWopsAssets.cpp */,
+				40E12C5919B507A700482702 /* RWopsOutputStream.cpp */,
+				40E12C5A19B507A700482702 /* RWopsOutputStreamProvider.cpp */,
+				40E12C5B19B507A700482702 /* RWopsStorage.cpp */,
+				40D8186F19A124B900FEAD6A /* RWopsInputStream.cpp */,
+				40D8187019A124B900FEAD6A /* RWopsInputStreamProvider.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40D8188019A1253100FEAD6A /* sdl2 */ = {
+			isa = PBXGroup;
+			children = (
+				40D8188219A1253B00FEAD6A /* src */,
+				40D8188119A1253600FEAD6A /* include */,
+			);
+			name = sdl2;
+			sourceTree = "<group>";
+		};
+		40D8188119A1253600FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40CB0C161B7153A4001D860A /* SDL_helper.h */,
+				40DFD66219FECCE900A65E4C /* SDLLuaEngineListener.h */,
+				40EE4ECD19A3ED44006CB7DA /* ae_sdl2.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8188219A1253B00FEAD6A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40CB0C171B7153B3001D860A /* SDL_helper.cpp */,
+				40DFD66319FECD0000A65E4C /* SDLLuaEngineListener.cpp */,
+				40D8188419A1255600FEAD6A /* ae_sdl2.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40D8188819A1258200FEAD6A /* SDL2 */ = {
+			isa = PBXGroup;
+			children = (
+				40D8188B19A125C900FEAD6A /* include */,
+			);
+			name = SDL2;
+			sourceTree = "<group>";
+		};
+		40D8188B19A125C900FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D8188C19A1261000FEAD6A /* begin_code.h */,
+				40D8188D19A1261000FEAD6A /* close_code.h */,
+				40D8188E19A1261000FEAD6A /* SDL_assert.h */,
+				40D8188F19A1261000FEAD6A /* SDL_atomic.h */,
+				40D8189019A1261000FEAD6A /* SDL_audio.h */,
+				40D8189119A1261000FEAD6A /* SDL_bits.h */,
+				40D8189219A1261000FEAD6A /* SDL_blendmode.h */,
+				40D8189319A1261000FEAD6A /* SDL_clipboard.h */,
+				40D8189419A1261000FEAD6A /* SDL_config_android.h */,
+				40D8189519A1261000FEAD6A /* SDL_config_iphoneos.h */,
+				40D8189619A1261000FEAD6A /* SDL_config_macosx.h */,
+				40D8189719A1261000FEAD6A /* SDL_config_minimal.h */,
+				40D8189819A1261000FEAD6A /* SDL_config_pandora.h */,
+				40D8189919A1261000FEAD6A /* SDL_config_psp.h */,
+				40D8189A19A1261000FEAD6A /* SDL_config_windows.h */,
+				40D8189B19A1261000FEAD6A /* SDL_config_winrt.h */,
+				40D8189C19A1261000FEAD6A /* SDL_config_wiz.h */,
+				40D8189D19A1261000FEAD6A /* SDL_config.h */,
+				40D8189E19A1261000FEAD6A /* SDL_copying.h */,
+				40D8189F19A1261000FEAD6A /* SDL_cpuinfo.h */,
+				40D818A019A1261000FEAD6A /* SDL_egl.h */,
+				40D818A119A1261000FEAD6A /* SDL_endian.h */,
+				40D818A219A1261000FEAD6A /* SDL_error.h */,
+				40D818A319A1261000FEAD6A /* SDL_events.h */,
+				40D818A419A1261000FEAD6A /* SDL_filesystem.h */,
+				40D818A519A1261000FEAD6A /* SDL_gamecontroller.h */,
+				40D818A619A1261000FEAD6A /* SDL_gesture.h */,
+				40D818A719A1261000FEAD6A /* SDL_haptic.h */,
+				40D818A819A1261000FEAD6A /* SDL_hints.h */,
+				40D818A919A1261000FEAD6A /* SDL_joystick.h */,
+				40D818AA19A1261000FEAD6A /* SDL_keyboard.h */,
+				40D818AB19A1261000FEAD6A /* SDL_keycode.h */,
+				40D818AC19A1261000FEAD6A /* SDL_loadso.h */,
+				40D818AD19A1261000FEAD6A /* SDL_log.h */,
+				40D818AE19A1261000FEAD6A /* SDL_main.h */,
+				40D818AF19A1261000FEAD6A /* SDL_messagebox.h */,
+				40D818B019A1261000FEAD6A /* SDL_mouse.h */,
+				40D818B119A1261000FEAD6A /* SDL_mutex.h */,
+				40D818B219A1261000FEAD6A /* SDL_name.h */,
+				40D818B319A1261000FEAD6A /* SDL_opengl.h */,
+				40D818B419A1261000FEAD6A /* SDL_opengles.h */,
+				40D818B519A1261000FEAD6A /* SDL_opengles2.h */,
+				40D818B619A1261000FEAD6A /* SDL_pixels.h */,
+				40D818B719A1261000FEAD6A /* SDL_platform.h */,
+				40D818B819A1261100FEAD6A /* SDL_power.h */,
+				40D818B919A1261100FEAD6A /* SDL_quit.h */,
+				40D818BA19A1261100FEAD6A /* SDL_rect.h */,
+				40D818BB19A1261100FEAD6A /* SDL_render.h */,
+				40D818BC19A1261100FEAD6A /* SDL_revision.h */,
+				40D818BD19A1261100FEAD6A /* SDL_rwops.h */,
+				40D818BE19A1261100FEAD6A /* SDL_scancode.h */,
+				40D818BF19A1261100FEAD6A /* SDL_shape.h */,
+				40D818C019A1261100FEAD6A /* SDL_stdinc.h */,
+				40D818C119A1261100FEAD6A /* SDL_surface.h */,
+				40D818C219A1261100FEAD6A /* SDL_system.h */,
+				40D818C319A1261100FEAD6A /* SDL_syswm.h */,
+				40D818C419A1261100FEAD6A /* SDL_thread.h */,
+				40D818C519A1261100FEAD6A /* SDL_timer.h */,
+				40D818C619A1261100FEAD6A /* SDL_touch.h */,
+				40D818C719A1261100FEAD6A /* SDL_types.h */,
+				40D818C819A1261100FEAD6A /* SDL_version.h */,
+				40D818C919A1261100FEAD6A /* SDL_video.h */,
+				40D818CA19A1261100FEAD6A /* SDL.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D818CC19A1344600FEAD6A /* ae */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4EE319A3EDD5006CB7DA /* audio */,
+				40EE4EDD19A3EDAB006CB7DA /* util */,
+				40D8191819A135CE00FEAD6A /* texture */,
+				40D8190619A1357D00FEAD6A /* math */,
+				40D818FF19A1356200FEAD6A /* io */,
+				40D818FA19A1352C00FEAD6A /* image */,
+				40D818EA19A134EF00FEAD6A /* gles2 */,
+				40D818DB19A134B600FEAD6A /* engine */,
+				40D818CD19A1345D00FEAD6A /* core */,
+			);
+			name = ae;
+			sourceTree = "<group>";
+		};
+		40D818CD19A1345D00FEAD6A /* core */ = {
+			isa = PBXGroup;
+			children = (
+				40D818CE19A1346100FEAD6A /* include */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		40D818CE19A1346100FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				401EB70C1C57F75E0038640A /* DLog.h */,
+				40EA50921C28216C0071DD90 /* NullLogger.h */,
+				4096AE941C236BB200720CB9 /* ae_platform.h */,
+				400163961A246D17007B9A1D /* LuaGC.h */,
+				40D818CF19A134AC00FEAD6A /* Error.h */,
+				40D818D019A134AC00FEAD6A /* Log.h */,
+				40D818D119A134AC00FEAD6A /* Logger.h */,
+				40D818D219A134AC00FEAD6A /* lua_common.h */,
+				40D818D419A134AC00FEAD6A /* lua_log.h */,
+				40D818D519A134AC00FEAD6A /* LuaGetField.h */,
+				40D818D619A134AC00FEAD6A /* LuaGetGlobal.h */,
+				40D818D719A134AC00FEAD6A /* LuaLoader.h */,
+				40D818D819A134AC00FEAD6A /* LuaPCall.h */,
+				40D818DA19A134AC00FEAD6A /* Runnable.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D818DB19A134B600FEAD6A /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				40D818DC19A134C000FEAD6A /* include */,
+			);
+			name = engine;
+			sourceTree = "<group>";
+		};
+		40D818DC19A134C000FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40AA83F91DE9CC6B00FEBDB7 /* ae_lock.h */,
+				40E16E6F1D0CB8ED009E1909 /* AppendLuaModelRequest.h */,
+				40E16E701D0CB8ED009E1909 /* DummyEngineMutex.h */,
+				40E16E711D0CB8ED009E1909 /* DummyEngineMutexFactory.h */,
+				40E16E721D0CB8ED009E1909 /* Engine.h */,
+				40E16E731D0CB8ED009E1909 /* EngineCfg.h */,
+				40E16E741D0CB8ED009E1909 /* EngineMutex.h */,
+				40E16E751D0CB8ED009E1909 /* EngineMutexFactory.h */,
+				40E16E761D0CB8ED009E1909 /* EngineRequest.h */,
+				40E16E771D0CB8ED009E1909 /* GetTicksFunc.h */,
+				40E16E781D0CB8ED009E1909 /* Key.h */,
+				40E16E791D0CB8ED009E1909 /* KeyListener.h */,
+				40E16E7A1D0CB8ED009E1909 /* lua_ae.h */,
+				40E16E7B1D0CB8ED009E1909 /* LuaCallBooleanFuncRequest.h */,
+				40E16E7C1D0CB8ED009E1909 /* LuaCallFuncRequest.h */,
+				40E16E7D1D0CB8ED009E1909 /* LuaCallNoArgFuncRequest.h */,
+				40E16E7E1D0CB8ED009E1909 /* LuaCallStrFuncRequest.h */,
+				40E16E7F1D0CB8ED009E1909 /* LuaEngine.h */,
+				40E16E801D0CB8ED009E1909 /* LuaEngineCfg.h */,
+				40E16E811D0CB8ED009E1909 /* LuaEngineCfgOS.h */,
+				40E16E821D0CB8ED009E1909 /* LuaEngineDisplayListener.h */,
+				40E16E831D0CB8ED009E1909 /* LuaEnginePauseListener.h */,
+				40E16E841D0CB8ED009E1909 /* LuaEnginePlugin.h */,
+				40E16E851D0CB8ED009E1909 /* LuaEnginePluginManager.h */,
+				40E16E861D0CB8ED009E1909 /* LuaEngineQuitListener.h */,
+				40E16E871D0CB8ED009E1909 /* LuaEngineRestartListener.h */,
+				40E16E881D0CB8ED009E1909 /* LuaExtraLib.h */,
+				40E16E891D0CB8ED009E1909 /* LuaExtraLibManager.h */,
+				40E16E8A1D0CB8ED009E1909 /* LuaKeyHandler.h */,
+				40E16E8B1D0CB8ED009E1909 /* LuaModel.h */,
+				40E16E8C1D0CB8ED009E1909 /* LuaTouchHandler.h */,
+				40E16E8D1D0CB8ED009E1909 /* Model.h */,
+				40E16E8E1D0CB8ED009E1909 /* PrependLuaModelRequest.h */,
+				40E16E8F1D0CB8ED009E1909 /* RemoveLuaModelRequest.h */,
+				40E16E901D0CB8ED009E1909 /* SleepFunc.h */,
+				40E16E911D0CB8ED009E1909 /* TouchListener.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D818EA19A134EF00FEAD6A /* gles2 */ = {
+			isa = PBXGroup;
+			children = (
+				40D818EB19A134F300FEAD6A /* include */,
+			);
+			name = gles2;
+			sourceTree = "<group>";
+		};
+		40D818EB19A134F300FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D818EC19A1352100FEAD6A /* ae_GLES2.h */,
+				40D818ED19A1352100FEAD6A /* GLError.h */,
+				40D818EE19A1352100FEAD6A /* GLSLProgram.h */,
+				40D818EF19A1352100FEAD6A /* GLSLShader.h */,
+				40D818F019A1352100FEAD6A /* lua_glerror.h */,
+				40D818F119A1352100FEAD6A /* lua_gles2.h */,
+				40D818F219A1352100FEAD6A /* luaGLSLAttrib.h */,
+				40D818F319A1352100FEAD6A /* luaGLSLProgram.h */,
+				40D818F419A1352100FEAD6A /* luaGLSLShader.h */,
+				40D818F519A1352100FEAD6A /* luaGLSLUniform.h */,
+				40D818F619A1352200FEAD6A /* luaVertexBufferData.h */,
+				40D818F719A1352200FEAD6A /* luaVertexBufferObject.h */,
+				40D818F819A1352200FEAD6A /* VertexBufferData.h */,
+				40D818F919A1352200FEAD6A /* VertexBufferObject.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D818FA19A1352C00FEAD6A /* image */ = {
+			isa = PBXGroup;
+			children = (
+				40D818FB19A1353300FEAD6A /* include */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		40D818FB19A1353300FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D818FC19A1355A00FEAD6A /* Image.h */,
+				40B753DE1A705A1B0092C87E /* ImageUtil.h */,
+				40B753DF1A705A1B0092C87E /* luaImage.h */,
+				40D818FD19A1355A00FEAD6A /* ImageLoader.h */,
+				40D818FE19A1355A00FEAD6A /* PNGImageLoader.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D818FF19A1356200FEAD6A /* io */ = {
+			isa = PBXGroup;
+			children = (
+				40D8190019A1356600FEAD6A /* include */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+		40D8190019A1356600FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40B3723F1C21F4A5001822D4 /* UnhashInputStream.h */,
+				40B372401C21F4A5001822D4 /* UnhashInputStreamProvider.h */,
+				400163941A246A37007B9A1D /* FileSystem.h */,
+				400163951A246A37007B9A1D /* lua_filesystem.h */,
+				40DFD65D19FECBD200A65E4C /* Assets.h */,
+				40DFD65E19FECBD200A65E4C /* lua_assets.h */,
+				40E12C5019B5058900482702 /* lua_storage.h */,
+				40E12C5119B5058900482702 /* luaInputStream.h */,
+				40E12C5219B5058900482702 /* luaOutputStream.h */,
+				40E12C5319B5058900482702 /* OutputStream.h */,
+				40E12C5419B5058900482702 /* OutputStreamProvider.h */,
+				40E12C5519B5058900482702 /* Storage.h */,
+				40D8190119A1357500FEAD6A /* BufferedInputStream.h */,
+				40D8190219A1357500FEAD6A /* InputStream.h */,
+				40D8190319A1357500FEAD6A /* InputStreamContentReader.h */,
+				40D8190419A1357500FEAD6A /* InputStreamProvider.h */,
+				40D8190519A1357500FEAD6A /* PropertiesReader.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8190619A1357D00FEAD6A /* math */ = {
+			isa = PBXGroup;
+			children = (
+				40D8190719A1358100FEAD6A /* include */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
+		40D8190719A1358100FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40B753DC1A705A0A0092C87E /* Interpolation.h */,
+				40B753DD1A705A0A0092C87E /* LinearInterpolation.h */,
+				40D8190819A1359000FEAD6A /* BasicMat4.h */,
+				40D8190919A1359000FEAD6A /* luaMat4.h */,
+				40D8190A19A1359000FEAD6A /* Mat4.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8191819A135CE00FEAD6A /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				40D8191919A135D300FEAD6A /* include */,
+			);
+			name = texture;
+			sourceTree = "<group>";
+		};
+		40D8191919A135D300FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40E16E921D0CB905009E1909 /* ImageTextureLoader.h */,
+				40E16E931D0CB905009E1909 /* luaTexture.h */,
+				40E16E941D0CB905009E1909 /* Texture.h */,
+				40E16E951D0CB905009E1909 /* TextureFactory.h */,
+				40E16E961D0CB905009E1909 /* TextureLoader.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8191F19A135EE00FEAD6A /* SDL2_mixer */ = {
+			isa = PBXGroup;
+			children = (
+				40D8192019A135FE00FEAD6A /* include */,
+			);
+			name = SDL2_mixer;
+			sourceTree = "<group>";
+		};
+		40D8192019A135FE00FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D8193419A1363B00FEAD6A /* SDL_mixer.h */,
+				40D8192119A1362E00FEAD6A /* dynamic_flac.h */,
+				40D8192219A1362F00FEAD6A /* dynamic_fluidsynth.h */,
+				40D8192319A1362F00FEAD6A /* dynamic_mod.h */,
+				40D8192419A1362F00FEAD6A /* dynamic_modplug.h */,
+				40D8192519A1362F00FEAD6A /* dynamic_mp3.h */,
+				40D8192619A1362F00FEAD6A /* dynamic_ogg.h */,
+				40D8192719A1362F00FEAD6A /* effects_internal.h */,
+				40D8192819A1362F00FEAD6A /* fluidsynth.h */,
+				40D8192919A1362F00FEAD6A /* load_aiff.h */,
+				40D8192A19A1362F00FEAD6A /* load_flac.h */,
+				40D8192B19A1362F00FEAD6A /* load_ogg.h */,
+				40D8192C19A1362F00FEAD6A /* load_voc.h */,
+				40D8192D19A1362F00FEAD6A /* music_cmd.h */,
+				40D8192E19A1362F00FEAD6A /* music_flac.h */,
+				40D8192F19A1362F00FEAD6A /* music_mad.h */,
+				40D8193019A1362F00FEAD6A /* music_mod.h */,
+				40D8193119A1362F00FEAD6A /* music_modplug.h */,
+				40D8193219A1362F00FEAD6A /* music_ogg.h */,
+				40D8193319A1362F00FEAD6A /* wavestream.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8193519A1364D00FEAD6A /* lpng */ = {
+			isa = PBXGroup;
+			children = (
+				40D8193619A1365200FEAD6A /* include */,
+			);
+			name = lpng;
+			sourceTree = "<group>";
+		};
+		40D8193619A1365200FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D8193719A1366D00FEAD6A /* png.h */,
+				40D8193819A1366D00FEAD6A /* pngconf.h */,
+				40D8193919A1366D00FEAD6A /* pngdebug.h */,
+				40D8193A19A1366D00FEAD6A /* pnginfo.h */,
+				40D8193B19A1366D00FEAD6A /* pnglibconf.h */,
+				40D8193C19A1366D00FEAD6A /* pngpriv.h */,
+				40D8193D19A1366D00FEAD6A /* pngstruct.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40D8193E19A1367300FEAD6A /* lua */ = {
+			isa = PBXGroup;
+			children = (
+				40D8193F19A1367700FEAD6A /* include */,
+			);
+			name = lua;
+			sourceTree = "<group>";
+		};
+		40D8193F19A1367700FEAD6A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40D8194019A136A600FEAD6A /* lapi.h */,
+				40D8194119A136A600FEAD6A /* lauxlib.h */,
+				40D8194219A136A600FEAD6A /* lcode.h */,
+				40D8194319A136A600FEAD6A /* lctype.h */,
+				40D8194419A136A600FEAD6A /* ldebug.h */,
+				40D8194519A136A600FEAD6A /* ldo.h */,
+				40D8194619A136A600FEAD6A /* lfunc.h */,
+				40D8194719A136A600FEAD6A /* lgc.h */,
+				40D8194819A136A600FEAD6A /* llex.h */,
+				40D8194919A136A600FEAD6A /* llimits.h */,
+				40D8194A19A136A600FEAD6A /* lmem.h */,
+				40D8194B19A136A600FEAD6A /* lobject.h */,
+				40D8194C19A136A600FEAD6A /* lopcodes.h */,
+				40D8194D19A136A600FEAD6A /* lparser.h */,
+				40D8194E19A136A600FEAD6A /* lstate.h */,
+				40D8194F19A136A600FEAD6A /* lstring.h */,
+				40D8195019A136A600FEAD6A /* ltable.h */,
+				40D8195119A136A600FEAD6A /* ltm.h */,
+				40D8195219A136A600FEAD6A /* lua.h */,
+				40D8195319A136A600FEAD6A /* lua.hpp */,
+				40D8195419A136A600FEAD6A /* luaconf.h */,
+				40D8195519A136A600FEAD6A /* lualib.h */,
+				40D8195619A136A600FEAD6A /* lundump.h */,
+				40D8195719A136A600FEAD6A /* lvm.h */,
+				40D8195819A136A600FEAD6A /* lzio.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40E049941A647D9C001CA95D /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40E0499B1A647F07001CA95D /* core */,
+				40E0499A1A647EF3001CA95D /* sdl2 */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40E049951A647DA1001CA95D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				404ACF981E5D8576000E750E /* ae_sdl2_ios_screen.h */,
+				40E049971A647DC7001CA95D /* ae_sdl2_ios.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40E049961A647DA5001CA95D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40E049981A647DCF001CA95D /* ae_sdl2_ios.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40E0499A1A647EF3001CA95D /* sdl2 */ = {
+			isa = PBXGroup;
+			children = (
+				40E049961A647DA5001CA95D /* src */,
+				40E049951A647DA1001CA95D /* include */,
+			);
+			name = sdl2;
+			sourceTree = "<group>";
+		};
+		40E0499B1A647F07001CA95D /* core */ = {
+			isa = PBXGroup;
+			children = (
+				40E0499D1A647F0F001CA95D /* src */,
+				40E0499C1A647F0B001CA95D /* include */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		40E0499C1A647F0B001CA95D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40E0499E1A647F24001CA95D /* NSLogger.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40E0499D1A647F0F001CA95D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40E0499F1A647F2A001CA95D /* NSLogger.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40E049A11A647F2F001CA95D /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40A32D4F1A49E65C00E1EA1D /* engine */,
+				40EE4ED019A3ED59006CB7DA /* audio */,
+				40D8188019A1253100FEAD6A /* sdl2 */,
+				40D8186A19A1249600FEAD6A /* io */,
+				40D8186419A1245F00FEAD6A /* core */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40EE4ED019A3ED59006CB7DA /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4ED219A3ED64006CB7DA /* src */,
+				40EE4ED119A3ED5E006CB7DA /* include */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
+		40EE4ED119A3ED5E006CB7DA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4ED319A3ED78006CB7DA /* SDLAudio.h */,
+				40EE4ED419A3ED78006CB7DA /* SDLMusic.h */,
+				40EE4ED519A3ED78006CB7DA /* SDLSound.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40EE4ED219A3ED64006CB7DA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4ED619A3ED81006CB7DA /* SDLAudio.cpp */,
+				40EE4ED719A3ED81006CB7DA /* SDLMusic.cpp */,
+				40EE4ED819A3ED81006CB7DA /* SDLSound.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40EE4EDD19A3EDAB006CB7DA /* util */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4EDF19A3EDB4006CB7DA /* include */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		40EE4EDF19A3EDB4006CB7DA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40DFD66119FECC9F00A65E4C /* FPSMax.h */,
+				40E12C3B19B5054300482702 /* FPSCounter.h */,
+				40E12C3C19B5054300482702 /* lua_MessagePack.h */,
+				40E12C3D19B5054300482702 /* luaMessagePackPacker.h */,
+				40E12C3E19B5054300482702 /* luaMessagePackUnpacker.h */,
+				40E12C3F19B5054300482702 /* MessagePack.h */,
+				40E12C4019B5054300482702 /* MessagePackPacker.h */,
+				40E12C4119B5054300482702 /* MessagePackUnpacker.h */,
+				40EE4EE019A3EDCA006CB7DA /* string_util.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		40EE4EE319A3EDD5006CB7DA /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4EE619A3EDE9006CB7DA /* include */,
+				40EE4EE519A3EDE5006CB7DA /* src */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
+		40EE4EE519A3EDE5006CB7DA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4EEF19A3EE08006CB7DA /* luaMusic.cpp */,
+				40EE4EF019A3EE08006CB7DA /* luaSound.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40EE4EE619A3EDE9006CB7DA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40EE4EE719A3EDFB006CB7DA /* Audio.h */,
+				40EE4EE819A3EDFB006CB7DA /* DummyAudio.h */,
+				40EE4EE919A3EDFB006CB7DA /* DummyMusic.h */,
+				40EE4EEA19A3EDFB006CB7DA /* DummySound.h */,
+				40EE4EEB19A3EDFB006CB7DA /* luaMusic.h */,
+				40EE4EEC19A3EDFB006CB7DA /* luaSound.h */,
+				40EE4EED19A3EDFB006CB7DA /* Music.h */,
+				40EE4EEE19A3EDFB006CB7DA /* Sound.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40D8183A19A1239500FEAD6A /* ae_sdl2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D8185E19A1239700FEAD6A /* Build configuration list for PBXNativeTarget "ae_sdl2" */;
+			buildPhases = (
+				40D8183719A1239500FEAD6A /* Sources */,
+				40D8183819A1239500FEAD6A /* Frameworks */,
+				40D8183919A1239500FEAD6A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_sdl2;
+			productName = ae_sdl2;
+			productReference = 40D8183B19A1239600FEAD6A /* libae_sdl2.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40D8183319A1239500FEAD6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = AndCreations;
+			};
+			buildConfigurationList = 40D8183619A1239500FEAD6A /* Build configuration list for PBXProject "ae_sdl2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40D8183219A1239500FEAD6A;
+			productRefGroup = 40D8183C19A1239600FEAD6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40D8183A19A1239500FEAD6A /* ae_sdl2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40D8183719A1239500FEAD6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40EE4EDA19A3ED82006CB7DA /* SDLMusic.cpp in Sources */,
+				40A32D5A1A49E69F00E1EA1D /* SDLSleepFunc.cpp in Sources */,
+				408671961A3A2D0500C62759 /* SDLLogger.cpp in Sources */,
+				40D8187219A124B900FEAD6A /* RWopsInputStreamProvider.cpp in Sources */,
+				40339AA71A7EC99600F84382 /* SDLGetTicksFunc.cpp in Sources */,
+				40CB0C181B7153B3001D860A /* SDL_helper.cpp in Sources */,
+				40E12C5D19B507A700482702 /* RWopsOutputStreamProvider.cpp in Sources */,
+				400163921A24687D007B9A1D /* RWopsFileSystem.cpp in Sources */,
+				40AA83FF1DE9CDB300FEBDB7 /* ae_lock_sdl2.cpp in Sources */,
+				40EE4ED919A3ED81006CB7DA /* SDLAudio.cpp in Sources */,
+				40DFD66419FECD0000A65E4C /* SDLLuaEngineListener.cpp in Sources */,
+				40D8188619A1255600FEAD6A /* ae_sdl2.cpp in Sources */,
+				40A32D591A49E69F00E1EA1D /* SDLEngineMutexFactory.cpp in Sources */,
+				40EE4EDB19A3ED82006CB7DA /* SDLSound.cpp in Sources */,
+				40DFD65C19FECB5B00A65E4C /* RWopsAssets.cpp in Sources */,
+				40EE4EF219A3EE08006CB7DA /* luaSound.cpp in Sources */,
+				40E12C5E19B507A700482702 /* RWopsStorage.cpp in Sources */,
+				40A32D581A49E69F00E1EA1D /* SDLEngineMutex.cpp in Sources */,
+				40E049991A647DCF001CA95D /* ae_sdl2_ios.mm in Sources */,
+				40E049A01A647F2A001CA95D /* NSLogger.mm in Sources */,
+				40D8187119A124B900FEAD6A /* RWopsInputStream.cpp in Sources */,
+				40E12C5C19B507A700482702 /* RWopsOutputStream.cpp in Sources */,
+				40EE4EF119A3EE08006CB7DA /* luaMusic.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40D8185C19A1239700FEAD6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40D8185D19A1239700FEAD6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40D8185F19A1239700FEAD6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/ae_sdl2.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40D8186019A1239700FEAD6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/ae_sdl2.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40D8183619A1239500FEAD6A /* Build configuration list for PBXProject "ae_sdl2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D8185C19A1239700FEAD6A /* Debug */,
+				40D8185D19A1239700FEAD6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D8185E19A1239700FEAD6A /* Build configuration list for PBXNativeTarget "ae_sdl2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D8185F19A1239700FEAD6A /* Debug */,
+				40D8186019A1239700FEAD6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40D8183319A1239500FEAD6A /* Project object */;
+}

@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4099F6241DCBB49100D7B75F /* LuaLibAppLovin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4099F6231DCBB49100D7B75F /* LuaLibAppLovin.cpp */; };
+		40A3F72D1C0E3F1200E02F52 /* AppLovinLuaExtraLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F72A1C0E3F1200E02F52 /* AppLovinLuaExtraLib.cpp */; };
+		40A3F72E1C0E3F1200E02F52 /* lua_applovin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F72B1C0E3F1200E02F52 /* lua_applovin.cpp */; };
+		40A3F72F1C0E3F1200E02F52 /* LuaAppLovinCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F72C1C0E3F1200E02F52 /* LuaAppLovinCallback.cpp */; };
+		40A3F7331C0E3F1E00E02F52 /* AEALInterstitalAdLoadDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F7301C0E3F1E00E02F52 /* AEALInterstitalAdLoadDelegate.mm */; };
+		40A3F7341C0E3F1E00E02F52 /* AEALInterstitialAdDisplayDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F7311C0E3F1E00E02F52 /* AEALInterstitialAdDisplayDelegate.mm */; };
+		40A3F7351C0E3F1E00E02F52 /* AEiOSLuaLibAppLovin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40A3F7321C0E3F1E00E02F52 /* AEiOSLuaLibAppLovin.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A3F7151C0E3E2300E02F52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4099F6231DCBB49100D7B75F /* LuaLibAppLovin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaLibAppLovin.cpp; path = ../../../common/src/cpp/LuaLibAppLovin.cpp; sourceTree = "<group>"; };
+		40A3F7171C0E3E2300E02F52 /* libae_applovin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libae_applovin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A3F72A1C0E3F1200E02F52 /* AppLovinLuaExtraLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppLovinLuaExtraLib.cpp; path = ../../../common/src/cpp/AppLovinLuaExtraLib.cpp; sourceTree = "<group>"; };
+		40A3F72B1C0E3F1200E02F52 /* lua_applovin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_applovin.cpp; path = ../../../common/src/cpp/lua_applovin.cpp; sourceTree = "<group>"; };
+		40A3F72C1C0E3F1200E02F52 /* LuaAppLovinCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaAppLovinCallback.cpp; path = ../../../common/src/cpp/LuaAppLovinCallback.cpp; sourceTree = "<group>"; };
+		40A3F7301C0E3F1E00E02F52 /* AEALInterstitalAdLoadDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEALInterstitalAdLoadDelegate.mm; path = ../../src/AEALInterstitalAdLoadDelegate.mm; sourceTree = "<group>"; };
+		40A3F7311C0E3F1E00E02F52 /* AEALInterstitialAdDisplayDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEALInterstitialAdDisplayDelegate.mm; path = ../../src/AEALInterstitialAdDisplayDelegate.mm; sourceTree = "<group>"; };
+		40A3F7321C0E3F1E00E02F52 /* AEiOSLuaLibAppLovin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AEiOSLuaLibAppLovin.mm; path = ../../src/AEiOSLuaLibAppLovin.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A3F7141C0E3E2300E02F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A3F70E1C0E3E2300E02F52 = {
+			isa = PBXGroup;
+			children = (
+				40A3F7241C0E3E3500E02F52 /* ae_applovin */,
+				40A3F7181C0E3E2300E02F52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A3F7181C0E3E2300E02F52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F7171C0E3E2300E02F52 /* libae_applovin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A3F7241C0E3E3500E02F52 /* ae_applovin */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F7281C0E3E5100E02F52 /* ios */,
+				40A3F7261C0E3E4900E02F52 /* common */,
+			);
+			name = ae_applovin;
+			sourceTree = "<group>";
+		};
+		40A3F7261C0E3E4900E02F52 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F7271C0E3E4D00E02F52 /* src */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		40A3F7271C0E3E4D00E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4099F6231DCBB49100D7B75F /* LuaLibAppLovin.cpp */,
+				40A3F72A1C0E3F1200E02F52 /* AppLovinLuaExtraLib.cpp */,
+				40A3F72B1C0E3F1200E02F52 /* lua_applovin.cpp */,
+				40A3F72C1C0E3F1200E02F52 /* LuaAppLovinCallback.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		40A3F7281C0E3E5100E02F52 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F7291C0E3E5400E02F52 /* src */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		40A3F7291C0E3E5400E02F52 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40A3F7301C0E3F1E00E02F52 /* AEALInterstitalAdLoadDelegate.mm */,
+				40A3F7311C0E3F1E00E02F52 /* AEALInterstitialAdDisplayDelegate.mm */,
+				40A3F7321C0E3F1E00E02F52 /* AEiOSLuaLibAppLovin.mm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A3F7161C0E3E2300E02F52 /* ae_applovin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A3F7201C0E3E2300E02F52 /* Build configuration list for PBXNativeTarget "ae_applovin" */;
+			buildPhases = (
+				40A3F7131C0E3E2300E02F52 /* Sources */,
+				40A3F7141C0E3E2300E02F52 /* Frameworks */,
+				40A3F7151C0E3E2300E02F52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ae_applovin;
+			productName = ae_applovin;
+			productReference = 40A3F7171C0E3E2300E02F52 /* libae_applovin.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A3F70F1C0E3E2300E02F52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AndCreations;
+				TargetAttributes = {
+					40A3F7161C0E3E2300E02F52 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 40A3F7121C0E3E2300E02F52 /* Build configuration list for PBXProject "ae_applovin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40A3F70E1C0E3E2300E02F52;
+			productRefGroup = 40A3F7181C0E3E2300E02F52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A3F7161C0E3E2300E02F52 /* ae_applovin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A3F7131C0E3E2300E02F52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4099F6241DCBB49100D7B75F /* LuaLibAppLovin.cpp in Sources */,
+				40A3F7331C0E3F1E00E02F52 /* AEALInterstitalAdLoadDelegate.mm in Sources */,
+				40A3F7351C0E3F1E00E02F52 /* AEiOSLuaLibAppLovin.mm in Sources */,
+				40A3F72D1C0E3F1200E02F52 /* AppLovinLuaExtraLib.cpp in Sources */,
+				40A3F7341C0E3F1E00E02F52 /* AEALInterstitialAdDisplayDelegate.mm in Sources */,
+				40A3F72E1C0E3F1200E02F52 /* lua_applovin.cpp in Sources */,
+				40A3F72F1C0E3F1200E02F52 /* LuaAppLovinCallback.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40A3F71E1C0E3E2300E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A3F71F1C0E3E2300E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A3F7211C0E3E2300E02F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/applovin-ios-sdk/headers",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40A3F7221C0E3E2300E02F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AE_DIST = /Users/ac/andcreations/ae/dist/build/dist;
+				HEADER_SEARCH_PATHS = (
+					"$(AE_DIST)/src/lua/include",
+					"$(AE_DIST)/src/ae/include",
+					"$(PLUGIN_DIR)/common/src/cpp/include",
+					"$(PLUGIN_DIR)/ios/src/include",
+					"$(PLUGIN_DIR)/build/ios/libs/applovin-ios-sdk/headers",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PLUGIN_DIR = "$(PROJECT_DIR)/../../..";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A3F7121C0E3E2300E02F52 /* Build configuration list for PBXProject "ae_applovin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F71E1C0E3E2300E02F52 /* Debug */,
+				40A3F71F1C0E3E2300E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A3F7201C0E3E2300E02F52 /* Build configuration list for PBXNativeTarget "ae_applovin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A3F7211C0E3E2300E02F52 /* Debug */,
+				40A3F7221C0E3E2300E02F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A3F70F1C0E3E2300E02F52 /* Project object */;
+}

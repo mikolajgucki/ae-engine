@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.desktop" default="info">
+    <!-- The property with the desktop files -->
+    <property name="dir.desktop" value="${basedir}/desktop"/>
+    
+    <!-- The property with the desktop source files -->
+    <property name="dir.desktop.src" value="${dir.desktop}/src"/>
+    
+    <!-- The property with the desktop C/C++ source files -->
+    <property name="dir.desktop.src.cpp" value="${dir.desktop.src}/cpp"/>
+
+    <!-- The property with the desktop build directory -->
+    <property name="dir.build.desktop" value="${dir.build}/desktop"/>
+    
+    <!-- The property with the desktop installation directory -->
+    <property name="dir.install.desktop" value="${dir.install}/desktop"/>    
+    
+    <!-- Prints info -->
+    <target name="info">
+        <echo>This file is included in another build.xml. Don't run it directly.</echo>
+    </target>
+    
+    <macrodef name="desktop-make">
+        <attribute name="target"/>
+        <sequential>
+            <exec executable="make" dir="${dir.desktop.src.cpp}" failonerror="true">
+                <arg value="@{target}"/>
+                <arg value="PLUGIN_NAME=${plugin.name}"/>
+                <arg value="AE_DIST=${ae.dist}"/>
+                <arg value="BUILD_DIR=${dir.build.desktop}"/>
+                <arg value="PLUGIN_DIR=${basedir}"/>
+                <arg value="PLATFORM=${ae.os}"/>            
+            </exec>        
+        </sequential>
+    </macrodef>
+    
+    <!-- Removes and desktop files project -->
+    <target name="desktop.clean" unless="no.desktop">
+        <delete dir="${dir.build.desktop}"/>
+        <desktop-make target="clean"/>
+    </target>    
+    
+    <!-- Builds the project -->
+    <target name="desktop.build" depends="get.os,desktop.project.custom" unless="no.desktop">
+        <echo>Building deskop plugin ${plugin.name} for OS ${ae.os}</echo>
+        <mkdir dir="${dir.build.desktop}"/>
+        <desktop-make target="all"/>
+    </target>
+    
+    <!-- Installs the desktop files -->
+    <target name="install.desktop" unless="no.desktop" depends="clean,desktop,install.desktop.custom">
+        <copy todir="${dir.install.desktop}" failonerror="false">        
+            <fileset dir="${dir.build.desktop}" includes="**/*.dll"/>
+            <fileset dir="${dir.build.desktop}" includes="**/*.dylib"/>
+        </copy>
+    </target>
+    
+    <!-- Builds the desktop part of the plugin -->
+    <target name="desktop" unless="no.desktop" depends="desktop.build">
+    </target>    
+</project>

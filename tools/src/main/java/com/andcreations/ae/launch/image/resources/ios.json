@@ -1,0 +1,130 @@
+{
+    "entries":[
+        {
+            "name":"iPhone Portrait iOS 7-9, 2x",
+            "filename":"iPhone_Portrait_iOS_7-9@2x.png",
+            "width":640,
+            "height":960,
+            "orientation":"PORTRAIT" 
+        },
+        {
+            "name":"iPhone Portrait iOS 7-9, Retina 4",
+            "filename":"iPhone_Portrait_iOS_7-9@Retina4.png",
+            "width":640,
+            "height":1136,
+            "orientation":"PORTRAIT"
+        },
+        
+        {
+            "name":"iPad Portrait iOS 7-9, 1x",
+            "filename":"iPad_Portrait_iOS_7-9@1x.png",
+            "width":768,
+            "height":1024,
+            "orientation":"PORTRAIT" 
+        },        
+        {
+            "name":"iPad Portrait iOS 7-9, 2x",
+            "filename":"iPad_Portrait_iOS_7-9@2x.png",
+            "width":1536,
+            "height":2048,
+            "orientation":"PORTRAIT" 
+        },        
+        
+        {
+            "name":"iPad Landscape iOS 7-9, 1x",
+            "filename":"iPad_Landscape_iOS_7-9@1x.png",
+            "width":1024,
+            "height":768,
+            "orientation":"LANDSCAPE" 
+        },        
+        {
+            "name":"iPad Landscape iOS 7-9, 2x",
+            "filename":"iPad_Landscape_iOS_7-9@2x.png",
+            "width":2048,
+            "height":1536,
+            "orientation":"LANDSCAPE" 
+        },   
+        
+        {
+            "name":"iPhone Portrait iOS 5,6, 1x",
+            "filename":"iPhone_Portrait_iOS_5_6@1x.png",
+            "width":320,
+            "height":480,
+            "orientation":"PORTRAIT" 
+        },        
+        {
+            "name":"iPhone Portrait iOS 5,6, 2x",
+            "filename":"iPhone_Portrait_iOS_5_6@2x.png",
+            "width":640,
+            "height":960,
+            "orientation":"PORTRAIT" 
+        },        
+        {
+            "name":"iPhone Portrait iOS 5,6, Retina 4",
+            "filename":"iPhone_Portrait_iOS_5_6@Retina4.png",
+            "width":640,
+            "height":1136,
+            "orientation":"PORTRAIT" 
+        },        
+        
+        {
+            "name":"iPad Portrait Without Status Bar iOS 5,6, 1x",
+            "filename":"iPad_Portrait_Without_Status_Bar_iOS_5_6@1x.png",
+            "width":768,
+            "height":1004,
+            "orientation":"PORTRAIT" 
+        },           
+        {
+            "name":"iPad Portrait Without Status Bar iOS 5,6, 2x",
+            "filename":"iPad_Portrait_Without_Status_Bar_iOS_5_6@2x.png",
+            "width":1536,
+            "height":2008,
+            "orientation":"PORTRAIT" 
+        },           
+
+        {
+            "name":"iPad Portrait iOS 5,6, 1x",
+            "filename":"iPad_Portrait_iOS_5_6@1x.png",
+            "width":768,
+            "height":1024,
+            "orientation":"PORTRAIT" 
+        },           
+        {
+            "name":"iPad Portrait iOS 5,6, 2x",
+            "filename":"iPad_Portrait_iOS_5_6@2x.png",
+            "width":1536,
+            "height":2048,
+            "orientation":"PORTRAIT" 
+        },
+
+        {
+            "name":"iPad Landscape Without Status Bar iOS 5,6, 1x",
+            "filename":"iPad_Landscape_Without_Status_Bar_iOS_5_6@1x.png",
+            "width":1024,
+            "height":748,
+            "orientation":"LANDSCAPE" 
+        },                   
+        {
+            "name":"iPad Landscape Without Status Bar iOS 5,6, 2x",
+            "filename":"iPad_Landscape_Without_Status_Bar_iOS_5_6@2x.png",
+            "width":2048,
+            "height":1496,
+            "orientation":"LANDSCAPE" 
+        },                   
+        
+        {
+            "name":"iPad Landscape iOS 5,6, 1x",
+            "filename":"iPad_Landscape_iOS_5_6@1x.png",
+            "width":1024,
+            "height":768,
+            "orientation":"LANDSCAPE" 
+        },           
+        {
+            "name":"iPad Landscape iOS 5,6, 2x",
+            "filename":"iPad_Landscape_iOS_5_6@2x.png",
+            "width":2048,
+            "height":1536,
+            "orientation":"LANDSCAPE" 
+        }           
+    ]
+}

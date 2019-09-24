@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<project name="com.andcreations.ae.studio.plugins.lua.lib" default="build">
+    <property name="plugin.class" value="com.andcreations.ae.studio.plugins.lua.lib.LuaLibPlugin"/>
+    <property name="plugin.dir" value="${basedir}"/>
+
+    <import file="${basedir}/../build-plugin.xml"/>
+    
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>    
+    
+    <!-- The directory with C++ sources -->
+    <property name="dir.src.cpp" value="${dir.src}/main/cpp"/>
+    
+    <!-- The directory with C++ build files -->
+    <property name="dir.build.cpp" value="${plugin.dir}/build"/>
+
+    <!-- Called before clean -->
+    <target name="before.clean">
+    </target>
+    
+    <!-- Called after clean -->
+    <target name="after.clean">
+        <echo>Cleaning Lua native library for OS: ${ae.os}</echo>
+        <exec executable="make" dir="${dir.src.cpp}" failonerror="true">
+            <arg value="BUILD_DIR=${dir.build}"/>
+            <arg value="PLATFORM=${ae.os}"/>
+            <arg value="clean"/>
+        </exec>        
+    </target>
+    
+    <!-- Called before the compilation -->
+    <target name="before.compile">
+    </target>
+    
+    <!-- Called after the compilation -->
+    <target name="after.compile">
+        <echo>Building Lua native library for OS: ${ae.os}</echo>
+        <mkdir dir="${dir.build.cpp}"/>
+        <exec executable="make" dir="${dir.src.cpp}" failonerror="true">
+            <arg value="JAVA_HOME=${ae.env.JAVA_HOME}"/>
+            <arg value="BUILD_DIR=${dir.build}"/>
+            <arg value="PLATFORM=${ae.os}"/>
+            <arg value="LUA_VERSION=${lua.version}"/>
+            <arg value="all"/>
+        </exec>        
+    </target>
+</project>

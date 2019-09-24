@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<project name="${ae.template.app.id}.tools" default="java.info">
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>
+
+    <!-- Verify the envrionment variable AE_DIST is set. -->
+    <fail unless="ae.env.AE_DIST" message="Environment variable AE_DIST not set."/>
+    <property name="ae.dir.dist" value="${ae.env.AE_DIST}"/>
+    
+    <!-- The project root directory -->
+    <property name="project.root" value="${basedir}/.."/>
+    
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="src"/>
+    
+    <!-- The directories with the build files -->
+    <property name="dir.build" value="build"/>      
+    
+    <!-- The directories with the lib files -->
+    <property name="dir.libs" value="libs"/>          
+    
+    <!-- Import the build file from the distribution -->
+    <import file="${ae.dir.dist}/ant/java/build-java.xml"/>
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dir.dist}/libs">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.libs}">
+            <include name="*.jar"/>
+        </fileset>   
+        <pathelement path="${java.dir.build.classes}"/>
+    </path>    
+    
+    <!-- Builds the tools -->
+    <target name="build" depends="java.jar">        
+    </target>
+    
+    <!-- Deletes the build directory -->
+    <target name="clean">
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    
+</project>

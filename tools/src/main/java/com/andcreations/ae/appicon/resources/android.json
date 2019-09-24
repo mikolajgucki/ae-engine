@@ -1,0 +1,11 @@
+{
+    "dir":"android",
+    "entries":[
+        { "filename":"drawable-hdpi/ic_launcher.png", "width":72, "height":72 },
+        { "filename":"drawable-ldpi/ic_launcher.png", "width":36, "height":36 },
+        { "filename":"drawable-mdpi/ic_launcher.png", "width":48, "height":48 },
+        { "filename":"drawable-xhdpi/ic_launcher.png", "width":96, "height":96 },
+        { "filename":"drawable-xxhdpi/ic_launcher.png", "width":144, "height":144 },
+        { "filename":"drawable-xxxhdpi/ic_launcher.png", "width":192, "height":192 }
+    ]
+}

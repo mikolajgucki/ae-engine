@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>AE Engine</title>
+    <style>
+        body {
+           font-family: Helvetica, arial, sans-serif;
+           font-size: 13px;
+           /*background-color: #33322c;
+           color: #c0c0c0;*/
+        }
+        
+        a {
+           color: #51a3f4; 
+           text-decoration: none;
+        }
+        a.absent {
+           color: #cc0000; 
+        }
+        a:hover {
+           cursor: pointer;
+           text-decoration: none;
+        }
+           
+        .entries {
+            padding-top: 1em;
+            padding-bottom: 0.5em;
+        }
+        
+        .entry0 {
+            padding-left: 2em;
+            font-weight: bold;
+            padding-top: 12px;
+        }
+        .entry1 {
+            padding-left: 4em;
+            padding-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="entries">
+#foreach ($entry in $entries)
+        <div class="entry$entry.getLevel()">
+#if ($entry.getLink())
+        <a href="$entry.getLink()" target="document">
+#end
+        $entry.getTitle()
+#if ($entry.getLink())
+        </a>
+#end
+        </div>
+#end
+    </div>
+</body>
+</html>

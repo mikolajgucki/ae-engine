@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.ios">
+    <!-- Prints info on main available targets -->
+    <target name="ios.info">
+        <echo>  ios.build.lua         Builds the Lua project</echo>
+        <echo>  ios.build.lpng        Builds the libpng project</echo>
+        <echo>  ios.build.sdl2        Builds the SDL2 project</echo>
+        <echo>  ios.build.sdl2_mixer  Builds the SDL2 mixer project</echo>
+        <echo>  ios.build.ae          Builds the AE project</echo>
+        <echo>  ios.build.ae_sdl2     Builds the AE SDL2 project</echo>
+        <echo>  ios.build.projects    Builds all the projects</echo>
+        <echo>  ios.headers           Copies the iOS headers to the distribution</echo>
+        <echo>  ios.clean             Cleans the iOS projects</echo>
+    </target>
+
+    <!-- The directory with the Xcode iOS projects -->
+    <property name="dir.ios" value="${dir.root}/ios"/>    
+
+    <!-- The distribution directory for iOS files -->
+    <property name="dir.dist.ios" value="${abs.dir.dist}/ios"/>
+    
+    <!-- -->
+    <macrodef name="ios-xcodebuild">
+        <attribute name="dir"/>
+        <attribute name="target"/>
+        <attribute name="sdk"/>
+        <attribute name="configuration"/>
+        <sequential>
+            <exec executable="xcodebuild" dir="@{dir}" failonerror="true">
+                <arg value="ONLY_ACTIVE_ARCH=NO"/>
+                <arg value="ARCHS=armv7 armv7s arm64"/>
+                <arg value="-sdk"/>
+                <arg value="@{sdk}"/>
+                <arg value="-configuration"/>
+                <arg value="@{configuration}"/>
+                <arg value="-target"/>
+                <arg value="@{target}"/>
+            </exec>        
+        </sequential>
+    </macrodef>
+
+    <!-- -->
+    <macrodef name="ios-copy-lib">
+        <attribute name="dir"/>
+        <attribute name="configuration"/>        
+        <sequential>
+            <mkdir dir="${dir.dist.ios}/libs"/>
+            <copy todir="${dir.dist.ios}/libs">
+                <fileset dir="@{dir}/build/@{configuration}-iphoneos" includes="*"/>
+            </copy>
+        </sequential>
+    </macrodef>
+    
+    <!-- Asserts that the iOS configuration is set -->
+    <target name="ios.assert.configuration" unless="ios.configuration">
+        <fail message="The property ios.configuration is not set"/>
+    </target>
+    
+    <!-- Asserts that the iOS SDK is set -->
+    <target name="ios.assert.sdk" unless="ios.sdk">
+        <fail message="The property ios.sdk is not set"/>
+    </target>
+    
+    <!-- -->
+    <macrodef name="ios-build-project">
+        <attribute name="dir"/>
+        <attribute name="target"/>
+        <sequential>
+            <ios-xcodebuild dir="@{dir}" target="@{target}"
+                sdk="${ios.sdk}" configuration="${ios.configuration}"/>
+            <ios-copy-lib dir="@{dir}" configuration="${ios.configuration}"/>
+        </sequential>
+    </macrodef>
+    
+    <!-- Builds the Lua project -->
+    <target name="ios.build.lua" depends="ae.tasks">
+        <ios-build-project dir="${dir.ios}/lua" target="lua"/>    
+    </target>
+
+    <!-- Builds the libpng project -->
+    <target name="ios.build.lpng" depends="ae.tasks">
+        <ios-build-project dir="${dir.ios}/lpng" target="lpng"/>    
+    </target>
+
+    <!-- Builds the SDL2 project -->
+    <target name="ios.build.sdl2" depends="ae.tasks">
+        <ios-build-project dir="${dir.libs.build}/SDL2/Xcode-iOS/SDL" target="libSDL"/>    
+    </target>
+    
+    <!-- Builds the SDL2 mixer project -->
+    <target name="ios.build.sdl2_mixer" depends="ae.tasks">
+        <ios-build-project dir="${dir.libs.build}/SDL2_mixer/Xcode-iOS" target="Static Library"/>    
+    </target>
+
+    <!-- Builds the AE project -->
+    <target name="ios.build.ae" depends="ae.tasks">
+        <ios-build-project dir="${dir.ios}/ae" target="ae"/>    
+    </target>    
+    
+    <!-- Builds the AE SDL2 project -->
+    <target name="ios.build.ae_sdl2" depends="ae.tasks">
+        <ios-build-project dir="${dir.ios}/ae_sdl2" target="ae_sdl2"/>    
+    </target>  
+    
+    <!-- Builds all the projects -->
+    <target name="ios.build.projects">
+        <antcall target="ios.build.lua"/>
+        <antcall target="ios.build.lpng"/>
+        <antcall target="ios.build.sdl2"/>
+        <antcall target="ios.build.sdl2_mixer"/>
+        <antcall target="ios.build.ae"/>
+        <antcall target="ios.build.ae_sdl2"/>
+    </target>
+    
+    <!-- Skips iOS on Windows -->
+    <target name="ios.windows" if="ae.os.windows" unless="no.ios">
+        <echo message="Skipping building iOS projects on Windows."/>
+    </target>
+    
+    <!-- Skips iOS on Linux -->
+    <target name="ios.linux" if="ae.os.linux" unless="no.ios">
+        <echo message="Skipping building iOS projects on Linux."/>
+    </target>
+    
+    <!-- Builds the iOS projects -->
+    <target name="ios.osx" if="ae.os.osx" unless="no.ios">
+        <antcall target="libs.unzip"/>
+        <antcall target="ios.build.projects"/>
+    </target>
+    
+    <!-- Skips iOS on an unknown OS -->
+    <target name="ios.unknown" if="ae.os.unknown" unless="no.ios">
+        <echo message="Skipping building iOS projects on an unknown OS."/>
+    </target>
+    
+    <!-- Copies the iOS headers to the distribution -->
+    <target name="ios.headers">
+        <copy todir="${dir.dist.ios}/src/include" flatten="true">
+            <fileset dir="${dir.engine}/ios" includes="**/include/*.h"/>
+        </copy>
+    </target>    
+    
+    <!-- Cleans the iOS projects -->
+    <target name="ios.clean">
+        <delete includeemptydirs="yes">
+            <fileset dir="${dir.ios}" includes="*\build"/>
+        </delete>
+    </target>
+    
+    <!-- -->
+    <target name="ios" depends="build,ae.tasks,get.os" unless="no.ios">
+        <antcall target="ios.windows"/>
+        <antcall target="ios.linux"/>
+        <antcall target="ios.osx"/>
+        <antcall target="ios.unknown"/>
+        <antcall target="ios.headers"/>
+    </target>
+</project>

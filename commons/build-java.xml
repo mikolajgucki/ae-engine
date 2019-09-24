@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<project name="AE Java build">
+    <!-- The directory with the Java sources -->
+    <property name="java.dir.src" value="${dir.src}/main/java"/>
+    
+    <!-- The build directory for the class files -->
+    <property name="java.dir.build.classes" value="${dir.build}/classes"/>
+    
+    <!-- The JAR file name -->
+    <property name="java.jar.filename" value="${ant.project.name}.jar"/>      
+    
+    <!-- The build directory with the files included in the jar META-INF directory -->
+    <property name="java.dir.build.metainf" value="${dir.build}/META-INF"/>    
+    
+    <!-- Prints info on available targets -->
+    <target name="java.info">
+        <echo>  java.compile    Compiles the Java sources</echo>
+        <echo>  java.jar        Creates the JAR file</echo>
+    </target>
+    
+    <!-- Creates the Java build directories -->
+    <target name="java.dir.build">
+        <mkdir dir="${java.dir.build.classes}"/>
+    </target>
+    
+    <!-- Compiles the Java sources -->
+    <target name="java.compile" depends="java.dir.build" unless="no.java.compile">
+        <javac
+            srcdir="${java.dir.src}"
+            destdir="${java.dir.build.classes}"
+            classpathref="java.classpath"
+            debug="yes"
+            debuglevel="vars,lines,source"            
+            includeantruntime="true">   
+            <compilerarg value="-Xlint:deprecation"/>   
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>      
+    </target>
+    
+    <!-- Copies the resources -->
+    <target name="java.resources" depends="java.dir.build" unless="no.java.resources">
+        <copy todir="${java.dir.build.classes}">
+            <fileset dir="${java.dir.src}" excludes="**/*.java">
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- Creates the JAR file -->
+    <target name="java.jar" depends="java.compile,java.resources" unless="no.java.jar">
+        <mkdir dir="${java.dir.build.metainf}"/>
+        <tstamp>
+            <format property="build.date" pattern="yyyy-MM-dd HH:mm:ssZ"/>
+        </tstamp>      
+        <jar destfile="${dir.build}/${java.jar.filename}">
+            <fileset dir="${java.dir.build.classes}">
+                <include name="**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Build-Date" value="${build.date}"/>
+            </manifest>            
+            <metainf dir="${java.dir.build.metainf}" includes="**/*"/>
+        </jar>
+    </target>    
+</project>

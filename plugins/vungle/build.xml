@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.ae_vungle" default="info">
+    <!-- Get the enviromnent variables -->
+    <property environment="ae.env"/>
+    
+    <!-- Verify the envrionment variable AE_DIST is set. -->
+    <condition property="ae.dist" value="${ae.env.AE_DIST}">
+        <isset property="ae.env.AE_DIST"/>
+    </condition>
+    <fail unless="ae.dist" message="Could not determine the path to the AE distribution"/>
+
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin-types.xml"/>      
+    
+    <!-- The plugin name -->
+    <property name="plugin.name" value="vungle"/>
+    
+    <!-- The Android JAR name (without the .jar suffix) -->
+    <property name="android.jar.name" value="ae_vungle"/>    
+    
+    <!-- The Android dependecies put in build.gradle -->
+    <gradle-deps id="android.deps">
+    </gradle-deps>     
+    
+    <!-- Performs plugin-specific operations before the Android project is built -->
+    <target name="android.project.custom" unless="no.android">
+        <unzip src="${dir.libs}/vungle-publisher-adaptive-id-4.0.2.zip" dest="${dir.build.android}/libs">
+            <patternset>
+                <include name="vungle-publisher-adaptive-id-4.0.2/libs/*"/>
+            </patternset>
+            <mapper type="flatten"/>
+        </unzip>
+        <fetch-ae-jar/>
+    </target>
+
+    <!-- Performs plugin-specific operations before the iOS project is built -->
+    <target name="ios.project.custom" unless="no.ios">
+        <unzip src="${dir.libs}/vungle406.zip" dest="${dir.build.ios.libs}"/> 
+    </target>
+    
+    <!-- Performs plugin-specific operations before the desktop project (plugin) is built -->
+    <target name="desktop.project.custom" unless="no.desktop">
+    </target>      
+    
+    <!-- Installs Android plugin-specific files -->
+    <target name="install.android.custom" unless="no.android">
+        <unzip src="${dir.libs}/vungle-publisher-adaptive-id-4.0.2.zip" dest="${dir.install.android}/libs">
+            <patternset>
+                <include name="vungle-publisher-adaptive-id-4.0.2/libs/*"/>
+            </patternset>
+            <mapper type="flatten"/>
+        </unzip>        
+    </target>
+    
+    <!-- Installs iOS plugin-specific files -->
+    <target name="install.ios.custom" unless="no.ios">
+        <copy todir="${dir.install.ios}/libs">        
+            <fileset dir="${dir.build.ios.libs}" includes="VungleSDK.embeddedframework/VungleSDK.framework/**/*"/>
+        </copy>    
+    </target>
+    
+    <!-- Installs desktop plugin-specific files -->
+    <target name="install.desktop.custom" unless="no.desktop">
+    </target>        
+    
+    <!-- Uninstalls custom files from the AE distribution -->
+    <target name="uninstall.custom">
+    </target>    
+    
+    <!-- -->
+    <import file="${ae.dist}/ant/plugin/build-plugin.xml"/>
+</project>

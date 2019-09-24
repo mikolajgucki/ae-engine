@@ -1,0 +1,264 @@
+{
+    "funcs":[
+        {
+            "name":"clock",
+            "desc":"Returns an approximation of the amount in seconds of CPU time used by the program.",
+            "definedIn":"Lua",           
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "replace":"os.clock"
+                }
+            ]
+        },
+        {
+            "name":"date",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"format,time",
+                    "replace":"os.date",
+                    "desc":"<p>Formats <code>time</code> and returns a string or a table containing date and time, formatted according to the given string <code>format</code>.</p><p>See the <code>os.time</code> function for a description of the <code>time</code> argument.alue).</p><p>If format starts with <code>!</code>, then the date is formatted in Coordinated Universal Time. After this optional character, if format is the string <code>*t</code>, then date returns a table with the following fields: <code>year</code> (four digits), <code>month</code> (1-12), <code>day</code> (1-31), <code>hour</code> (0-23), <code>min</code> (0-59), <code>sec</code> (0-61), <code>wday</code> (weekday, Sunday is 1), <code>yday</code> (day of the year), and <code>isdst</code> (daylight saving flag, a boolean). This last field may be absent if the information is not available.</br> If <code>format</code> is not <code>*t</code>, then <code>date</code> returns the date as a string, formatted according to the same rules as the ISO C function <code>strftime</code>.</p><p>On non-Posix systems, this function may be not thread safe because of its reliance on C function <code>gmtime</code> and C function <code>localtime</code>.</p>",
+                    "params":[
+                        {
+                            "name":"format",
+                            "desc":"The date format."
+                        },
+                        {
+                            "name":"time",
+                            "desc":"The time to be formatted."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"os.",
+                    "args":"format",
+                    "replace":"os.date",
+                    "desc":"<p>Formats the current time and returns a string or a table containing date and time, formatted according to the given string <code>format</code>.</p><p>If <code>format</code> starts with <code>!</code>, then the date is formatted in Coordinated Universal Time. After this optional character, if format is the string <code>*t</code>, then date returns a table with the following fields: <code>year</code> (four digits), <code>month</code> (1-12), <code>day</code> (1-31), <code>hour</code> (0-23), <code>min</code> (0-59), <code>sec</code> (0-61), <code>wday</code> (weekday, Sunday is 1), <code>yday</code> (day of the year), and <code>isdst</code> (daylight saving flag, a boolean). This last field may be absent if the information is not available.</br> If <code>format</code> is not <code>*t</code>, then <code>date</code> returns the date as a string, formatted according to the same rules as the ISO C function <code>strftime</code>.</p><p>On non-Posix systems, this function may be not thread safe because of its reliance on C function <code>gmtime</code> and C function <code>localtime</code>.</p>",
+                    "params":[
+                        {
+                            "name":"format",
+                            "desc":"The date format."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"os.",
+                    "replace":"os.date",
+                    "desc":"<p>Returns a reasonable date and time representation that depends on the host system and on the current locale (that is, <code>os.date()</code> is equivalent to <code>os.date(\"%c\")</code>).</p><p>On non-Posix systems, this function may be not thread safe because of its reliance on C function <code>gmtime</code> and C function <code>localtime</code>.</p>"
+                }                
+            ]
+        },
+        {
+            "name":"difftime",
+            "desc":"Returns the number of seconds from time <code>t1</code> to time <code>t2</code>. In POSIX, Windows, and some other systems, this value is exactly <code>t2-t1</code>.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"t2",
+                    "desc":"The end time."
+                },
+                {
+                    "name":"t1",
+                    "desc":"The start time."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"t1,t2",
+                    "replace":"os.difftime"
+                }
+            ]
+        },
+        {
+            "name":"execute",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"command",
+                    "replace":"os.execute",
+                    "desc":"This function is equivalent to the ISO C function system. It passes command to be executed by an operating system shell. Its first result is <code>true</code> if the command terminated successfully, or <code>nil</code> otherwise. After this first result the function returns a string and a number, as follows:<ul><li><code>exit</code>: the command terminated normally; the following number is the exit status of the command.</li><li><code>signal</code>: the command was terminated by a signal; the following number is the signal that terminated the command.</li></ul>",
+                    "params":[
+                        {
+                            "name":"command",
+                            "desc":"The command to execute."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"os.",
+                    "replace":"os.execute",
+                    "desc":"Returns a boolean that is <code>true</code> if a shell is available."
+                }
+            ]
+        },
+        {
+            "name":"exit",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"code,close",
+                    "replace":"os.exit",
+                    "desc":"<p>Calls the ISO C function <code>exit</code> to terminate the host program. If <code>code</code> is <code>true</code>, the returned status is <code>EXIT_SUCCESS</code>; if <code>code</code> is false, the returned status is <code>EXIT_FAILURE</code>; if <code>code</code> is a number, the returned status is this number.</p><p>If the second argument <code>close</code> is true, closes the Lua state before exiting.</p>",
+                    "params":[
+                        {
+                            "name":"code",
+                            "desc":"The return code."
+                        },
+                        {
+                            "name":"close",
+                            "desc":"Indicates if to close the Lua state before exiting."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"os.",
+                    "args":"code",
+                    "replace":"os.exit",
+                    "desc":"Calls the ISO C function <code>exit</code> to terminate the host program. If <code>code</code> is <code>true</code>, the returned status is <code>EXIT_SUCCESS</code>; if <code>code</code> is false, the returned status is <code>EXIT_FAILURE</code>; if <code>code</code> is a number, the returned status is this number.",
+                    "params":[
+                        {
+                            "name":"code",
+                            "desc":"The return code."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"os.",
+                    "replace":"os.exit",
+                    "desc":"Calls the ISO C function <code>exit</code> to terminate the host program with return code <code>EXIT_SUCCESS</code>."
+                }                
+            ]
+        },
+        {
+            "name":"getenv",
+            "desc":"Returns the value of the process environment variable <code>varname</code>, or <code>nil</code> if the variable is not defined.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"varname",
+                    "desc":"The variable name."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"varname",
+                    "replace":"os.getenv"
+                }
+            ]
+        },
+        {
+            "name":"remove",
+            "desc":"Deletes the file (or empty directory, on POSIX systems) with the given name. If this function fails, it returns <code>nil</code>, plus a string describing the error and the error code.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"filename",
+                    "desc":"The file name."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"filename",
+                    "replace":"os.remove"
+                }
+            ]
+        },
+        {
+            "name":"rename",
+            "desc":"Renames file or directory named <code>oldname</code> to <code>newname</code>. If this function fails, it returns <code>nil</code>, plus a string describing the error and the error code.",
+            "definedIn":"Lua",
+            "params":[
+                {
+                    "name":"oldname",
+                    "desc":"The old name."
+                },
+                {
+                    "name":"newname",
+                    "desc":"The new name."
+                }
+            ],            
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"oldname,newname",
+                    "replace":"os.rename"
+                }
+            ]
+        },
+        {
+            "name":"setlocale",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"locale,category",
+                    "replace":"os.setlocale",
+                    "desc":"<p>Sets the current locale of the program. <code>locale</code> is a system-dependent string specifying a locale; <code>category</code> is a string describing which category to change: <code>all</code>, <code>collate</code>, <code>ctype</code>, <code>monetary</code>, <code>numeric</code>, or <code>time</code>. The function returns the name of the new locale, or <code>nil</code> if the request cannot be honored.</p><p>If <code>locale</code> is the empty string, the current locale is set to an implementation-defined native locale. If locale is the string <code>C</code>, the current locale is set to the standard C locale.</p><p>When called with <code>nil</code> as the first argument, this function only returns the name of the current locale for the given category.</p><p>This function may be not thread safe because of its reliance on C function <code>setlocale</code>.</p>",
+                    "params":[
+                        {
+                            "name":"locale",
+                            "desc":"The string specyfing the locale."
+                        },
+                        {
+                            "name":"category",
+                            "desc":"Indicates if to close the Lua state before exiting."
+                        }
+                    ]
+                },    
+                {
+                    "prefix":"os.",
+                    "args":"locale",
+                    "replace":"os.setlocale",
+                    "desc":"<p>Sets the current locale of the program. <code>locale</code> is a system-dependent string specifying a locale. The function returns the name of the new locale, or <code>nil</code> if the request cannot be honored.</p><p>If <code>locale</code> is the empty string, the current locale is set to an implementation-defined native locale. If locale is the string <code>C</code>, the current locale is set to the standard C locale.</p><p>When called with <code>nil</code>, this function only returns the name of the current locale for the given category.</p><p>This function may be not thread safe because of its reliance on C function <code>setlocale</code>.</p>",
+                    "params":[
+                        {
+                            "name":"locale",
+                            "desc":"The string specyfing the locale."
+                        }
+                    ]
+                }            
+            ]
+        },
+        {
+            "name":"time",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "args":"table",
+                    "replace":"os.time",
+                    "desc":"<p>Returns the time representing the date and time specified by the given table. This table must have fields <code>year</code>, <code>month</code>, and <code>day</code>, and may have fields <code>hour</code> (default is 12), <code>min</code> (default is 0), <code>sec</code> (default is 0), and <code>isdst</code> (default is <code>nil</code>). For a description of these fields, see the <code>os.date</code> function.</p><p>The returned value is a number, whose meaning depends on your system. In POSIX, Windows, and some other systems, this number counts the number of seconds since some given start time (the <i>epoch</i>). In other systems, the meaning is not specified, and the number returned by time can be used only as an argument to <code>os.date</code> and <code>os.difftime</code>.</p>",
+                    "params":[
+                        {
+                            "name":"table",
+                            "desc":"The table with date and time."
+                        }
+                    ]
+                }, 
+                {
+                    "prefix":"os.",
+                    "replace":"os.time",
+                    "desc":"Returns the current time. The returned value is a number, whose meaning depends on your system. In POSIX, Windows, and some other systems, this number counts the number of seconds since some given start time (the <i>epoch</i>). In other systems, the meaning is not specified, and the number returned by time can be used only as an argument to <code>os.date</code> and <code>os.difftime</code>."
+                }
+            ]
+        },
+        {
+            "name":"tmpname",
+            "desc":"<p>Returns a string with a file name that can be used for a temporary file. The file must be explicitly opened before its use and explicitly removed when no longer needed.</p><p>On POSIX systems, this function also creates a file with that name, to avoid security risks. (Someone else might create the file with wrong permissions in the time between getting the name and creating the file.) You still have to open the file to use it and to remove it (even if you do not use it).</p>",
+            "definedIn":"Lua",
+            "variants":[
+                {
+                    "prefix":"os.",
+                    "replace":"os.tmpname"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.android" default="info">
+    <!-- The property with the Android files -->
+    <property name="dir.android" value="${basedir}/android"/>
+    
+    <!-- The property with the Android sources -->
+    <property name="dir.android.src" value="${dir.android}/src"/>
+    
+    <!-- The property with the Android Java sources -->
+    <property name="dir.android.src.java" value="${dir.android.src}/java"/>
+    
+    <!-- The property with the Android native sources -->
+    <property name="dir.android.src.cpp" value="${dir.android.src}/cpp"/>
+    
+    <!-- The property with the Android build directory -->
+    <property name="dir.build.android" value="${dir.build}/android"/>
+    
+    <!-- The property with the Android Java sources directory -->
+    <property name="dir.build.android.src.java" value="${dir.build.android}/src/main/java"/>    
+    
+    <!-- The property with the Android C++ sources directory -->
+    <property name="dir.build.android.src.cpp" value="${dir.build.android}/src/main/cpp"/>    
+    
+    <!-- The property with the compiled Java classes -->
+    <property name="dir.build.android.classes"
+        value="${dir.build.android}/build/intermediates/classes/debug"/>
+    
+    <!-- The property with the path to the Android JAR file -->
+    <property name="dir.build.android.jar"
+        value="${dir.build.android}/build/jar/${android.jar.name}.jar"/>
+        
+    <!-- The property with the Android installation directory -->
+    <property name="dir.install.android" value="${dir.install}/android"/>    
+    
+    <!-- Prints info -->
+    <target name="info">
+        <echo>This file is included in another build.xml. Don't run it directly.</echo>
+    </target>
+    
+    <!-- Copies ae.jar to the Android libraries directory -->
+    <macrodef name="fetch-ae-jar">
+        <sequential>
+            <copy todir="${dir.build.android}/libs" file="${ae.dist}/android/libs/ae.jar"/>
+        </sequential>
+    </macrodef>    
+    
+    <!-- Creates the JAR file -->
+    <target name="android.jar">
+        <jar destfile="${dir.build.android.jar}">
+            <fileset dir="${dir.build.android.classes}">
+                <include name="**"/>
+                <exclude name="com/andcreations/plugin/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Plugin-Name" value="${plugin.name}"/>
+            </manifest>                                 
+        </jar> 
+    </target>
+    
+    <!-- Creates and builds the Android project -->
+    <target name="android.build" unless="no.android" depends="ae.tasks">
+        <taskdef name="create-android-project"
+            loaderRef="ae.loader"
+            classpathref="java.classpath"
+            classname="com.andcreations.android.project.gradle.AndroidGradleProjectAntTask"/>
+            
+        <!-- Create the Android project -->
+        <create-android-project depsref="android.deps">
+            <templateDir path="${ae.dist}/templates/android/project"/>
+            <sdkDir path="${android.sdk.dir}"/>
+            <ndkDir path="${android.ndk.dir}"/>
+            <applicationName value="${plugin.name}"/>
+            <minSdkVersion value="${android.min.sdk.version}"/>
+            <targetSdkVersion value="${android.target.sdk.version}"/>
+            <compileSdkVersion value="${android.compile.sdk.version}"/>
+            <packageName value="com.andcreations.plugin.dummy"/>
+            <activityName value="DummyPlugin"/>
+            <nativeCode/>
+            <cmakeArgs value="-DAE_DIST=${ae.dist} -DANDROID_STL=gnustl_shared"/>
+            <dstDir path="${dir.build.android}"/>            
+        </create-android-project>
+        <antcall target="android.project.custom"/>
+        
+        <!-- Copies the native sources to the Android project -->
+        <copy todir="${dir.build.android.src.cpp}">
+            <fileset dir="${dir.common.src}/cpp" includes="include/*.h"/>
+            <fileset dir="${dir.common.src}/cpp" includes="*.cpp"/>
+            <fileset dir="${dir.android.src.cpp}" includes="**/*"/>
+        </copy>      
+        
+        <!-- Copy CMakeLists.txt -->
+        <copy todir="${dir.build.android}">
+            <fileset file="${dir.android.src}/cmake/CMakeLists.txt"/>
+        </copy>
+        
+        <!-- Copies the Java sources to the Android project -->
+        <copy todir="${dir.build.android.src.java}">
+            <fileset dir="${dir.android.src.java}" includes="**/*"/>           
+        </copy>        
+        
+        <!-- Build the Android project -->
+        <exec executable="gradlew" dir="${dir.build.android}" vmlauncher="false" failonerror="true">
+            <arg value="jarDebugClasses"/>
+            <arg value="assembleDebug"/>
+        </exec>
+        
+        <!-- Create the JAR file -->
+        <antcall target="android.jar"/>
+    </target>
+    
+    <!-- Removes and Android project -->
+    <target name="android.clean">
+        <delete dir="${dir.build.android}"/>
+    </target>
+    
+    <!-- Builds the Android part of the plugin -->
+    <target name="android" unless="no.android" depends="android.build">
+    </target>
+    
+    <!-- Installs the Android part of the plugin -->
+    <target name="install.android" unless="no.android"
+        depends="clean,android,install.common">
+        <!-- Native libraries -->
+        <mkdir dir="${dir.install.android}/libs/jni"/>
+        <if>
+            <available file="${dir.build.android}/build/jni" type="dir"/>
+            <then>
+                <copy todir="${dir.install.android}/libs/jni">
+                    <fileset dir="${dir.build.android}/build/jni" includes="**/*.so"/>
+                </copy>
+            </then>
+        </if>
+        
+        <!-- JAR library -->
+        <copy todir="${dir.install.android}/libs">
+            <fileset file="${dir.build.android}/build/jar/${android.jar.name}.jar"/>
+        </copy>
+        
+        <!-- Custom Android stuff -->
+        <antcall target="install.android.custom"/>
+    </target>
+</project>

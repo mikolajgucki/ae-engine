@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<project name="ae.ios.project">
+    <!-- Makes sure necessary properties are set -->
+    <fail message="Missing property ae.dist" unless="ae.dist"/>
+    <fail message="Missing property ae.project.dir" unless="ae.project.dir"/>
+    <fail message="Missing property ae.ios.project.dir" unless="ae.ios.project.dir"/>
+
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dist}/libs">
+            <include name="*.jar"/>
+        </fileset>
+    </path>     
+    
+    <!-- Updates iOS project -->
+    <target name="ae.update">
+        <taskdef name="update-ios" classpathref="java.classpath"
+            classname="com.andcreations.ae.sdk.update.ios.UpdateiOSProjectAntTask"/>            
+        <update-ios>
+            <aedistdir path="${ae.dist}"/>
+            <projectdir path="${ae.project.dir}"/>
+            <iosprojectdir path="${ae.ios.project.dir}"/>
+            <appiconsetdir path="${basedir}/${ae.app.icon.set.dir}"/>
+        </update-ios>
+    </target>
+    
+    <!-- Cleans iOS project -->
+    <target name="ae.clean">
+        <taskdef name="clean-ios" classpathref="java.classpath"
+            classname="com.andcreations.ae.sdk.update.ios.CleaniOSProjectAntTask"/>            
+        <clean-ios>
+            <aedistdir path="${ae.dist}"/>
+            <projectdir path="${ae.project.dir}"/>
+            <iosprojectdir path="${ae.ios.project.dir}"/>
+        </clean-ios>
+    </target>
+</project>

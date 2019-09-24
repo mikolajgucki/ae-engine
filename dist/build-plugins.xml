@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.plugins">
+    <!-- Prints info on main available targets -->
+    <target name="plugins.info">
+        <echo>  plugins.clean         Cleans the plugins</echo>
+    </target>
+
+    <!-- The directory with plugins -->
+    <property name="dir.plugins" value="${dir.root}/plugins"/>
+    
+    <!-- The absolute directory with plugins -->
+    <property name="abs.dir.plugins" location="${dir.plugins}"/>      
+    
+    <!-- Builds plugins -->
+    <target name="plugins" depends="libs.core,ae.tasks,scripts">
+        <for list="${plugins.to.build}" param="plugin" delimiter=",">
+            <sequential>
+                <echo>---==== Building plugin @{plugin} ====---</echo>
+                <ant dir="${abs.dir.plugins}/@{plugin}" inheritAll="false">
+                    <property name="ae.dist" value="${abs.dir.dist}"/>
+                    <target name="install"/>
+                </ant>
+            </sequential>
+        </for>
+    </target>
+    
+    <!-- Cleans the plugins -->
+    <target name="plugins.clean" depends="ae.tasks,libs.core,scripts">
+        <for list="${plugins.to.build}" param="plugin" delimiter=",">
+            <sequential>
+                <echo>---==== Cleaning plugin @{plugin} ====---</echo>
+                <exec executable="ant" dir="${abs.dir.plugins}/@{plugin}" vmlauncher="false" failonerror="true">
+                    <arg value="-Dae.dist=${abs.dir.dist}"/>
+                    <arg value="clean"/>
+                </exec>
+            </sequential>
+        </for>    
+    </target>
+</project>

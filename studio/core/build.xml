@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<project name="ae.studio.core" default="info">
+    <!-- The root directory of the entire AE project -->
+    <property name="dir.root" value="${basedir}/../.."/>
+    
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="${basedir}/src"/>
+    
+    <!-- The directories the the build files -->
+    <property name="dir.build" value="${basedir}/build"/>    
+
+    <!-- The directory with libraries -->
+    <property name="dir.libs" value="${dir.root}/libs"/>
+
+    <!-- The directory with Java libraries -->
+    <property name="dir.libs.java" value="${dir.libs}/java"/>    
+    
+    <!-- The distribution directory -->
+    <property name="dir.dist" value="${dir.root}/dist/build/dist"/>     
+    
+    <!-- The distribution directory with binaries and run scripts -->
+    <property name="dir.dist.bin" value="${dir.dist}/bin"/>     
+    
+    <!-- The distribution directory with libraries -->
+    <property name="dir.dist.libs" value="${dir.dist}/libs"/>     
+    
+    <!-- The distribution directory with the studio libraries -->
+    <property name="dir.dist.libs.studio" value="${dir.dist.libs}/studio"/>     
+    
+    <!-- Java related build -->
+    <import file="${basedir}/../../commons/build-java.xml"/>
+
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${dir.libs.java}">
+            <include name="*.jar"/>
+        </fileset>     
+        <fileset dir="${dir.dist.libs}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${dir.dist.libs}">
+            <include name="*.jar"/>
+        </fileset>        
+    </path> 
+    
+    <!-- Prints info on available targets -->
+    <target name="info">
+        <echo>${ant.project.name}, available targets:</echo>
+        <echo>  compile    Compiles the sources</echo>
+        <echo>  clean      Removes the build directory</echo>
+        <echo>  build      Builds the project</echo>
+        <antcall target="java.info"/>
+    </target>
+    
+    <!-- Compiles the sources -->
+    <target name="compile" depends="java.compile">
+    </target>
+    
+    <!-- Removes the build directory -->
+    <target name="clean">    
+        <delete dir="${dir.build}"/>
+    </target>
+    
+    <!-- Copies the JAR file to the distribution -->
+    <target name="dist.jar">
+        <mkdir dir="${dir.dist.libs.studio}"/>        
+        <copy todir="${dir.dist.libs.studio}">
+            <fileset dir="${dir.build}">
+                <include name="*.jar"/>
+            </fileset>
+        </copy>        
+    </target>
+    
+    <!-- Copies the bin directory content to the disribution -->
+    <target name="dist.bin">
+        <mkdir dir="${dir.dist.bin}"/>        
+        <copy todir="${dir.dist.bin}">
+            <fileset dir="${basedir}/src/main/bin">
+                <include name="*"/>
+            </fileset>
+        </copy>
+        <chmod file="${dir.dist.bin}/ae.studio.sh" perm="ug+x"/>
+    </target>
+    
+    <!-- Builds the project -->
+    <target name="build" depends="compile,java.jar,dist.jar,dist.bin">
+    </target>
+</project>

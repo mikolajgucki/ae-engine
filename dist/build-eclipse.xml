@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<project name="ae.dist.eclipse">
+    <!-- The target directory with the Eclipse projects --> 
+    <property name="dir.build.eclipse" value="${dir.build}/eclipse"/>
+
+    <!-- Creates the Eclipse projects -->
+    <target name="eclipse">
+        <!-- Classpath -->
+        <path id="eclipse.classpath">
+            <fileset dir="${dir.libs.java}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.commons}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <fileset dir="${dir.tools}/${dir.build}">
+                <include name="*.jar"/>
+            </fileset>   
+            <pathelement path="${java.dir.build.classes}"/>
+        </path>    
+    
+        <!-- Task -->
+        <taskdef name="ae-eclipse" classpathref="eclipse.classpath"
+            classname="com.andcreations.ae.eclipse.AEEclipseProjectsAntTask"/>
+            
+        <!-- Print classpath -->
+        <!--
+        <pathconvert property="eclipse.classpath.prop"
+            refid="eclipse.classpath"/>
+        <echo>Eclipse task classpath is ${eclipse.classpath.prop}</echo>
+        -->
+            
+        <!-- Create the projects -->
+        <ae-eclipse>
+            <aeSrcDir path="${dir.root}"/>
+            <dstDir path="${dir.build.eclipse}"/>
+            <antHomeDir path="${ant.home}"/>
+        </ae-eclipse>
+    </target>
+    
+    <!-- Deletes the Eclipse projects -->
+    <target name="eclipse.clean">
+        <delete dir="${dir.build.eclipse}"/>
+    </target>
+</project>

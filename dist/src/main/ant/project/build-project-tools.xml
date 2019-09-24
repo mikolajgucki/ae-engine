@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<project name="ae.project.tools" default="info">
+    <!-- The root directory of the tools -->
+    <property name="dir.root" value="${basedir}"/>
+    
+    <!-- The project root directory -->
+    <property name="project.root" value="${basedir}/.."/>
+    
+    <!-- The directory with the sources -->
+    <property name="dir.src" value="${dir.root}/src"/>    
+    
+    <!-- The directories with the build files -->
+    <property name="dir.build" value="${dir.root}/build"/>
+    
+    <!-- The directories with the Eclipse projects -->
+    <property name="dir.build.eclipse" value="${dir.build}/eclipse"/>
+    
+    <!-- The directories with the lib files -->
+    <property name="dir.libs" value="${dir.root}/libs"/>
+    
+    <!-- The directories with AE Studio metainf files -->
+    <property name="dir.ae.studio.metainf" value="${dir.build}/studio/metainf"/>
+   
+    <!-- Import the Java build file from the distribution -->
+    <import file="${ae.dir.dist}/ant/java/build-java.xml"/>    
+    
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dir.dist}/libs">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${ae.dir.dist}/libs/studio">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${ae.dir.dist}/libs/studio/plugins">
+            <include name="*.jar"/>
+        </fileset>   
+        <fileset dir="${dir.libs}">
+            <include name="*.jar"/>
+        </fileset>   
+        <pathelement path="${java.dir.build.classes}"/>
+    </path>     
+    
+    <!-- -->
+    <macrodef name="ae-studio-plugin-jar">
+        <attribute name="class"/>
+        <attribute name="package"/>
+        <attribute name="packageDir"/>
+        <sequential>
+            <echo>---==== Building plugin: @{package} ===---</echo>
+            <mkdir dir="${dir.ae.studio.metainf}/@{package}"/>
+            <tstamp>
+                <format property="build.date" pattern="yyyy-MM-dd HH:mm:ssZ"/>
+            </tstamp>      
+            <jar destfile="${dir.build}/@{package}.jar">
+                <fileset dir="${java.dir.build.classes}">
+                    <include name="@{packageDir}/**"/>
+                </fileset>
+                <manifest>
+                    <attribute name="Build-Date" value="${build.date}"/>
+                    <section name="AEStudio-Plugin">
+                        <attribute name="Plugin-Class" value="@{package}.@{class}"/>
+                    </section>
+                </manifest>            
+                <metainf dir="${dir.ae.studio.metainf}/@{package}" includes="**/*"/>
+            </jar>            
+        </sequential>
+    </macrodef>    
+    
+    <!-- Creates the Eclipse projects -->
+    <target name="eclipse">
+        <!-- Task -->
+        <taskdef name="tools-eclipse" classpathref="java.classpath"
+            classname="com.andcreations.ae.project.eclipse.ToolsProjectBuilderAntTask"/>
+            
+        <!-- Create the tools project -->
+        <tools-eclipse>
+            <projectDir path="${project.root}"/>
+            <projectName value="${ant.project.name}"/>
+            <aeDistDir path="${ae.dir.dist}"/>
+            <antHomeDir path="${ant.home}"/>
+            <dstDir path="${dir.build.eclipse}"/>
+        </tools-eclipse>
+    </target>    
+    
+    <!-- Deletes the Eclipse projects -->
+    <target name="eclipse.clean">
+        <delete dir="${dir.build.eclipse}"/>
+    </target>    
+    
+    <!-- Builds the tools -->
+    <target name="build" depends="java.jar,ae.studio.plugins">
+    </target>
+    
+    <!-- Deletes the build directory -->
+    <target name="clean">
+        <delete dir="${dir.build}"/>
+    </target>    
+</project>

@@ -1,0 +1,306 @@
+{
+    "funcs":[     
+        {
+            "name":"concat",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.concat",
+                    "desc":"Given a list where all elements are strings or numbers, returns the string <code>list[i]..separator..list[i+1] ... separator..list[j]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        },
+                        {
+                            "name":"separator",
+                            "desc":"The separator."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The index of the first element to concatenate."
+                        },
+                        {
+                            "name":"j",
+                            "desc":"The index of the last element to concatenate."
+                        }                        
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.concat",
+                    "desc":"Given a list where all elements are strings or numbers, returns the string <code>list[i]..separator..list[i+1] ... separator..list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        },
+                        {
+                            "name":"separator",
+                            "desc":"The separator."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The index of the first element to concatenate."
+                        }                        
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.concat",
+                    "desc":"Given a list where all elements are strings or numbers, returns the string <code>list[1]..separator..list[2] ... separator..list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        },
+                        {
+                            "name":"separator",
+                            "desc":"The separator."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.concat",
+                    "desc":"Given a list where all elements are strings or numbers, returns the string <code>list[1]..list[2] ...  list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        }
+                    ]
+                }                
+            ]
+        },
+        {
+            "name":"insert",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.insert",
+                    "desc":"Inserts element <code>value</code> at <code>position</code> in <code>list</code>, shifting up the elements <code>list[position]</code>, <code>list[position+1]</code>... <code>list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        },
+                        {
+                            "name":"position",
+                            "desc":"The position."
+                        },
+                        {
+                            "name":"value",
+                            "desc":"The value."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.insert",
+                    "desc":"Inserts <code>value</code> at the end of <code>list</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list."
+                        },
+                        {
+                            "name":"value",
+                            "desc":"The value."
+                        }
+                    ]
+                }                
+            ]
+        },
+        {
+            "name":"move",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.move",
+                    "desc":"Moves elements from table <code>ta</code> to table <code>tb</code>. This function performs the equivalent to the following multiple assignment: <code>tb[position],... = ta[start],...,ta[end]</code>. The destination range can overlap with the source range. The number of elements to be moved must fit in a Lua integer.",
+                    "params":[
+                        {
+                            "name":"ta",
+                            "desc":"The source table."
+                        },
+                        {
+                            "name":"start",
+                            "desc":"The start position in the source table."
+                        },
+                        {
+                            "name":"end",
+                            "desc":"The end position in the source table."
+                        },
+                        {
+                            "name":"position",
+                            "desc":"The position in the destination table."
+                        },
+                        {
+                            "name":"tb",
+                            "desc":"The destination table."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.move",
+                    "desc":"Moves elements inside table <code>ta</code>. This function performs the equivalent to the following multiple assignment: <code>ta[position],... = ta[start],...,ta[end]</code>. The destination range can overlap with the source range. The number of elements to be moved must fit in a Lua integer.",
+                    "params":[
+                        {
+                            "name":"ta",
+                            "desc":"The table."
+                        },
+                        {
+                            "name":"start",
+                            "desc":"The start position in the table."
+                        },
+                        {
+                            "name":"end",
+                            "desc":"The end position in the table."
+                        },
+                        {
+                            "name":"position",
+                            "desc":"The destination position in table."
+                        }
+                    ]
+                }                
+            ]
+        },
+        {
+            "name":"pack",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.pack",
+                    "desc":"Returns a new table with all parameters stored into keys 1, 2, etc. and with a field <code>n</code> with the total number of parameters. Note that the resulting table may not be a sequence.",
+                    "params":[
+                        {
+                            "name":"...",
+                            "desc":"The values to pack."
+                        }
+                    ]
+                }              
+            ]
+        },
+        {
+            "name":"remove",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.remove",
+                    "desc":"Removes from <code>list</code> the element at <code>position</code>, returning the value of the removed element. Shifts down the elements <code>list[position+1]</code>, <code>list[position+2]</code>, ..., <code>list[#list]</code> and erases element <code>list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list from which to remove."
+                        },
+                        {
+                            "name":"position",
+                            "desc":"The list from which to remove."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.remove",
+                    "desc":"Removes the last element of <code>list</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list from which to remove."
+                        }
+                    ]
+                }              
+            ]
+        },
+        {
+            "name":"sort",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.sort",
+                    "desc":"<p>Sorts <code>list</code> elements in a given order, in-place, from <code>list[1]</code> to <code>list[#list]</code>. <code>comparator</code> must be a function that receives two list elements and returns true when the first element must come before the second in the final order (so that, after the sort, i < j implies not <code>comparator(list[j],list[i])</code>).</p><p>Note that the <code>comparator</code> function must define a strict partial order over the elements in the list; that is, it must be asymmetric and transitive. Otherwise, no valid sort may be possible.</p><p>The sort algorithm is not stable; that is, elements not comparable by the given order (e.g., equal elements) may have their relative positions changed by the sort.</p>",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list to sort."
+                        },
+                        {
+                            "name":"comparator",
+                            "desc":"The comparator."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.sort",
+                    "desc":"<p>Sorts <code>list</code> elements in a given order, in-place, from <code>list[1]</code> to <code>list[#list]</code>. The standard Lua operator <code>&lt;</code> is used instead.</p><p>The sort algorithm is not stable; that is, elements not comparable by the given order (e.g., equal elements) may have their relative positions changed by the sort.</p>",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list to sort."
+                        }
+                    ]
+                }                
+            ]
+        },
+        {
+            "name":"unpack",
+            "definedIn":"Lua",            
+            "variants":[
+                {
+                    "prefix":"table.",
+                    "replace":"table.unpack",
+                    "desc":" Returns the elements from the given <code>list</code>. This function is equivalent to <code>return list[i], list[i+1], ..., list[j]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list to unpack."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The position of the first element."
+                        },
+                        {
+                            "name":"j",
+                            "desc":"The position of the last element."
+                        }
+                    ]
+                },
+                {
+                    "prefix":"table.",
+                    "replace":"table.unpack",
+                    "desc":" Returns the elements from the given <code>list</code>. This function is equivalent to <code>return list[i], list[i+1], ..., list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list to unpack."
+                        },
+                        {
+                            "name":"i",
+                            "desc":"The position of the first element."
+                        }
+                    ]
+                },                
+                {
+                    "prefix":"table.",
+                    "replace":"table.unpack",
+                    "desc":" Returns the elements from the given <code>list</code>. This function is equivalent to <code>return list[1], list[2], ..., list[#list]</code>.",
+                    "params":[
+                        {
+                            "name":"list",
+                            "desc":"The list to unpack."
+                        }
+                    ]
+                }                
+            ]
+        }        
+    ]
+}

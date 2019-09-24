@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<project name="ae.build.plugin.types" default="info">
+    <!-- -->
+    <path id="java.classpath">
+        <fileset dir="${ae.dist}/libs">
+            <include name="*.jar"/>
+        </fileset> 
+    </path>
+    
+    <!-- -->
+    <property file="${ae.dist}/properties/android.properties"/>    
+    
+    <!-- The type to hold Gradle dependencies -->
+    <typedef name="gradle-deps"
+        loaderRef="ae.loader"
+        classpathref="java.classpath"
+        classname="com.andcreations.android.project.gradle.GradleDependenciesAntType"/>    
+</project>
